@@ -758,6 +758,14 @@ function appendUserMessage(text) {
   renderUserBubble(text);
 }
 
+function formatBotMessageHtml(text) {
+  if (!text) return '';
+  let escaped = escapeHtml(text);
+  // Support **bold** markdown tags
+  escaped = escaped.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  return escaped;
+}
+
 function renderBotBubble(text, suggested = [], actions = []) {
   const stream = document.getElementById('chatMessagesStream');
   if (!stream) return;
@@ -774,7 +782,10 @@ function renderBotBubble(text, suggested = [], actions = []) {
         return `<button type="button" class="chat-action-btn" onclick="window.openConsultationModal('${escapeHtml(act.subject || 'Design Consultation')}')">${escapeHtml(act.label)} →</button>`;
       }
       if (act.type === 'scroll') {
-        return `<a href="${act.target}" class="chat-action-btn" onclick="document.querySelector('${act.target}')?.scrollIntoView({behavior:'smooth'}); return false;">${escapeHtml(act.label)} ↓</a>`;
+        return `<a href="${act.target}" class="chat-action-btn secondary" onclick="document.querySelector('${act.target}')?.scrollIntoView({behavior:'smooth'}); return false;">${escapeHtml(act.label)} ↓</a>`;
+      }
+      if (act.type === 'map') {
+        return `<a href="${act.url}" target="_blank" rel="noopener noreferrer" class="chat-action-btn secondary">${escapeHtml(act.label)} ↗</a>`;
       }
       if (act.type === 'whatsapp') {
         const encoded = encodeURIComponent(act.text || 'Hi Vizous Interio');
@@ -802,7 +813,7 @@ function renderBotBubble(text, suggested = [], actions = []) {
 
   msgDiv.innerHTML = `
     <div class="chat-bubble">
-      ${escapeHtml(text)}
+      ${formatBotMessageHtml(text)}
       ${actionsHtml}
     </div>
     ${pillsHtml}
@@ -844,26 +855,135 @@ function showTypingIndicator() {
  * Intelligent Grounded Architectural Assistant Knowledge Engine
  */
 function getArchitecturalAssistantResponse(text) {
-  const q = text.toLowerCase();
+  const q = text.toLowerCase().trim();
 
-  // 1. Kitchens
+  // 1. SPECIFIC DIRECTIONS & MAP QUERY
+  if (q.includes('direction') || q.includes('how to reach') || q.includes('map') || q.includes('route') || q.includes('landmark') || q.includes('near sunshine')) {
+    return {
+      text: "📍 **Directions to Vizous Experience Centre**:\n\n• **Address**: 1st Floor, Laxmi Sagar Square, Plot 301/1516, Cuttack Road, Bhubaneswar - 751006.\n• **Landmark**: Situated directly at Laxmi Sagar Square, near Sunshine Hospital (Budheswari Colony).\n• **Timings**: 10:00 AM – 8:30 PM (Open all 7 days).\n• **Parking**: Dedicated customer parking available right in front.",
+      suggested: ['Book showroom visit', 'Call showroom at +91 90400 87614', 'Factory address at Bhagabanpur'],
+      actions: [
+        { type: 'map', url: 'https://maps.google.com/?q=Vizous+Interio+Laxmi+Sagar+Bhubaneswar', label: 'Open in Google Maps' },
+        { type: 'whatsapp', text: 'Hi Vizous Interio, please send Google Maps live location for your Laxmisagar showroom.', label: 'Get Location on WhatsApp' },
+        { type: 'modal', subject: 'Showroom Visit Booking', label: 'Reserve Visit Slot' }
+      ]
+    };
+  }
+
+  // 2. SHOWROOM VISIT & APPOINTMENT BOOKING
+  if (q.includes('book showroom') || q.includes('schedule visit') || q.includes('book visit') || q.includes('appointment') || q.includes('come today') || q.includes('visit today') || q.includes('visit tomorrow')) {
+    return {
+      text: "🏛️ **Book Your Showroom Experience**:\n\nYou are warmly invited to visit our Flagship Experience Centre at Laxmi Sagar Square! Our senior architects will give you a personalized walkthrough of:\n\n• 6 Real Modular Kitchen configurations\n• Walk-in closets with sensor LED lighting\n• 100+ shutter finish samples (Acrylic, PU, Glass)\n• 3D architectural review of your floor plan",
+      suggested: ['Get directions to showroom', 'Calculate interior cost', 'Modular kitchen designs'],
+      actions: [
+        { type: 'modal', subject: 'Experience Centre Walkthrough & 3D Session', label: 'Pick Preferred Time Slot' },
+        { type: 'call', phone: '+919040087614', label: 'Call Studio (+91 90400 87614)' }
+      ]
+    };
+  }
+
+  // 3. SHOWROOM TIMINGS & OPENING HOURS
+  if (q.includes('timing') || q.includes('hours') || q.includes('open today') || q.includes('sunday') || q.includes('closing time')) {
+    return {
+      text: "🕒 **Vizous Operating Timings**:\n\n• **Laxmi Sagar Experience Centre**: 10:00 AM – 8:30 PM (All 7 Days, including Sundays).\n• **Bhagabanpur Factory Plant**: 9:00 AM – 6:30 PM (Monday through Saturday).\n• **Raipur Branch Studio**: 10:00 AM – 7:30 PM (Monday through Saturday).\n\nWalk-ins are always welcome!",
+      suggested: ['Get directions to showroom', 'Book showroom visit', 'Call showroom at +91 90400 87614'],
+      actions: [
+        { type: 'map', url: 'https://maps.google.com/?q=Vizous+Interio+Laxmi+Sagar+Bhubaneswar', label: 'Open in Google Maps' },
+        { type: 'call', phone: '+919040087614', label: 'Call +91 90400 87614' }
+      ]
+    };
+  }
+
+  // 4. DIRECT CALL / PHONE NUMBER REQUEST
+  if ((q.includes('call') && !q.includes('calculate')) || q.includes('phone') || q.includes('mobile') || q.includes('hotline') || q.includes('number')) {
+    return {
+      text: "📞 **Vizous Senior Design Hotlines**:\n\n• **Bhubaneswar Studio**: +91 90400 87614 (10:00 AM – 8:30 PM)\n• **Customer Care**: +91 95892 77465\n• **Raipur Branch**: +91 98932 18906\n• **Official Email**: info@vizous.in\n\nClick below to call our design desk right away or leave your contact number in this chat for an immediate callback.",
+      suggested: ['Showroom address in Bhubaneswar', 'Calculate interior cost', 'Book free 3D design session'],
+      actions: [
+        { type: 'call', phone: '+919040087614', label: 'Call +91 90400 87614' },
+        { type: 'whatsapp', text: 'Hi Vizous Interio, I would like to speak with an interior architect.', label: 'WhatsApp Us' },
+        { type: 'modal', subject: 'Priority Callback Request', label: 'Request Architect Callback' }
+      ]
+    };
+  }
+
+  // 5. FACTORY & IN-HOUSE MANUFACTURING (BHAGABANPUR)
+  if (q.includes('factory') || q.includes('bhagabanpur') || q.includes('plant') || q.includes('patrapada') || q.includes('cnc') || q.includes('machinery') || q.includes('manufacturing')) {
+    return {
+      text: "🏭 **Vizous In-House Manufacturing Facility**:\n\n• **Location**: Plot #12, Bhagabanpur Industrial Estate, Patrapada, Bhubaneswar - 751019.\n• **Capacity**: 15,000+ sq.ft automated manufacturing unit.\n• **Technology**: German Homag CNC beam saws, automated edgebanders & multi-spindle boring machines.\n• **Benefit**: Zero middleman markups (saves 20-30%) and zero on-site carpenter delays or dust.",
+      suggested: ['Schedule a factory visit', 'Showroom address in Bhubaneswar', '10-Year Warranty & Materials'],
+      actions: [
+        { type: 'navigate', url: 'about.html#factoryTourSection', label: 'Explore Factory Plant' },
+        { type: 'modal', subject: 'Guided Factory Tour Request', label: 'Book Factory Walkthrough' }
+      ]
+    };
+  }
+
+  // 6. PRICING & COST ESTIMATES
+  if (q.includes('cost') || q.includes('price') || q.includes('rate') || q.includes('per sq') || q.includes('sqft') || q.includes('sq.ft') || q.includes('budget') || q.includes('how much') || q.includes('estimate') || q.includes('quote') || q.includes('package') || q.includes('bhk')) {
+    if (q.includes('kitchen')) {
+      return {
+        text: "🍳 **Modular Kitchen Factory-Direct Pricing**:\n\n• **Straight Layout**: ₹95,000 – ₹1,80,000\n• **L-Shaped Layout**: ₹1,45,000 – ₹3,20,000\n• **Parallel Layout**: ₹1,60,000 – ₹3,40,000\n• **U-Shaped Layout**: ₹2,10,000 – ₹4,20,000\n• **Island / Peninsular**: ₹2,80,000 – ₹5,50,000+\n\n*Built with 100% IS:710 Marine Grade BWP Plywood and soft-close German hardware with a 10-Year Written Warranty.*",
+        suggested: ['Calculate kitchen cost', 'Acrylic vs Laminate finish', 'Book free site measurement'],
+        actions: [
+          { type: 'scroll', target: '#costEstimator', label: 'Launch Cost Estimator' },
+          { type: 'navigate', url: 'modular-kitchen.html', label: 'View 6 Kitchen Layouts' },
+          { type: 'modal', subject: 'Kitchen Quote Request', label: 'Get Itemized 3D Quote' }
+        ]
+      };
+    }
+
+    if (q.includes('wardrobe')) {
+      return {
+        text: "🚪 **Custom Wardrobe Pricing**:\n\n• **2-Shutter Sliding**: ₹65,000 – ₹1,10,000\n• **3-Shutter Sliding**: ₹1,15,000 – ₹1,85,000\n• **Floor-to-Ceiling 4-Shutter**: ₹1,90,000 – ₹2,60,000+\n• **Walk-in Closets**: ₹1,40,000 – ₹3,50,000+\n\n*Includes anti-termite marine ply carcass, German sliding channels, and sensor profile LED illumination.*",
+        suggested: ['Walk-in wardrobes', 'Calculate interior cost', 'Book designer consultation'],
+        actions: [
+          { type: 'navigate', url: 'wardrobes.html', label: 'View Wardrobes' },
+          { type: 'modal', subject: 'Wardrobe Pricing Request', label: 'Get Wardrobe 3D Quote' }
+        ]
+      };
+    }
+
+    if (q.includes('sqft') || q.includes('sq.ft') || q.includes('per sq')) {
+      return {
+        text: "📐 **Turnkey Pricing Per Square Foot**:\n\n• **Essential Craft**: ₹1,200 – ₹1,450 / sq.ft (BWP plywood, scratch-resistant laminates, soft-close hinges)\n• **Premium Contemporary**: ₹1,550 – ₹1,950 / sq.ft (Anti-fingerprint acrylic, Hafele hardware, designer lighting)\n• **Luxury Elite**: ₹2,100 – ₹2,600+ / sq.ft (PU lacquer, fluted panels, sintered stone, motorized Blum fittings)\n\n*Direct factory pricing saves you 20-30% compared to typical design agencies.*",
+        suggested: ['Calculate 2BHK interior cost', 'Calculate 3BHK interior cost', 'Book free 3D design session'],
+        actions: [
+          { type: 'scroll', target: '#costEstimator', label: 'Open Cost Estimator' },
+          { type: 'modal', subject: 'Sq.Ft Rate Consultation', label: 'Get Detailed Estimate' }
+        ]
+      };
+    }
+
+    return {
+      text: "🏠 **Complete Home Interior Turnkey Estimates**:\n\n• **1BHK**: ₹1.80L – ₹2.80L\n• **2BHK**: ₹3.20L – ₹4.80L\n• **3BHK**: ₹5.50L – ₹7.80L\n• **4BHK / Villa**: ₹9.00L – ₹15.00L+\n\n*Package includes custom modular kitchen, bedroom wardrobes, TV unit, false ceiling, and lighting backed by a 45-day handover guarantee.*",
+      suggested: ['Open Cost Estimator', 'Calculate kitchen cost', 'Book free site measurement'],
+      actions: [
+        { type: 'scroll', target: '#costEstimator', label: 'Launch Cost Estimator' },
+        { type: 'modal', subject: 'Full Home Budget Consultation', label: 'Get Itemized 3D Quote' },
+        { type: 'call', phone: '+919040087614', label: 'Speak with Estimator' }
+      ]
+    };
+  }
+
+  // 7. MODULAR KITCHENS
   if (q.includes('kitchen') || q.includes('cook') || q.includes('island') || q.includes('chimney') || q.includes('countertop')) {
     return {
-      text: "Vizous manufactures bespoke Modular Kitchens across 6 configurations: L-Shaped, U-Shaped, Island, Straight, Parallel, and Peninsular. We build using 100% IS:710 BWP Marine Plywood, acrylic or PU finishes, and soft-close German Hettich / Blum hardware with an authentic 10-Year Written Warranty.",
-      suggested: ['Calculate kitchen cost', 'Acrylic vs Laminate finish', 'Book free site measurement', 'Where is your showroom?'],
+      text: "🍳 **Vizous Bespoke Modular Kitchens**:\n\nEngineered specifically for Indian culinary habits — turmeric resistance, heavy spices, and continuous wet grinding.\n\n• **6 Layouts**: L-Shape, U-Shape, Island, Parallel, Straight, Peninsular\n• **Carcass**: 100% Certified IS:710 Marine Grade BWP Plywood\n• **Hardware**: German Hettich & Blum soft-close fittings\n• **Warranty**: 10-Year Comprehensive Written Warranty",
+      suggested: ['Calculate kitchen cost', 'Acrylic vs Laminate finish', 'Book free site measurement', 'Showroom address in Bhubaneswar'],
       actions: [
-        { type: 'navigate', url: 'modular-kitchen.html', label: 'View Modular Kitchens' },
-        { type: 'scroll', target: '#costEstimator', label: 'Calculate Kitchen Cost' },
+        { type: 'navigate', url: 'modular-kitchen.html', label: 'Explore 6 Kitchen Layouts' },
+        { type: 'scroll', target: '#costEstimator', label: 'Estimate Kitchen Cost' },
         { type: 'modal', subject: 'Modular Kitchen Consultation', label: 'Book 3D Design Session' }
       ]
     };
   }
 
-  // 2. Wardrobes
+  // 8. WARDROBES & CLOSETS
   if (q.includes('wardrobe') || q.includes('closet') || q.includes('almirah') || q.includes('sliding') || q.includes('dressing')) {
     return {
-      text: "We custom-manufacture Walk-in Closets, Floor-to-Ceiling Sliding Wardrobes (2, 3, or 4 shutters), and Classic Openable wardrobes tailored to your bedroom dimensions. Features include lacquered glass finishes, integrated sensor LED illumination, anti-termite marine ply, and soft-close German sliders.",
-      suggested: ['Walk-in wardrobes', 'Sliding vs Openable wardrobes', 'Get wardrobe quote', '10-Year Warranty'],
+      text: "🚪 **Custom Wardrobe Architecture**:\n\nMaximized storage crafted for your exact ceiling height and bedroom dimensions.\n\n• **Configurations**: Floor-to-Ceiling Sliding, Walk-in Closets, Hinged Openable\n• **Finishes**: Anti-fingerprint acrylic, tinted lacquered glass, PU lacquer\n• **Accessories**: Pull-out trouser organizers, jewelry drawers, sensor LED profiles\n• **Hardware**: German soft-close sliding channels",
+      suggested: ['Walk-in wardrobes', 'Calculate wardrobe cost', 'Book designer consultation'],
       actions: [
         { type: 'navigate', url: 'wardrobes.html', label: 'Explore Wardrobes' },
         { type: 'modal', subject: 'Custom Wardrobe Consultation', label: 'Book Designer Consultation' }
@@ -871,84 +991,120 @@ function getArchitecturalAssistantResponse(text) {
     };
   }
 
-  // 3. Living Room & TV Consoles
-  if (q.includes('living') || q.includes('tv') || q.includes('panel') || q.includes('louver') || q.includes('sofa') || q.includes('ceiling')) {
+  // 9. LUXURY BEDS & BEDROOM FURNITURE
+  if (q.includes('bed') || q.includes('bedroom') || q.includes('hydraulic') || q.includes('storage bed') || q.includes('mattress')) {
     return {
-      text: "Our living room architecture features custom floating TV entertainment units, fluted acoustic louvers, sintered stone marble wall cladding, and concealed warm LED backlighting manufactured to match your floor plan.",
+      text: "🛏️ **Luxury Bed Collection**:\n\n• **Hydraulic Storage Beds**: Heavy-duty German gas-lift cylinders for effortless lifting with dust-sealed under-bed storage.\n• **Designer Headboards**: Velvet, leatherette, and fluted acoustic wooden paneling.\n• **Configurations**: King (72x78), Queen (60x78), Single, and custom mattress sizes.\n• **Carcass**: 100% IS:710 Marine Grade BWP Plywood with 10-Year Warranty.",
+      suggested: ['View Bed Collection', 'Calculate interior cost', 'Book free 3D design session'],
+      actions: [
+        { type: 'navigate', url: 'beds.html', label: 'View Bed Collection' },
+        { type: 'modal', subject: 'Luxury Bed Inquiry', label: 'Request Custom Size' }
+      ]
+    };
+  }
+
+  // 10. LIVING ROOM, TV UNITS & MANDIR
+  if (q.includes('living') || q.includes('tv') || q.includes('mandir') || q.includes('puja') || q.includes('pooja') || q.includes('temple') || q.includes('louver') || q.includes('fluted') || q.includes('sofa')) {
+    return {
+      text: "🛋️ **Living Room & Sacred Spaces Architecture**:\n\n• **Floating TV Consoles**: Sintered stone marble cladding, fluted acoustic louvers, concealed wire channels.\n• **Sacred Puja Mandirs**: Custom CNC jaali carving, backlit onyx marble sanctum, brass bell fittings.\n• **Partitions & Foyer**: Open wooden screen dividers and shoe consoles.",
       suggested: ['View completed projects', 'Calculate 2BHK interior cost', 'Book free 3D design session'],
       actions: [
+        { type: 'navigate', url: 'modular-furniture.html', label: 'View Living & Mandirs' },
         { type: 'navigate', url: 'our-work.html', label: 'Explore Portfolio' },
-        { type: 'modal', subject: 'Living Room & TV Console Inquiry', label: 'Request 3D Layout' }
+        { type: 'modal', subject: 'Living Room Consultation', label: 'Request 3D Layout' }
       ]
     };
   }
 
-  // 4. Cost, Pricing & Estimates
-  if (q.includes('cost') || q.includes('price') || q.includes('estimate') || q.includes('rate') || q.includes('budget') || q.includes('per sq') || q.includes('sqft') || q.includes('how much')) {
+  // 11. COMMERCIAL & OFFICE FURNITURE
+  if (q.includes('office') || q.includes('commercial') || q.includes('workstation') || q.includes('boardroom') || q.includes('conference') || q.includes('director') || q.includes('millet bhavan')) {
     return {
-      text: "Our factory-direct transparent pricing for complete home interiors:\n\n• 1BHK: ₹1.80L – ₹2.80L\n• 2BHK: ₹3.20L – ₹4.80L\n• 3BHK: ₹5.50L – ₹7.80L\n• 4BHK / Villa: ₹9.00L – ₹14.50L+\n\nRates range from ₹1,250/sq.ft for Essential Craft up to ₹2,400+/sq.ft for Luxury Elite, saving you 20-30% middleman markups.",
-      suggested: ['Open Cost Estimator', 'Calculate 2BHK price', 'Calculate 3BHK price', 'Book Free 3D Session'],
+      text: "🏢 **Commercial & Corporate Interiors**:\n\n• **Executive Suites**: Monumental director desks and credenzas.\n• **Workstation Clusters**: Aluminum cable raceways and pinnable acoustic screen partitions.\n• **Boardroom Suites**: Racetrack conference tables with integrated pop-up AV connectivity.\n• **Landmark Trust**: Executed prominent institutional projects including Millet Bhavan in Bhubaneswar.",
+      suggested: ['View Milestone Case Study', 'Calculate commercial quote', 'Book consultation'],
       actions: [
-        { type: 'scroll', target: '#costEstimator', label: 'Launch Cost Estimator' },
-        { type: 'modal', subject: 'Custom Budget Consultation', label: 'Lock in Free 3D Session' },
-        { type: 'call', phone: '+919040087614', label: 'Speak with Estimator' }
+        { type: 'navigate', url: 'office-furniture.html', label: 'Office Furniture' },
+        { type: 'navigate', url: 'our-work.html#featuredCaseStudy', label: 'Millet Bhavan Case Study' },
+        { type: 'modal', subject: 'Commercial RFP Inquiry', label: 'Request Commercial RFP' }
       ]
     };
   }
 
-  // 5. Showroom & Factory Location
-  if (q.includes('showroom') || q.includes('factory') || q.includes('where') || q.includes('location') || q.includes('address') || q.includes('bhubaneswar') || q.includes('visit') || q.includes('office')) {
+  // 12. HOME DÉCOR, CEILINGS & FLOORING
+  if (q.includes('decor') || q.includes('flooring') || q.includes('false ceiling') || q.includes('ceiling') || q.includes('panelling') || q.includes('wallpaper')) {
     return {
-      text: "You are welcome to visit us in Bhubaneswar!\n\n📍 Flagship Experience Centre:\n1st Floor, Laxmi Sagar Square, Cuttack Road, Bhubaneswar (10:00 AM – 8:30 PM, all 7 days).\n\n🏭 Manufacturing Facility:\n15,000+ sq.ft German Homag machinery plant at Plot #12, Bhagabanpur Industrial Estate, Patrapada.",
-      suggested: ['Get directions to showroom', 'Call showroom at +91 90400 87614', 'Book showroom visit'],
+      text: "🎨 **Home Décor & Architectural Finishes**:\n\n• **False Ceilings**: Saint-Gobain gypsum boards with recessed COB spotlights and magnetic track lights.\n• **Wall Panelling**: Charcoal louvers, wooden fluting, and acoustic stone panels.\n• **Flooring**: German wooden laminates, luxury SPC waterproof vinyl, and Italian marble restoration.",
+      suggested: ['Explore Home Décor', 'Calculate interior cost', 'Book consultation'],
       actions: [
-        { type: 'navigate', url: 'contact.html', label: 'Showroom & Factory Details' },
-        { type: 'call', phone: '+919040087614', label: 'Call +91 90400 87614' },
-        { type: 'whatsapp', text: 'Hi Vizous Interio, please share Google Maps location for your Laxmisagar showroom.', label: 'Get Location on WhatsApp' }
+        { type: 'navigate', url: 'home-decor.html', label: 'Explore Home Décor' },
+        { type: 'modal', subject: 'Home Decor Consultation', label: 'Book 3D Design Session' }
       ]
     };
   }
 
-  // 6. Timeline, Process & Delivery
-  if (q.includes('time') || q.includes('day') || q.includes('delivery') || q.includes('handover') || q.includes('process') || q.includes('how long') || q.includes('duration')) {
+  // 13. WARRANTY & MATERIALS
+  if (q.includes('warranty') || q.includes('guarantee') || q.includes('plywood') || q.includes('bwp') || q.includes('termite') || q.includes('borer') || q.includes('waterproof') || q.includes('quality') || q.includes('hettich') || q.includes('hafele') || q.includes('blum')) {
     return {
-      text: "We provide a Guaranteed 45-Day Handover commitment backed by penalty clauses. Our structured 4-step execution:\n1. Free site measurement & consultation\n2. 3D photorealistic visualization\n3. Precision factory machining with German CNCs\n4. White-glove installation with zero on-site dust.",
-      suggested: ['Book 3D consultation', 'Calculate interior cost', 'View kitchen designs'],
-      actions: [
-        { type: 'modal', subject: '45-Day Handover Consultation', label: 'Book Site Measurement' }
-      ]
-    };
-  }
-
-  // 7. Warranty & Materials
-  if (q.includes('warranty') || q.includes('guarantee') || q.includes('termite') || q.includes('material') || q.includes('plywood') || q.includes('ply') || q.includes('hettich') || q.includes('quality')) {
-    return {
-      text: "Every Vizous kitchen, wardrobe, and custom module comes with an authentic 10-Year Written Warranty. We use 100% certified IS:710 BWP (Boiling Water Proof) Marine Plywood with lifetime anti-termite and anti-borer protection, paired with German Hettich and Hafele hardware.",
+      text: "🛡️ **10-Year Written Warranty & Material Standards**:\n\n• **Carcass**: 100% Certified IS:710 Marine Grade BWP Plywood (Boiling Water Proof for 72+ continuous hours).\n• **Protection**: Lifetime anti-termite and anti-borer immunity.\n• **Hardware**: 100% German Hettich, Hafele & Blum soft-close fittings.\n• **Guarantee**: Official stamped company warranty certificate handed over with your keys.",
       suggested: ['Modular kitchen designs', 'Custom wardrobe designs', 'Book consultation'],
       actions: [
-        { type: 'modal', subject: '10-Year Warranty & Material Consultation', label: 'Book Free 3D Consultation' }
+        { type: 'modal', subject: 'Warranty & Material Inquiry', label: 'Verify Warranty Details' },
+        { type: 'navigate', url: 'about.html', label: 'About Our Quality' }
       ]
     };
   }
 
-  // 8. Contact, Phone & Booking
-  if (q.includes('contact') || q.includes('call') || q.includes('phone') || q.includes('number') || q.includes('whatsapp') || q.includes('book') || q.includes('consultation') || q.includes('appointment')) {
+  // 14. 45-DAY HANDOVER & PROCESS
+  if (q.includes('delivery') || q.includes('handover') || q.includes('time') || q.includes('how long') || q.includes('duration') || q.includes('process') || q.includes('days') || q.includes('step')) {
     return {
-      text: "You can reach our senior design desk directly at +91 90400 87614, or share your phone number right here in this chat and our architect will call you back within 30 minutes with layout ideas.",
-      suggested: ['Book 3D consultation', 'Where is your showroom?', 'Calculate interior cost'],
+      text: "⏱️ **Guaranteed 45-Day Handover Commitment**:\n\nOur structured 4-step execution:\n1. **Day 1–7**: Free site measurement & 3D design approval.\n2. **Day 8–30**: Precision German CNC cutting & edgebanding at our Bhagabanpur factory.\n3. **Day 31–40**: Flat-pack dispatch to site & clean, dust-free modular assembly (3-5 days on site).\n4. **Day 41–45**: 52-point quality audit, deep clean, and keys handover backed by penalty clauses.",
+      suggested: ['Book free 3D design session', 'Calculate interior cost', 'Showroom address in Bhubaneswar'],
       actions: [
-        { type: 'modal', subject: 'Direct Consultation Request', label: 'Book 3D Session' },
-        { type: 'whatsapp', text: 'Hi Vizous Interio, I would like to consult with an interior designer.', label: 'Chat on WhatsApp' },
+        { type: 'modal', subject: '45-Day Handover Consultation', label: 'Plan Your 45-Day Project' }
+      ]
+    };
+  }
+
+  // 15. FREE 3D DESIGN & SITE MEASUREMENT
+  if (q.includes('3d') || q.includes('free') || q.includes('site visit') || q.includes('measurement') || q.includes('design charge') || q.includes('floor plan')) {
+    return {
+      text: "📐 **100% Free Initial Design Consultation**:\n\n• **Free Site Measurement**: An interior architect visits your site in Bhubaneswar, Cuttack, or Khordha.\n• **Free 3D Photorealistic Design**: Custom 3D visuals of your exact floor plan before you commit a single rupee.\n• **Transparent Line-Item Quote**: Clear pricing with zero hidden charges or surprises.",
+      suggested: ['Book free 3D design session', 'Calculate interior cost', 'Showroom address in Bhubaneswar'],
+      actions: [
+        { type: 'modal', subject: 'Free 3D Design Session Booking', label: 'Book Free 3D Session' },
         { type: 'call', phone: '+919040087614', label: 'Call +91 90400 87614' }
       ]
     };
   }
 
-  // 9. Greetings
-  if (q.includes('hi') || q.includes('hello') || q.includes('hey') || q.includes('namaste') || q.includes('good morning') || q.includes('good evening')) {
+  // 16. PAYMENT TERMS & ZERO-COST EMI
+  if (q.includes('emi') || q.includes('loan') || q.includes('finance') || q.includes('financing') || q.includes('installment') || q.includes('payment') || q.includes('advance')) {
     return {
-      text: "Namaste! Welcome to Vizous Interio. I am here to assist you with floor plans, modular kitchens, custom wardrobes, transparent pricing, and 3D interior design in Bhubaneswar. What project are you planning?",
-      suggested: ['Modular kitchen designs', 'Custom wardrobe designs', 'Calculate interior cost', 'Visit showroom in Bhubaneswar'],
+      text: "💳 **Transparent Milestone Payments & EMI**:\n\n• 10% on Initial 3D Design Finalization\n• 40% on Production Release at Factory\n• 40% on Flat-Pack Delivery at Site\n• 10% on Final Quality Handover & Inspection\n• **Zero-Cost EMI**: Available across 3 to 12-month tenures with leading partner banks.",
+      suggested: ['Calculate interior cost', 'Book free 3D design session', 'Call studio'],
+      actions: [
+        { type: 'modal', subject: 'EMI & Payment Consultation', label: 'Check EMI Eligibility' },
+        { type: 'call', phone: '+919040087614', label: 'Speak with Finance Desk' }
+      ]
+    };
+  }
+
+  // 17. LOCATIONS SERVED (CUTTACK, PURI, KHORDHA, RAIPUR)
+  if (q.includes('cuttack') || q.includes('puri') || q.includes('khordha') || q.includes('raipur') || q.includes('rourkela') || q.includes('sambalpur') || q.includes('outside') || q.includes('area') || q.includes('city') || q.includes('location')) {
+    return {
+      text: "📍 **Areas & Cities We Serve**:\n\n• **Bhubaneswar**: Patia, Nayapalli, Khandagiri, Saheed Nagar, Sundarpada, Chandrasekharpur, etc.\n• **Greater Odisha**: Cuttack, Puri, Khordha, and nearby districts.\n• **Chhattisgarh**: Branch Studio at Bhawna Nagar, Kachna Road, Raipur (+91 98932 18906).\n\nWe provide full turnkey design, factory delivery, and white-glove installation across these regions.",
+      suggested: ['Showroom address in Bhubaneswar', 'Book free site measurement', 'Call +91 90400 87614'],
+      actions: [
+        { type: 'navigate', url: 'contact.html', label: 'View All Locations' },
+        { type: 'call', phone: '+919040087614', label: 'Call Hotline' }
+      ]
+    };
+  }
+
+  // 18. GREETINGS
+  if (q === 'hi' || q === 'hello' || q === 'hey' || q.startsWith('hi ') || q.startsWith('hello ') || q.includes('namaste') || q.includes('good morning') || q.includes('good afternoon') || q.includes('good evening') || q === 'help') {
+    return {
+      text: "Namaste! Welcome to Vizous Interio. I am your architectural design assistant in Bhubaneswar.\n\nI can help you explore modular kitchens, custom wardrobes, transparent pricing, 3D floor plans, or arrange a showroom visit. How can I assist you today?",
+      suggested: ['Modular kitchen designs', 'Custom wardrobe designs', 'Calculate interior cost', 'Showroom address in Bhubaneswar'],
       actions: [
         { type: 'scroll', target: '#costEstimator', label: 'Calculate Interior Cost' },
         { type: 'modal', subject: 'Introductory Consultation', label: 'Book Free 3D Session' }
@@ -956,10 +1112,22 @@ function getArchitecturalAssistantResponse(text) {
     };
   }
 
-  // 10. General Intelligent Fallback
+  // 19. GRATITUDE & CLOSING
+  if (q.includes('thank') || q.includes('thx') || q.includes('okay') || q.includes('ok') || q.includes('great') || q.includes('awesome') || q.includes('good') || q.includes('bye') || q.includes('sure')) {
+    return {
+      text: "You are very welcome! If you would like to see live modular kitchen layouts or review material samples, visit our Laxmi Sagar showroom or call us directly at +91 90400 87614. Have a wonderful day!",
+      suggested: ['Showroom address in Bhubaneswar', 'Book free 3D design session', 'Explore Portfolio'],
+      actions: [
+        { type: 'call', phone: '+919040087614', label: 'Call Studio (+91 90400 87614)' },
+        { type: 'whatsapp', text: 'Hi Vizous Interio, thank you for the information.', label: 'WhatsApp Us' }
+      ]
+    };
+  }
+
+  // 20. INTELLIGENT GENERAL FALLBACK
   return {
-    text: "Thank you for reaching out to Vizous Interio! We craft factory-direct luxury interiors, modular kitchens, and custom wardrobes with a 10-Year Written Warranty and 45-day guaranteed handover in Bhubaneswar. Leave your phone number here, or select an option below to proceed:",
-    suggested: ['Modular kitchen designs', 'Custom wardrobe designs', 'Calculate interior cost', 'Showroom address in Bhubaneswar'],
+    text: "Thank you for reaching out to Vizous Interio! We are Bhubaneswar's leading interior infrastructure studio with an in-house 15,000+ sq.ft factory at Bhagabanpur.\n\nTo assist you immediately, please choose an option below or leave your contact number in this chat for a callback from our senior architect:",
+    suggested: ['Modular kitchen designs', 'Custom wardrobe designs', 'Calculate interior cost', 'Showroom address in Bhubaneswar', 'Book free 3D design session'],
     actions: [
       { type: 'modal', subject: 'Design Assistant Consultation', label: 'Book 3D Design Session' },
       { type: 'whatsapp', text: 'Hi Vizous Interio, I would like to speak with an interior designer.', label: 'WhatsApp Us' },
