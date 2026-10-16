@@ -3124,9 +3124,9 @@ input, select, textarea {
 
 .hero-split-container {
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.25fr);
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.36fr);
   align-items: center;
-  gap: clamp(1.75rem, 3.2vw, 3.75rem);
+  gap: clamp(1.75rem, 3vw, 3.25rem);
 }
 
 .hero-split-content {
@@ -3145,7 +3145,7 @@ input, select, textarea {
   font-weight: 700;
   letter-spacing: 0.09em;
   color: var(--color-terracotta);
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.95rem;
   text-transform: uppercase;
 }
 
@@ -3156,7 +3156,7 @@ input, select, textarea {
   line-height: 1.15;
   color: #171411 !important; /* Pure Black for maximum contrast */
   letter-spacing: -0.015em;
-  margin-bottom: 1.15rem;
+  margin-bottom: 0.95rem;
 }
 
 .title-serif-italic {
@@ -3167,9 +3167,9 @@ input, select, textarea {
 
 .hero-split-desc {
   font-size: clamp(0.98rem, 1.15vw, 1.1rem);
-  line-height: 1.68;
+  line-height: 1.62;
   color: #29251F !important; /* Dark charcoal */
-  margin-bottom: 1.65rem;
+  margin-bottom: 1.35rem;
   max-width: 580px;
 }
 
@@ -3178,7 +3178,7 @@ input, select, textarea {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.65rem;
-  margin-bottom: 1.85rem;
+  margin-bottom: 1.45rem;
 }
 
 .hero-service-chip {
@@ -3217,7 +3217,7 @@ input, select, textarea {
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 2rem;
+  margin-bottom: 1.65rem;
 }
 
 /* Inline Metrics Strip */
@@ -3225,7 +3225,7 @@ input, select, textarea {
   display: flex;
   align-items: center;
   gap: clamp(0.75rem, 1.4vw, 1.5rem);
-  padding-top: 1.5rem;
+  padding-top: 1.35rem;
   border-top: 1px solid var(--border-subtle);
 }
 
@@ -3419,7 +3419,7 @@ input, select, textarea {
 /* iPad Landscape / Standard Laptop (1024px to 1200px) */
 @media (max-width: 1199px) {
   .hero-split-container {
-    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.18fr);
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.28fr);
     gap: 2rem;
   }
   .hero-image-stage, .hero-split-photo {
