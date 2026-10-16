@@ -1841,9 +1841,19 @@ input, select, textarea {
   color: #FFFFFF;
   transition: all var(--transition-fast);
 }
+.social-circle svg {
+  width: 17px;
+  height: 17px;
+  display: block;
+  transition: transform var(--transition-fast);
+}
 .social-circle:hover {
   background: var(--color-terracotta);
   border-color: var(--color-terracotta);
+  color: #FFFFFF;
+}
+.social-circle:hover svg {
+  transform: scale(1.15);
 }
 
 .footer-col h4 {
