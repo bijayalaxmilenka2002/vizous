@@ -87,53 +87,7 @@ function initHeader() {
    2. HERO MASTER PHOTOGRAPH LIGHTBOX (UNCROPPED FULL-RESOLUTION VIEW)
    ========================================================================== */
 function initHeroLightbox() {
-  const stage = document.getElementById('heroImageStage');
-  const expandBtn = document.getElementById('heroPhotoExpandBtn');
-  const lightbox = document.getElementById('heroLightboxOverlay');
-  const closeBtn = document.getElementById('heroLightboxClose');
-
-  if (!lightbox) return;
-
-  const openLightbox = () => {
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeLightbox = () => {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
-  };
-
-  if (expandBtn) {
-    expandBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      openLightbox();
-    });
-  }
-
-  if (stage) {
-    stage.addEventListener('click', (e) => {
-      // Don't trigger if clicked on the tagline links/badges
-      if (e.target.closest('.hero-photo-tagline') && !e.target.closest('#heroPhotoExpandBtn')) {
-        return;
-      }
-      openLightbox();
-    });
-  }
-
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closeLightbox);
-  }
-
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
-
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-      closeLightbox();
-    }
-  });
+  // Hero image is static and non-clickable as per design specifications
 }
 
 /* ==========================================================================
