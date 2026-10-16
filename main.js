@@ -36,13 +36,37 @@ function initHeader() {
   const toggleBtn = document.getElementById('mobileMenuToggle');
   const drawer = document.getElementById('mobileDrawer');
   const drawerClose = document.getElementById('mobileDrawerClose');
+  const drawerBackdrop = document.getElementById('mobileDrawerBackdrop');
 
-  if (toggleBtn && drawer) {
-    toggleBtn.addEventListener('click', () => drawer.classList.add('active'));
-  }
-  if (drawerClose && drawer) {
-    drawerClose.addEventListener('click', () => drawer.classList.remove('active'));
-  }
+  const openDrawer = () => {
+    if (drawer) {
+      drawer.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  const closeDrawer = () => {
+    if (drawer) {
+      drawer.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  };
+
+  if (toggleBtn) toggleBtn.addEventListener('click', openDrawer);
+  if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+  if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer?.classList.contains('active')) {
+      closeDrawer();
+    }
+  });
+
+  // Close when clicking any drawer link
+  drawer?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => closeDrawer());
+  });
 
   // Smooth scroll for in-page anchors
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -53,7 +77,7 @@ function initHeader() {
       if (targetElem) {
         e.preventDefault();
         targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        if (drawer) drawer.classList.remove('active');
+        closeDrawer();
       }
     });
   });
