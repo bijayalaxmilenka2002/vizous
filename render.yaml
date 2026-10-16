@@ -1,0 +1,7 @@
+services:
+  - type: static
+    name: vizous-interio
+    repo: https://github.com/bijayalaxmilenka2002/vizous
+    branch: main
+    buildCommand: npm install && npm run build
+    publishPath: dist
