@@ -27,6 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initPincodeChecker();
   initContactPageForm();
   initAIChatbot();
+  initVideoModal();
+  initImageLightbox();
+  initMediaFilter();
+  initProjectFilter();
+  initBlogFilter();
+  initBlogReader();
 });
 
 /* ==========================================================================
@@ -924,11 +930,11 @@ function getArchitecturalAssistantResponse(text) {
     if (q.includes('kitchen')) {
       return {
         text: "🍳 **Modular Kitchen Factory-Direct Pricing**:\n\n• **Straight Layout**: ₹95,000 – ₹1,80,000\n• **L-Shaped Layout**: ₹1,45,000 – ₹3,20,000\n• **Parallel Layout**: ₹1,60,000 – ₹3,40,000\n• **U-Shaped Layout**: ₹2,10,000 – ₹4,20,000\n• **Island / Peninsular**: ₹2,80,000 – ₹5,50,000+\n\n*Built with 100% IS:710 Marine Grade BWP Plywood and soft-close German hardware with a 10-Year Written Warranty.*",
-        suggested: ['Calculate kitchen cost', 'Acrylic vs Laminate finish', 'Book free site measurement'],
+        suggested: ['View 6 kitchen layouts', 'Acrylic vs Laminate finish', 'Book free site measurement'],
         actions: [
-          { type: 'scroll', target: '#costEstimator', label: 'Launch Cost Estimator' },
+          { type: 'modal', subject: 'Kitchen Quote Request', label: 'Get Itemized 3D Quote' },
           { type: 'navigate', url: 'modular-kitchen.html', label: 'View 6 Kitchen Layouts' },
-          { type: 'modal', subject: 'Kitchen Quote Request', label: 'Get Itemized 3D Quote' }
+          { type: 'whatsapp', text: 'Hi Vizous Interio, I would like to get a quote for a modular kitchen.', label: 'WhatsApp for Quote' }
         ]
       };
     }
@@ -936,7 +942,7 @@ function getArchitecturalAssistantResponse(text) {
     if (q.includes('wardrobe')) {
       return {
         text: "🚪 **Custom Wardrobe Pricing**:\n\n• **2-Shutter Sliding**: ₹65,000 – ₹1,10,000\n• **3-Shutter Sliding**: ₹1,15,000 – ₹1,85,000\n• **Floor-to-Ceiling 4-Shutter**: ₹1,90,000 – ₹2,60,000+\n• **Walk-in Closets**: ₹1,40,000 – ₹3,50,000+\n\n*Includes anti-termite marine ply carcass, German sliding channels, and sensor profile LED illumination.*",
-        suggested: ['Walk-in wardrobes', 'Calculate interior cost', 'Book designer consultation'],
+        suggested: ['Walk-in wardrobes', 'Sliding wardrobes', 'Book designer consultation'],
         actions: [
           { type: 'navigate', url: 'wardrobes.html', label: 'View Wardrobes' },
           { type: 'modal', subject: 'Wardrobe Pricing Request', label: 'Get Wardrobe 3D Quote' }
@@ -947,21 +953,20 @@ function getArchitecturalAssistantResponse(text) {
     if (q.includes('sqft') || q.includes('sq.ft') || q.includes('per sq')) {
       return {
         text: "📐 **Turnkey Pricing Per Square Foot**:\n\n• **Essential Craft**: ₹1,200 – ₹1,450 / sq.ft (BWP plywood, scratch-resistant laminates, soft-close hinges)\n• **Premium Contemporary**: ₹1,550 – ₹1,950 / sq.ft (Anti-fingerprint acrylic, Hafele hardware, designer lighting)\n• **Luxury Elite**: ₹2,100 – ₹2,600+ / sq.ft (PU lacquer, fluted panels, sintered stone, motorized Blum fittings)\n\n*Direct factory pricing saves you 20-30% compared to typical design agencies.*",
-        suggested: ['Calculate 2BHK interior cost', 'Calculate 3BHK interior cost', 'Book free 3D design session'],
+        suggested: ['2BHK interior design', '3BHK interior design', 'Book free 3D design session'],
         actions: [
-          { type: 'scroll', target: '#costEstimator', label: 'Open Cost Estimator' },
-          { type: 'modal', subject: 'Sq.Ft Rate Consultation', label: 'Get Detailed Estimate' }
+          { type: 'modal', subject: 'Sq.Ft Rate Consultation', label: 'Get Detailed Estimate' },
+          { type: 'call', phone: '+919040087614', label: 'Call Studio (+91 90400 87614)' }
         ]
       };
     }
 
     return {
       text: "🏠 **Complete Home Interior Turnkey Estimates**:\n\n• **1BHK**: ₹1.80L – ₹2.80L\n• **2BHK**: ₹3.20L – ₹4.80L\n• **3BHK**: ₹5.50L – ₹7.80L\n• **4BHK / Villa**: ₹9.00L – ₹15.00L+\n\n*Package includes custom modular kitchen, bedroom wardrobes, TV unit, false ceiling, and lighting backed by a 45-day handover guarantee.*",
-      suggested: ['Open Cost Estimator', 'Calculate kitchen cost', 'Book free site measurement'],
+      suggested: ['2BHK interior package', '3BHK interior package', 'Book free site measurement'],
       actions: [
-        { type: 'scroll', target: '#costEstimator', label: 'Launch Cost Estimator' },
         { type: 'modal', subject: 'Full Home Budget Consultation', label: 'Get Itemized 3D Quote' },
-        { type: 'call', phone: '+919040087614', label: 'Speak with Estimator' }
+        { type: 'call', phone: '+919040087614', label: 'Speak with Designer' }
       ]
     };
   }
@@ -970,10 +975,9 @@ function getArchitecturalAssistantResponse(text) {
   if (q.includes('kitchen') || q.includes('cook') || q.includes('island') || q.includes('chimney') || q.includes('countertop')) {
     return {
       text: "🍳 **Vizous Bespoke Modular Kitchens**:\n\nEngineered specifically for Indian culinary habits — turmeric resistance, heavy spices, and continuous wet grinding.\n\n• **6 Layouts**: L-Shape, U-Shape, Island, Parallel, Straight, Peninsular\n• **Carcass**: 100% Certified IS:710 Marine Grade BWP Plywood\n• **Hardware**: German Hettich & Blum soft-close fittings\n• **Warranty**: 10-Year Comprehensive Written Warranty",
-      suggested: ['Calculate kitchen cost', 'Acrylic vs Laminate finish', 'Book free site measurement', 'Showroom address in Bhubaneswar'],
+      suggested: ['Explore Kitchen Layouts', 'Acrylic vs Laminate finish', 'Book free site measurement', 'Showroom address in Bhubaneswar'],
       actions: [
         { type: 'navigate', url: 'modular-kitchen.html', label: 'Explore 6 Kitchen Layouts' },
-        { type: 'scroll', target: '#costEstimator', label: 'Estimate Kitchen Cost' },
         { type: 'modal', subject: 'Modular Kitchen Consultation', label: 'Book 3D Design Session' }
       ]
     };
@@ -1104,10 +1108,10 @@ function getArchitecturalAssistantResponse(text) {
   if (q === 'hi' || q === 'hello' || q === 'hey' || q.startsWith('hi ') || q.startsWith('hello ') || q.includes('namaste') || q.includes('good morning') || q.includes('good afternoon') || q.includes('good evening') || q === 'help') {
     return {
       text: "Namaste! Welcome to Vizous Interio. I am your architectural design assistant in Bhubaneswar.\n\nI can help you explore modular kitchens, custom wardrobes, transparent pricing, 3D floor plans, or arrange a showroom visit. How can I assist you today?",
-      suggested: ['Modular kitchen designs', 'Custom wardrobe designs', 'Calculate interior cost', 'Showroom address in Bhubaneswar'],
+      suggested: ['Modular kitchen designs', 'Custom wardrobe designs', 'Explore project gallery', 'Showroom address in Bhubaneswar'],
       actions: [
-        { type: 'scroll', target: '#costEstimator', label: 'Calculate Interior Cost' },
-        { type: 'modal', subject: 'Introductory Consultation', label: 'Book Free 3D Session' }
+        { type: 'modal', subject: 'Introductory Consultation', label: 'Book Free 3D Session' },
+        { type: 'navigate', url: 'modular-kitchen.html', label: 'Explore Modular Kitchens' }
       ]
     };
   }
@@ -1127,7 +1131,7 @@ function getArchitecturalAssistantResponse(text) {
   // 20. INTELLIGENT GENERAL FALLBACK
   return {
     text: "Thank you for reaching out to Vizous Interio! We are Bhubaneswar's leading interior infrastructure studio with an in-house 15,000+ sq.ft factory at Bhagabanpur.\n\nTo assist you immediately, please choose an option below or leave your contact number in this chat for a callback from our senior architect:",
-    suggested: ['Modular kitchen designs', 'Custom wardrobe designs', 'Calculate interior cost', 'Showroom address in Bhubaneswar', 'Book free 3D design session'],
+    suggested: ['Modular kitchen designs', 'Custom wardrobe designs', 'Explore project gallery', 'Showroom address in Bhubaneswar', 'Book free 3D design session'],
     actions: [
       { type: 'modal', subject: 'Design Assistant Consultation', label: 'Book 3D Design Session' },
       { type: 'whatsapp', text: 'Hi Vizous Interio, I would like to speak with an interior designer.', label: 'WhatsApp Us' },
@@ -1145,3 +1149,485 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;');
 }
+
+/* ==========================================================================
+   VIDEO MODAL & LIGHTBOX ENGINE
+   ========================================================================== */
+function initVideoModal() {
+  const modal = document.getElementById('videoModal');
+  const iframe = document.getElementById('videoModalIframe');
+  const closeBtn = document.getElementById('videoModalClose');
+
+  window.openVideoModal = function(videoId, title) {
+    if (!modal || !iframe) return;
+    const cleanId = String(videoId).replace(/.*[?&]v=/, '').replace(/.*\//, '').split(/[?#&]/)[0];
+    iframe.src = `https://www.youtube-nocookie.com/embed/${cleanId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeVideoModal = function() {
+    if (!modal || !iframe) return;
+    iframe.src = '';
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  if (closeBtn) closeBtn.addEventListener('click', window.closeVideoModal);
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) window.closeVideoModal();
+    });
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal?.classList.contains('active')) {
+      window.closeVideoModal();
+    }
+  });
+}
+
+function initImageLightbox() {
+  const modal = document.getElementById('lightboxModal');
+  const img = document.getElementById('lightboxImg');
+  const caption = document.getElementById('lightboxCaption');
+  const closeBtn = document.getElementById('lightboxClose');
+
+  window.openLightbox = function(src, cap) {
+    if (!modal || !img) return;
+    img.src = src;
+    if (caption) caption.textContent = cap || '';
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeLightbox = function() {
+    if (!modal || !img) return;
+    img.src = '';
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  if (closeBtn) closeBtn.addEventListener('click', window.closeLightbox);
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) window.closeLightbox();
+    });
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal?.classList.contains('active')) {
+      window.closeLightbox();
+    }
+  });
+}
+
+function initMediaFilter() {
+  const filterBtns = document.querySelectorAll('.media-filter-btn');
+  const mediaCards = document.querySelectorAll('.media-item-card');
+
+  window.filterMedia = function(category, btn) {
+    if (btn) {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+    mediaCards.forEach(card => {
+      const cardCat = card.getAttribute('data-category');
+      if (category === 'all' || cardCat === category) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  };
+
+  window.filterOfficeMedia = function(category, btn) {
+    const parent = btn ? btn.parentElement : null;
+    if (parent) {
+      parent.querySelectorAll('.media-filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+    const cards = document.querySelectorAll('.office-media-card');
+    cards.forEach(card => {
+      const cardCat = card.getAttribute('data-category');
+      if (category === 'all' || cardCat === category) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  };
+}
+
+function initProjectFilter() {
+  const filterBtns = document.querySelectorAll('.project-filter-btn');
+  const projectCards = document.querySelectorAll('.project-gallery-card');
+
+  window.filterProjects = function(category, btn) {
+    if (btn) {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+    projectCards.forEach(card => {
+      const cardCat = card.getAttribute('data-category');
+      if (category === 'all' || cardCat === category) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  };
+}
+
+/* ==========================================================================
+   BLOG CATEGORY FILTER & RICH ARTICLE READER MODAL
+   ========================================================================== */
+const BLOG_ARTICLES = {
+  'company-trust': {
+    category: 'Company & Trust',
+    title: 'Best Interior Design Company in Bhubaneswar: 4 Things to Check Before You Decide',
+    readTime: '5 min read',
+    date: 'October 2026',
+    image: '/assets/images/hero_luxury_spaces_clean.jpg',
+    content: `
+      <p>Selecting an interior partner for your home in Bhubaneswar—whether in Patia, Khandagiri, Nayapalli, or Sundarpada—is one of the most critical financial and lifestyle decisions you will make. While glossy 3D renders look stunning on Instagram, execution reality is where dreams succeed or crumble.</p>
+      
+      <h3>1. Ask to Tour Their Physical Manufacturing Plant</h3>
+      <p>Over 80% of local "interior designers" are middle-tier brokers. They create renderings on laptops, subcontract the woodwork to unregistered road-side carpenter squads, and tack on heavy commissions. Always ask: <em>"Can I physically visit the factory where my kitchen and wardrobes will be manufactured?"</em></p>
+      <p>At Vizous Interio, we actively welcome homeowners to tour our <strong>15,000+ sq.ft automated factory at Plot #12, Bhagabanpur Industrial Estate</strong>. You can watch German CNC panel saws and automated PUR edge-banders produce your carcasses with millimeter precision.</p>
+
+      <h3>2. Verify IS:710 Marine Grade BWP Plywood Certification</h3>
+      <p>Odisha's humid tropical weather, combined with everyday Indian wet cooking, causes ordinary commercial ply or MDF to swell, warp, and host fungus within 18 months. Insist on 100% Boiling Water Proof (IS:710) Marine Plywood for all wet areas and under-sink units.</p>
+
+      <h3>3. Look for Written Handover Guarantees</h3>
+      <p>Unorganized contractors notoriously turn 2-month schedules into 9-month nightmares. Ensure your contract guarantees a strict <strong>45-Day Handover</strong> with formal project management and milestone tracker updates.</p>
+
+      <div class="blog-reader-callout">
+        <strong>Vizous Recommendation:</strong> Never pay 100% upfront. Work with studios offering verified 10-Year Comprehensive Warranties and milestone-based approvals before dispatch.
+      </div>
+    `
+  },
+  'wardrobe-planning': {
+    category: 'Wardrobe Guide',
+    title: 'Wardrobe Design in Bhubaneswar: Making Every Inch of Your Bedroom Count',
+    readTime: '6 min read',
+    date: 'October 2026',
+    image: '/assets/images/wardrobes_1.jpg',
+    content: `
+      <p>Bedroom space in modern duplexes and apartments is premium real estate. A poorly planned wardrobe creates dead zones, cluttered floors, and wasted vertical ceiling space.</p>
+
+      <h3>The 3 Critical Storage Zones Every Master Wardrobe Needs</h3>
+      <ul>
+        <li><strong>Primary Zone (Eye-Level):</strong> Daily office wear, formal shirts, sarees, and suits. Utilize heavy-duty chrome oval hanging rods and soft-close pull-out trouser racks.</li>
+        <li><strong>Secondary Zone (Waist to Floor):</strong> Underwear organizers, jewelry drawers with velvet flocking, and bottom wire baskets for folded linens.</li>
+        <li><strong>Top Loft Zone:</strong> Suitcases, winter blankets, and seasonal festival attire sealed against dust with full-height overhead loft shutters.</li>
+      </ul>
+
+      <h3>Sliding Doors vs Hinged Shutters</h3>
+      <p>If you have less than 3.5 feet of clearance between your bed edge and the wardrobe wall, <strong>sliding door systems</strong> are mandatory. They eliminate door swing clearance entirely while offering floor-to-ceiling panoramic glass or tinted acrylic aesthetic appeal.</p>
+
+      <div class="blog-reader-callout">
+        <strong>Pro Tip:</strong> Integrated warm-white (3000K) sensor profile LEDs not only look ultra-luxurious—they also allow you to dress early in the morning without turning on bright ceiling lights and waking your partner.
+      </div>
+    `
+  },
+  'straight-kitchen': {
+    category: 'Modular Kitchens',
+    title: "Is a Straight Modular Kitchen Right for Your Bhubaneswar Home? Here's How to Tell",
+    readTime: '4 min read',
+    date: 'October 2026',
+    image: '/assets/images/modular_kitchen_3.jpg',
+    content: `
+      <p>Straight (linear single-wall) kitchens are frequently misunderstood as "budget" layouts. In reality, modern European architecture embraces linear kitchens as the cleanest, most space-efficient solution for open-plan studio apartments, compact duplexes, and contemporary row houses.</p>
+
+      <h3>When to Choose a Straight Kitchen</h3>
+      <ul>
+        <li>Your cooking area width is under 7 feet, making parallel or L-shaped counters cramped.</li>
+        <li>You want an integrated dining table or breakfast island directly facing the counter.</li>
+        <li>You prefer uninterrupted, continuous sightlines without blind corner dead zones.</li>
+      </ul>
+
+      <h3>Maximizing Linear Ergonomics</h3>
+      <p>Sequence your appliances logically from left to right: <strong>Refrigerator &rarr; Prep Sink &rarr; Cutting Zone &rarr; Hob &amp; Chimney</strong>. Incorporate hydraulic bi-fold overhead cabinets to access spices effortlessly while cooking.</p>
+    `
+  },
+  'company-signs': {
+    category: 'Company & Trust',
+    title: "5 Signs You've Found the Right Interior Design Company in Bhubaneswar",
+    readTime: '5 min read',
+    date: 'October 2026',
+    image: '/assets/images/about_7.png',
+    content: `
+      <p>With dozens of new interior firms popping up across Odisha, how do you separate seasoned master craftsmen from temporary marketing agencies? Look for these 5 unmistakable signs:</p>
+
+      <h3>1. Transparent Bill of Materials (BOM)</h3>
+      <p>Reliable firms specify the exact plywood brand (Century, Greenply), grade (BWP IS:710), laminate thickness (1mm - 1.5mm), and hardware model (Hettich Sensys, Häfele) on paper before accepting a single rupee.</p>
+
+      <h3>2. Dedicated Factory Machinery</h3>
+      <p>Carpenters cutting sheets on site with hand-saws leave chipped laminate edges and inconsistent gaps. Automated CNC saws and PUR edge-banders produce glass-smooth, moisture-sealed edges that last decades.</p>
+
+      <h3>3. Experienced In-House Project Managers</h3>
+      <p>You should have a single designated Point of Contact (SPOC) who sends weekly photo updates and coordinates electricians, plumbers, and installers.</p>
+
+      <h3>4. Real Homeowner Video Testimonials</h3>
+      <p>Written 5-star Google reviews can be easily requested from friends. Genuine homeowner video walkthroughs show real living spaces and authentic client satisfaction.</p>
+
+      <h3>5. Written 10-Year Warranty Card</h3>
+      <p>A legitimate company stands behind their joinery with a formal warranty document covering termite resistance, delamination, and hardware performance.</p>
+    `
+  },
+  'u-shape-kitchen': {
+    category: 'Modular Kitchens',
+    title: 'U-Shape Modular Kitchen in Bhubaneswar: The Ultimate Golden Triangle Layout',
+    readTime: '6 min read',
+    date: 'October 2026',
+    image: '/assets/images/modular_kitchen_4.jpg',
+    content: `
+      <p>For passionate cooks and large joint families in Odisha, the U-shaped kitchen remains the absolute gold standard of culinary efficiency.</p>
+
+      <h3>The Golden Work Triangle Perfected</h3>
+      <p>In a U-shape layout, the refrigerator, cooking range, and washing sink occupy three distinct walls. The walking distance between each apex is between 4 and 9 feet, allowing two cooks to prepare festive meals simultaneously without bumping into each other.</p>
+
+      <h3>Conquering Corner Dead Zones</h3>
+      <p>Traditional kitchens waste up to 40% of their storage space in deep, dark corners. At Vizous, we engineer corner units with <strong>German LeMans pull-out trays</strong> and <strong>Magic Corner carousels</strong> that glide outward with a fingertip touch.</p>
+    `
+  },
+  'wardrobe-systems': {
+    category: 'Wardrobe Guide',
+    title: 'Custom Wardrobe Design Services: Hinged vs Sliding Systems',
+    readTime: '5 min read',
+    date: 'October 2026',
+    image: '/assets/images/wardrobes_3.jpg',
+    content: `
+      <p>One of the most frequent questions our showroom architects answer is: <em>"Should I build hinged doors or sliding doors for my bedroom?"</em> Here is the comprehensive breakdown:</p>
+
+      <h3>Hinged (Openable) Wardrobes</h3>
+      <ul>
+        <li><strong>Pros:</strong> Full 100% visibility of the interior at once; inside of doors can mount full-length mirrors and tie/belt racks.</li>
+        <li><strong>Cons:</strong> Requires at least 3 feet of empty clearance in front of the wardrobe for doors to swing open freely.</li>
+        <li><strong>Best for:</strong> Large master bedrooms and children's rooms.</li>
+      </ul>
+
+      <h3>Sliding Track Wardrobes</h3>
+      <ul>
+        <li><strong>Pros:</strong> Zero floor space required for door swing; accommodates dramatic 8-to-9 foot tinted glass or lacquer profile shutters.</li>
+        <li><strong>Cons:</strong> Only 50% of the interior is accessible at any one moment.</li>
+        <li><strong>Best for:</strong> Compact bedrooms, modern guest rooms, and master suites.</li>
+      </ul>
+    `
+  },
+  'open-kitchen': {
+    category: 'Modular Kitchens',
+    title: 'Modular Kitchen in Bhubaneswar: Modern Open Kitchen Ideas for Families',
+    readTime: '7 min read',
+    date: 'October 2026',
+    image: '/assets/images/modular_kitchen_1.jpg',
+    content: `
+      <p>The traditional concept of cooking in a dark, isolated back room is officially obsolete. Modern families want kitchens integrated seamlessly with living and dining lounges.</p>
+
+      <h3>Island Breakfast Counters</h3>
+      <p>An island serves as a morning breakfast station, homework desk for kids, and party cocktail bar when entertaining guests. Choose quartz or sintered stone countertops for zero-porosity stain resistance against turmeric and curry oils.</p>
+
+      <h3>Fluted Glass Partitions</h3>
+      <p>If you want open-plan aesthetics but wish to contain heavy mustard or fish frying aromas, install sleek aluminum-profile sliding glass partitions. They allow light to flood through while isolating aromas during intense cooking.</p>
+    `
+  },
+  'project-timeline': {
+    category: 'Planning & Handover',
+    title: 'Home Interiors in Bhubaneswar: Process, Quality Checkpoints & Handover',
+    readTime: '6 min read',
+    date: 'October 2026',
+    image: '/assets/images/about_3.png',
+    content: `
+      <p>At Vizous Interio, we believe transparency eliminates stress. Here is exactly what happens from the moment you step into our Laxmisagar showroom to the day you receive your house keys:</p>
+
+      <h3>Step 1: Consultation & 3D Visualization (Days 1–7)</h3>
+      <p>Our architects take exact laser site measurements, understand your family's routines, and render photorealistic 3D room visualizations with exact color schemes and lighting.</p>
+
+      <h3>Step 2: Material Finalization & BOM Sign-Off (Days 8–12)</h3>
+      <p>Inspect physical laminate, acrylic, and quartz samples at our Experience Centre. Every hardware hinge and drawer runner is finalized in writing.</p>
+
+      <h3>Step 3: In-House Factory Manufacturing (Days 13–35)</h3>
+      <p>All cabinets, wardrobes, and modular components are precision-cut at our Bhagabanpur plant, edge-banded, pre-drilled, and flat-packed.</p>
+
+      <h3>Step 4: White-Glove Installation & 45-Day Handover (Days 36–45)</h3>
+      <p>Our certified site technicians assemble everything on-site without dust, noise, or messy timber sawing. Full deep cleaning and formal warranty handover.</p>
+    `
+  },
+  'kitchen-home': {
+    category: 'Modular Kitchens',
+    title: 'Designing a Modular Kitchen in Bhubaneswar That Truly Feels Like Home',
+    readTime: '5 min read',
+    date: 'October 2026',
+    image: '/assets/images/modular_kitchen_2.jpg',
+    content: `
+      <p>European catalogs show pristine white kitchens where people only brew espresso. But an authentic home in Odisha needs to handle heavy wet grinding, hot mustard oil tadka, massive spice collections, and multi-generational cooking.</p>
+
+      <h3>Heavy-Duty Hardware Built for Daily Use</h3>
+      <p>Soft-close tandem boxes must be rated for at least 45kg to support heavy brass utensils, cast-iron pans, and rice sacks. We specify authentic German Hettich and Blum drawer runners tested to 100,000 opening cycles.</p>
+
+      <h3>Turmeric-Resistant Acrylic & PU Finishes</h3>
+      <p>Avoid porous budget laminates that permanently absorb yellow curry splashes. High-gloss European acrylic and PU lacquers wipe clean with a single microfiber cloth swipe.</p>
+    `
+  },
+  'factory-vs-carpenter': {
+    category: 'Craftsmanship',
+    title: 'Factory-Built Modulars vs Carpenter Carpentry: The 10-Year Test',
+    readTime: '8 min read',
+    date: 'October 2026',
+    image: '/assets/images/about_5.png',
+    content: `
+      <p>Many homeowners initially contemplate hiring a neighborhood carpenter to save a few thousand rupees. But what does that furniture look like after 3, 5, and 10 years in Odisha's humid monsoon climate?</p>
+
+      <h3>1. Edge Banding Adhesion</h3>
+      <p>Carpenters manually apply contact adhesive (Fevicol) and press PVC tape with a wooden block. Within 2 years, humidity breaks down the glue bond, causing edge strips to peel and expose raw core ply to moisture. In our Bhagabanpur plant, automated German edge-banders apply <strong>PUR hot-melt glue at 200°C under 6 bars of pneumatic pressure</strong>, creating a seamless, lifetime waterproof hermetic seal.</p>
+
+      <h3>2. Joinery Strength</h3>
+      <p>Carpenters hammer nails into plywood edges, creating microscopic internal cracks. Factory modulars utilize <strong>pre-bored CNC cam-and-dowel lock fittings</strong> that can be disassembled and reassembled multiple times if you relocate homes.</p>
+
+      <h3>3. Dust, Health, and Timeline</h3>
+      <p>On-site carpentry fills your apartment with toxic sawdust, chemical adhesive fumes, and deafening circular saw noise for 3 to 6 months. Factory modulars arrive 100% pre-finished and install cleanly in 3 to 5 days.</p>
+    `
+  }
+};
+
+function initBlogFilter() {
+  const filterBtns = document.querySelectorAll('.media-filter-bar .media-filter-btn');
+  const blogCards = document.querySelectorAll('.blog-card');
+  if (!blogCards.length) return;
+
+  window.filterBlog = function(category, btn) {
+    if (btn) {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+    blogCards.forEach(card => {
+      const cat = card.getAttribute('data-category');
+      if (category === 'all' || cat === category) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  };
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cat = btn.getAttribute('data-filter') || 'all';
+      window.filterBlog(cat, btn);
+    });
+  });
+}
+
+function initBlogReader() {
+  const modal = document.getElementById('blogReaderModal');
+  const closeBtn = document.getElementById('blogReaderClose');
+  const modalBadge = document.getElementById('blogReaderBadge');
+  const modalMeta = document.getElementById('blogReaderMeta');
+  const modalTitle = document.getElementById('blogReaderTitle');
+  const modalImg = document.getElementById('blogReaderImg');
+  const modalText = document.getElementById('blogReaderText');
+
+  window.openBlogReader = function(articleId) {
+    const article = BLOG_ARTICLES[articleId];
+    if (!article || !modal) return;
+
+    if (modalBadge) modalBadge.textContent = article.category;
+    if (modalMeta) modalMeta.textContent = `${article.date} • ${article.readTime} • By Vizous Editorial`;
+    if (modalTitle) modalTitle.textContent = article.title;
+    if (modalImg) {
+      modalImg.src = article.image;
+      modalImg.alt = article.title;
+    }
+    if (modalText) modalText.innerHTML = article.content;
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeBlogReader = function() {
+    if (!modal) return;
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  closeBtn?.addEventListener('click', window.closeBlogReader);
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) window.closeBlogReader();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal?.classList.contains('active')) {
+      window.closeBlogReader();
+    }
+  });
+
+  // Attach click listeners to all blog card elements
+  document.querySelectorAll('.blog-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      // If clicking consultation modal trigger, don't open reader
+      if (e.target.closest('.btn-primary-consult')) return;
+      const articleId = card.getAttribute('data-article-id');
+      if (articleId && BLOG_ARTICLES[articleId]) {
+        e.preventDefault();
+        window.openBlogReader(articleId);
+      }
+    });
+  });
+}
+
+// INLINE PLAYABLE TRUST SECTION MAIN OFFICE VIDEO
+window.playTrustVideoInline = function() {
+  const frame = document.getElementById('trustVideoFrame');
+  if (frame) {
+    frame.innerHTML = `
+      <iframe 
+        width="100%" 
+        height="100%" 
+        src="https://www.youtube-nocookie.com/embed/Gc-_NirqGrI?autoplay=1&rel=0&modestbranding=1" 
+        title="Vizous Interio Main Office & Showroom Tour" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen
+        style="position:absolute; inset:0; width:100%; height:100%; border:none; border-radius:inherit;"
+      ></iframe>
+    `;
+  }
+};
+
+// REFERENCE SHOWCASE CAROUSEL NAVIGATION
+window.slideRefCarousel = function(carouselId, direction) {
+  const track = document.getElementById(carouselId);
+  if (!track) return;
+  const firstCard = track.querySelector('.ref-card');
+  const scrollAmount = firstCard ? (firstCard.offsetWidth + 24) * direction : 380 * direction;
+  track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+};
+
+// MEET A DESIGNER BANNER FORM HANDLER
+window.handleDesignerBannerSubmit = function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const card = form.closest('.designer-form-card');
+  const name = (form.querySelector('[name="name"]')?.value || '').trim();
+  const phone = (form.querySelector('[name="phone"]')?.value || '').trim();
+  const city = (form.querySelector('[name="city"]')?.value || 'Bhubaneswar').trim();
+
+  if (!name || !phone) return;
+
+  const safeName = name.replace(/[<>&"']/g, '');
+  const safePhone = phone.replace(/[<>&"']/g, '');
+
+  if (card) {
+    card.innerHTML = `
+      <div class="designer-form-success">
+        <div class="designer-success-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3 class="designer-success-title">Design Session Reserved!</h3>
+        <p class="designer-success-desc">Thank you <strong>${safeName}</strong>! Our design consultant for <strong>${city}</strong> will connect with you on <strong>+91 ${safePhone}</strong> shortly.</p>
+      </div>
+    `;
+  }
+};
+
+
+
+

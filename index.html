@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="format-detection" content="telephone=no" />
-  <title>Vizous Interio | Premium Modular Kitchens, Wardrobes & Luxury Interiors | Bhubaneswar</title>
-  <meta name="description" content="Odisha's premier interior decor brand and bespoke furniture manufacturer. 15,000+ sq.ft factory in Bhagabanpur, 10-year warranty, 45-day handover, and custom 3D design." />
+  <title>Vizous Interio | Premium Interior Design &amp; Modular Manufacturing | Bhubaneswar</title>
+  <meta name="description" content="Odisha's premier bespoke interior design studio and modular manufacturer. 15,000+ sq.ft Bhagabanpur factory, 10-year warranty, 45-day handover, and customized 3D design." />
   <link rel="canonical" href="https://vizous.in/" />
   <link rel="icon" type="image/png" href="/assets/images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,15 +15,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/style.css" />
 </head>
-<body>  <!-- TOP TICKER BAR -->
+<body>
+  <!-- TOP TICKER BAR -->
   <div class="top-ticker">
     <div class="container top-ticker-inner">
       <div class="top-ticker-left">
-        <span class="badge-pulse">In-House Manufacturing 2026</span>
+        <span class="badge-pulse">In-House Manufacturing</span>
         <span>Free 3D Design Session + 10-Year Comprehensive Warranty</span>
       </div>
       <div class="top-ticker-right">
-        <div class="pincode-pill" onclick="openConsultationModal('Pincode Check')">
+        <div class="pincode-pill" onclick="window.openConsultationModal && window.openConsultationModal('Pincode Check')">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           <span>Serving Bhubaneswar, Cuttack &amp; Raipur</span>
         </div>
@@ -34,7 +36,7 @@
     </div>
   </div>
 
-  <!-- MAIN SITE HEADER -->
+  <!-- MAIN SITE HEADER (NAVBAR: Home, Why Us, Product, Blog, Contact, Media) -->
   <header class="site-header" id="siteHeader">
     <div class="container">
       <div class="header-main">
@@ -42,51 +44,58 @@
           <img src="/assets/images/logo.png" alt="Vizous Interio - Exploring Frontiers" class="brand-logo-img" />
         </a>
 
-        <!-- Desktop Navigation Menu -->
+        <!-- Desktop Navigation Menu (Strictly: Home, Why Us, Product, Blog, Contact, Media) -->
         <ul class="desktop-nav-menu">
           <li class="nav-item">
             <a href="/" class="nav-link active">Home</a>
           </li>
           <li class="nav-item">
-            <a href="/about.html" class="nav-link ">About Us</a>
+            <a href="/why-us.html" class="nav-link">Why Us</a>
           </li>
           <li class="nav-item">
-            <a href="/modular-kitchen.html" class="nav-link ">
-              Services &amp; Designs
+            <a href="/modular-kitchen.html" class="nav-link">
+              Product
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
             </a>
             <div class="nav-dropdown">
               <a href="/modular-kitchen.html" class="dropdown-link">
-                <span class="dropdown-link-title">Modular Kitchens</span>
+                <span class="dropdown-link-title">Modular Kitchen</span>
                 <span class="dropdown-link-badge">6 Layouts</span>
               </a>
-              <a href="/wardrobes.html" class="dropdown-link">
-                <span class="dropdown-link-title">Custom Wardrobes</span>
-                <span class="dropdown-link-badge">Walk-in &amp; Sliding</span>
+              <a href="/living-rooms.html" class="dropdown-link">
+                <span class="dropdown-link-title">Living Rooms</span>
+                <span class="dropdown-link-badge">TV &amp; Panelling</span>
               </a>
-              <a href="/beds.html" class="dropdown-link">
-                <span class="dropdown-link-title">Luxury Beds</span>
-                <span class="dropdown-link-badge">Hydraulic Storage</span>
+              <a href="/bedrooms.html" class="dropdown-link">
+                <span class="dropdown-link-title">Bedrooms</span>
+                <span class="dropdown-link-badge">Beds &amp; Wardrobes</span>
+              </a>
+              <a href="/doors-windows.html" class="dropdown-link">
+                <span class="dropdown-link-title">Door and Windows</span>
+                <span class="dropdown-link-badge">UPVC &amp; Wood</span>
               </a>
               <a href="/office-furniture.html" class="dropdown-link">
-                <span class="dropdown-link-title">Office Furniture</span>
-                <span class="dropdown-link-badge">Commercial Grade</span>
+                <span class="dropdown-link-title">Office Furnitures</span>
+                <span class="dropdown-link-badge">Commercial</span>
               </a>
-              <a href="/modular-furniture.html" class="dropdown-link">
-                <span class="dropdown-link-title">Modular Furniture</span>
-                <span class="dropdown-link-badge">TV &amp; Mandirs</span>
+              <a href="/healthcare.html" class="dropdown-link">
+                <span class="dropdown-link-title">Health Care</span>
+                <span class="dropdown-link-badge">Medical Grade</span>
               </a>
-              <a href="/home-decor.html" class="dropdown-link">
-                <span class="dropdown-link-title">Home Décor</span>
-                <span class="dropdown-link-badge">Flooring &amp; Panelling</span>
+              <a href="/educational.html" class="dropdown-link">
+                <span class="dropdown-link-title">Educational Purpose</span>
+                <span class="dropdown-link-badge">Classrooms &amp; Labs</span>
               </a>
             </div>
           </li>
           <li class="nav-item">
-            <a href="/our-work.html" class="nav-link ">Our Work</a>
+            <a href="/blog.html" class="nav-link">Blog</a>
           </li>
           <li class="nav-item">
-            <a href="/contact.html" class="nav-link ">Contact</a>
+            <a href="/contact.html" class="nav-link">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a href="/media.html" class="nav-link">Media</a>
           </li>
         </ul>
 
@@ -122,26 +131,25 @@
         <div class="mobile-nav-group-title">Navigation</div>
         <ul class="mobile-nav-list">
           <li><a href="/" class="mobile-nav-link active">Home</a></li>
-          <li><a href="/about.html" class="mobile-nav-link">About Vizous</a></li>
-          <li><a href="/our-work.html" class="mobile-nav-link">Our Work &amp; Portfolio</a></li>
-          <li><a href="/contact.html" class="mobile-nav-link">Showroom &amp; Contact</a></li>
+          <li><a href="/why-us.html" class="mobile-nav-link">Why Us</a></li>
+          <li><a href="/modular-kitchen.html" class="mobile-nav-link">Product</a></li>
+          <li><a href="/blog.html" class="mobile-nav-link">Blog</a></li>
+          <li><a href="/contact.html" class="mobile-nav-link">Contact</a></li>
+          <li><a href="/media.html" class="mobile-nav-link">Media</a></li>
         </ul>
 
-        <div class="mobile-nav-group-title">Bespoke Services &amp; Products</div>
+        <div class="mobile-nav-group-title">Products</div>
         <ul class="mobile-nav-list services-list">
-          <li><a href="/modular-kitchen.html" class="mobile-nav-link">Modular Kitchens <span class="nav-chip">6 Layouts</span></a></li>
-          <li><a href="/wardrobes.html" class="mobile-nav-link">Custom Wardrobes <span class="nav-chip">Walk-in &amp; Sliding</span></a></li>
-          <li><a href="/beds.html" class="mobile-nav-link">Luxury Beds <span class="nav-chip">Hydraulic</span></a></li>
-          <li><a href="/office-furniture.html" class="mobile-nav-link">Office Furniture <span class="nav-chip">Commercial</span></a></li>
-          <li><a href="/modular-furniture.html" class="mobile-nav-link">Modular Living <span class="nav-chip">TV &amp; Mandirs</span></a></li>
-          <li><a href="/home-decor.html" class="mobile-nav-link">Home Décor <span class="nav-chip">Wall &amp; Louvers</span></a></li>
+          <li><a href="/modular-kitchen.html" class="mobile-nav-link">Modular Kitchen <span class="nav-chip">6 Layouts</span></a></li>
+          <li><a href="/living-rooms.html" class="mobile-nav-link">Living Rooms <span class="nav-chip">TV &amp; Panelling</span></a></li>
+          <li><a href="/bedrooms.html" class="mobile-nav-link">Bedrooms <span class="nav-chip">Beds &amp; Wardrobes</span></a></li>
+          <li><a href="/doors-windows.html" class="mobile-nav-link">Door and Windows <span class="nav-chip">UPVC &amp; Wood</span></a></li>
+          <li><a href="/office-furniture.html" class="mobile-nav-link">Office Furnitures <span class="nav-chip">Commercial</span></a></li>
+          <li><a href="/healthcare.html" class="mobile-nav-link">Health Care <span class="nav-chip">Medical Grade</span></a></li>
+          <li><a href="/educational.html" class="mobile-nav-link">Educational Purpose <span class="nav-chip">Classrooms &amp; Labs</span></a></li>
         </ul>
 
         <div class="mobile-drawer-actions">
-          <a href="/#costEstimator" class="btn-drawer-estimator">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            Instant Price Estimator
-          </a>
           <button class="btn-drawer-consult" data-action="consult">
             Book Free 3D Design Session &rarr;
           </button>
@@ -163,1461 +171,1542 @@
       </div>
     </div>
   </div>
-  <!-- ARCHITECTURAL LUXURY HERO (Split Layout: 100% Text Visibility & 100% Photograph Visibility) -->
-  <section class="hero-split-section" id="hero">
-    <div class="container hero-split-container">
-      <!-- Left Column: Editorial Content in Dark Pure Black (#171411 / #29251F) -->
-      <div class="hero-split-content">
-        <div class="hero-pill-badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          Odisha's Premier Modular Interior Manufacturer &bull; In-House Factory
-        </div>
 
-        <h1 class="hero-split-title">
-          Spaces Designed for a <span class="title-serif-italic">Better You.</span>
-        </h1>
+  <!-- SECTION 2: HOMEPAGE HERO SECTION (IMAGE-FIRST, MINIMAL TO-THE-POINT TEXT) -->
+  <section class="hero-centered-section" id="hero">
+    <div class="hero-centered-bg">
+      <img 
+        src="/assets/images/hero_luxury_spaces_clean.jpg" 
+        alt="Vizous Interio - Luxury Living &amp; Dining Interior Photography" 
+        width="1376" 
+        height="768" 
+        loading="eager" 
+        fetchpriority="high"
+      />
+    </div>
+    <div class="hero-centered-overlay"></div>
+    <div class="hero-centered-container">
+      <h1 class="hero-centered-title">
+        Spaces Designed for a <span class="title-accent">Better You.</span>
+      </h1>
 
-        <p class="hero-split-desc">
-          From modular kitchens to bespoke furniture, we create beautiful, functional, and personalized spaces for homes and offices across Bhubaneswar with German Homag CNC precision.
-        </p>
-
-        <!-- 6 Quick Service Category Links (Clear, Accessible, Responsive Grid) -->
-        <div class="hero-service-chips-grid">
-          <a href="/modular-kitchen.html" class="hero-service-chip" title="Explore Modular Kitchens">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M2 9h20M9 21V9M15 21V9"/></svg>
-            <span>Modular Kitchens</span>
-          </a>
-          <a href="/wardrobes.html" class="hero-service-chip" title="Explore Wardrobes">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="3" x2="12" y2="21"/><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/></svg>
-            <span>Wardrobes</span>
-          </a>
-          <a href="/beds.html" class="hero-service-chip" title="Explore Luxury Beds">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/></svg>
-            <span>Beds</span>
-          </a>
-          <a href="/office-furniture.html" class="hero-service-chip" title="Explore Office Furniture">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 18a4 4 0 0 1-4-4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v9a4 4 0 0 1-4 4H7zM12 18v4M8 22h8"/></svg>
-            <span>Office Furniture</span>
-          </a>
-          <a href="/modular-furniture.html" class="hero-service-chip" title="Explore Modular Furniture">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="16" x2="21" y2="16"/><circle cx="12" cy="8" r="1"/></svg>
-            <span>Modular Furniture</span>
-          </a>
-          <a href="/home-decor.html" class="hero-service-chip" title="Explore Home Décor">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 2h8l4 10H4L8 2zM12 12v10M8 22h8"/></svg>
-            <span>Home D&eacute;cor</span>
-          </a>
-        </div>
-
-        <!-- Primary & Secondary CTA Buttons -->
-        <div class="hero-split-actions">
-          <button class="btn-hero-primary" data-action="consult">
-            Get a Free Quote &rarr;
-          </button>
-          <a href="#categoriesSection" class="btn-hero-secondary">
-            Explore Our Designs &darr;
-          </a>
-        </div>
-
-        <!-- Inline Trust Metrics Strip -->
-        <div class="hero-split-metrics">
-          <div class="metric-mini">
-            <strong>15+</strong>
-            <span>Years Craft</span>
-          </div>
-          <div class="metric-divider"></div>
-          <div class="metric-mini">
-            <strong>3,000+</strong>
-            <span>Happy Homes</span>
-          </div>
-          <div class="metric-divider"></div>
-          <div class="metric-mini">
-            <strong>10 Yrs</strong>
-            <span>Warranty</span>
-          </div>
-          <div class="metric-divider"></div>
-          <div class="metric-mini">
-            <strong>45 Days</strong>
-            <span>Handover</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Column: 100% Crisp Interior Master Photograph (Grand Cinematic Proportions) -->
-      <div class="hero-split-visual">
-        <div class="hero-image-stage" id="heroImageStage">
-          <img 
-            src="/assets/images/hero_luxury_spaces_clean.jpg" 
-            alt="Spaces Designed for a Better You - Luxury Living & Dining Space by Vizous Interio" 
-            class="hero-split-photo" 
-            id="heroSplitPhoto"
-            width="1376" 
-            height="768" 
-            loading="eager"
-            fetchpriority="high"
-          />
-        </div>
+      <div class="hero-centered-actions">
+        <a href="#kitchenShowcaseSection" class="btn-hero-explore">
+          Explore Our Designs
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+        </a>
+        <button class="btn-hero-touch" data-action="consult">
+          Get in Touch
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- ARCHITECTURAL TRUST VALUES -->
-  <section class="trust-strip" id="whyChooseSection">
+  <!-- SECTION 2B: TRUST & CREDIBILITY SECTION WITH MAIN OFFICE VIDEO (TWO-COLUMN) -->
+  <section class="homelane-trust-section" id="whyHomeownersLove">
     <div class="container">
-      <div class="trust-grid">
-        <div class="trust-item">
-          <div class="trust-icon-box">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <div class="trust-item-text">
-            <h4>10-Year Warranty</h4>
-            <p>100% IS:710 BWP Marine Ply &amp; Anti-Corrosion Hardware</p>
-          </div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon-box">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-          </div>
-          <div class="trust-item-text">
-            <h4>45-Day Handover</h4>
-            <p>Guaranteed On-Time Delivery Across Odisha</p>
-          </div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon-box">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M5 20V8l7-5 7 5v12"/></svg>
-          </div>
-          <div class="trust-item-text">
-            <h4>In-House Factory</h4>
-            <p>15,000+ sq.ft Plant at Bhagabanpur Industrial Estate</p>
-          </div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon-box">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/></svg>
-          </div>
-          <div class="trust-item-text">
-            <h4>100% Customization</h4>
-            <p>Bespoke Engineering Tailored to Your Exact Floorplan</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="homelane-trust-grid">
+        <!-- Left Column: Trust Pillars & CTA -->
+        <div class="trust-grid-left">
+          <h2 class="homelane-trust-title">Here’s Why Homeowners Love Vizous</h2>
+          
+          <div class="homelane-features-grid">
+            <!-- 1. 1,500+ Homes Designed -->
+            <div class="homelane-feature-item">
+              <div class="homelane-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EE7F23" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <path d="M9 22V12h6v10"/>
+                </svg>
+              </div>
+              <div class="homelane-feature-stat">1,500+</div>
+              <div class="homelane-feature-label">Homes Designed</div>
+            </div>
 
-  <!-- INTRODUCING VIZOUS INTERIO -->
-  <section class="section" id="aboutIntro">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tag">Odisha's Leading Interior Brand</span>
-        <h2 class="section-title">Designing Spaces, Defining Dreams.</h2>
-        <p class="section-desc">
-          Vizous Interio Pvt. Ltd. is the no. 1 leading interior decor brand in Bhubaneswar, specialised in the manufacturing of customised kitchen, wardrobe, home interiors and office furniture.
-        </p>
-      </div>
+            <!-- 2. 15+ Years Experience -->
+            <div class="homelane-feature-item">
+              <div class="homelane-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EE7F23" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="6"/>
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+                </svg>
+              </div>
+              <div class="homelane-feature-stat">15+ Years</div>
+              <div class="homelane-feature-label">Craft Experience</div>
+            </div>
 
-      <div class="editorial-block" style="margin-top:2.5rem;">
-        <div class="editorial-media">
-          <img src="/assets/images/about_1.png" alt="Vizous Precision Factory Craftsmanship" class="editorial-img" />
-          <span class="editorial-badge">Bhagabanpur Plant</span>
-        </div>
-        <div class="editorial-content">
-          <span class="editorial-tag">The Talent Behind The Reputation</span>
-          <h3 class="editorial-title">"Design your interior to be timeless, sustainable, efficient and beautiful."</h3>
-          <p class="editorial-desc">
-            The basic philosophy of our studio is to create individual, aesthetically stunning solutions for our customers by lightning-fast development of projects employing unique styles. With over 15 years of industry leadership and 3,000+ completed projects, we bridge the gap between architectural ambition and factory precision.
-          </p>
-          <ul class="editorial-bullets">
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>15,000+ Sq.Ft Factory:</strong> Heavy-duty German Homag CNC beam saws and automated zero-joint edge banders in Patrapada, Bhubaneswar.</span>
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>Direct Factory Pricing:</strong> Eliminating distributor margins and middleman markups for honest, transparent project quotations.</span>
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>End-to-End Handover:</strong> Comprehensive 3D visualization, in-house fabrication, dust-free installation, and 10-year written warranty.</span>
-            </li>
-          </ul>
-          <div class="editorial-cta-row">
-            <a href="/about.html" class="btn-card-quote" style="display:inline-flex; width:auto; padding:0.75rem 1.75rem;">
-              Discover Our Factory Legacy &rarr;
-            </a>
-            <button class="btn-banner-secondary" data-action="consult" style="color:var(--text-main); border-color:var(--border-medium);">
-              Book Showroom Visit
+            <!-- 3. 10-Year Warranty -->
+            <div class="homelane-feature-item">
+              <div class="homelane-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EE7F23" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <polyline points="9 12 11 14 15 10"/>
+                </svg>
+              </div>
+              <div class="homelane-feature-stat">10-Year</div>
+              <div class="homelane-feature-label">Warranty Support</div>
+            </div>
+
+            <!-- 4. In-House Factory -->
+            <div class="homelane-feature-item">
+              <div class="homelane-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EE7F23" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/>
+                  <path d="M17 18h1"/>
+                  <path d="M12 18h1"/>
+                  <path d="M7 18h1"/>
+                </svg>
+              </div>
+              <div class="homelane-feature-stat">In-House</div>
+              <div class="homelane-feature-label">Direct Factory</div>
+            </div>
+          </div>
+
+          <div class="homelane-cta-wrap" style="display:flex; justify-content:center; width:100%;">
+            <button class="btn btn-primary homelane-consult-btn" onclick="openConsultationModal('Homeowners Trust Section')">
+              Book Free Consultation
             </button>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- 6 CORE PRODUCT CATEGORIES SHOWCASE -->
-  <section class="section section-subtle" id="categoriesSection">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Explore By Category</span>
-        <h2 class="section-title">Bespoke Solutions for Every Room</h2>
-        <p class="section-desc">
-          From futuristic modular kitchens to ergonomic office workstations, explore our comprehensive range of custom furniture and interior styling services.
-        </p>
-      </div>
-
-      <div class="category-card-grid">
-        <!-- 1. Modular Kitchens -->
-        <div class="cat-explore-card">
-          <div class="cat-card-media">
-            <img src="/assets/images/modular_kitchen_1.jpg" alt="Modular Kitchen Designs in Bhubaneswar" class="cat-card-img" />
-            <span class="cat-card-badge">6 Layouts</span>
-          </div>
-          <div class="cat-card-content">
-            <h3 class="cat-card-title">Futuristic Modular Kitchen</h3>
-            <p class="cat-card-desc">
-              Tech-infused, sleek, future-ready kitchens. L-shape, U-shape, Island, Straight, Parallel, and Peninsular layouts customized with IS:710 Marine Ply and soft-close hardware.
-            </p>
-            <div class="cat-card-action">
-              <span>View Kitchen Layouts</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <!-- Right Column: Inline Playable Main Office Video -->
+        <div class="trust-grid-right">
+          <div class="trust-video-player-card">
+            <div class="trust-video-header" style="justify-content: center; text-align: center;">
+              <span class="trust-video-tag" style="justify-content: center; font-size: 0.85rem; letter-spacing: 0.06em;">
+                Company Profile
+              </span>
             </div>
-            <a href="/modular-kitchen.html" class="stretched-link" aria-label="Explore Modular Kitchens"></a>
-          </div>
-        </div>
 
-        <!-- 2. Custom Wardrobes -->
-        <div class="cat-explore-card">
-          <div class="cat-card-media">
-            <img src="/assets/images/wardrobes_1.jpg" alt="Custom Wardrobes in Bhubaneswar" class="cat-card-img" />
-            <span class="cat-card-badge">Walk-in &amp; Sliding</span>
-          </div>
-          <div class="cat-card-content">
-            <h3 class="cat-card-title">Designer Wardrobes</h3>
-            <p class="cat-card-desc">
-              Space-saving sliding doors, luxurious walk-in master dressing suites, classic openable hinged wardrobes, and folding designs with integrated sensor LED illumination.
-            </p>
-            <div class="cat-card-action">
-              <span>Explore Wardrobe Types</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-            <a href="/wardrobes.html" class="stretched-link" aria-label="Explore Custom Wardrobes"></a>
-          </div>
-        </div>
-
-        <!-- 3. Luxury Beds -->
-        <div class="cat-explore-card">
-          <div class="cat-card-media">
-            <img src="/assets/images/beds_1.jpg" alt="Luxury Storage Beds in Bhubaneswar" class="cat-card-img" />
-            <span class="cat-card-badge">7 Bed Styles</span>
-          </div>
-          <div class="cat-card-content">
-            <h3 class="cat-card-title">Popular Modern Bedroom</h3>
-            <p class="cat-card-desc">
-              Trendy, coveted modern bedroom designs. King, Queen, and Single beds with German hydraulic storage, minimalist floating platforms, and bunk beds with study desks.
-            </p>
-            <div class="cat-card-action">
-              <span>Browse Bed Collection</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-            <a href="/beds.html" class="stretched-link" aria-label="Explore Luxury Beds"></a>
-          </div>
-        </div>
-
-        <!-- 4. Office Furniture -->
-        <div class="cat-explore-card">
-          <div class="cat-card-media">
-            <img src="/assets/images/office_furniture_1.jpg" alt="Office Furniture and Workstations" class="cat-card-img" />
-            <span class="cat-card-badge">Commercial Grade</span>
-          </div>
-          <div class="cat-card-content">
-            <h3 class="cat-card-title">Trusted Office Furniture</h3>
-            <p class="cat-card-desc">
-              Reliable, quality office furniture solutions. Modular cluster workstations, executive Managing Director tables, heavy-duty file racks, cafeteria furniture, and cabins.
-            </p>
-            <div class="cat-card-action">
-              <span>View Office Solutions</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-            <a href="/office-furniture.html" class="stretched-link" aria-label="Explore Office Furniture"></a>
-          </div>
-        </div>
-
-        <!-- 5. Modular Furniture -->
-        <div class="cat-explore-card">
-          <div class="cat-card-media">
-            <img src="/assets/images/modular_furniture_1.jpg" alt="Custom Modular Furniture Units" class="cat-card-img" />
-            <span class="cat-card-badge">7 Units</span>
-          </div>
-          <div class="cat-card-content">
-            <h3 class="cat-card-title">Innovative Living Room</h3>
-            <p class="cat-card-desc">
-              Revolutionizing living spaces through contemporary design. Fluted TV consoles, elegant crockery units, CNC jali puja mandirs, study desks, shoe racks, and partitions.
-            </p>
-            <div class="cat-card-action">
-              <span>Discover Living Units</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-            <a href="/modular-furniture.html" class="stretched-link" aria-label="Explore Modular Furniture"></a>
-          </div>
-        </div>
-
-        <!-- 6. Home Décor -->
-        <div class="cat-explore-card">
-          <div class="cat-card-media">
-            <img src="/assets/images/home_decor_1.jpg" alt="Architectural Home Décor" class="cat-card-img" />
-            <span class="cat-card-badge">Turnkey Styling</span>
-          </div>
-          <div class="cat-card-content">
-            <h3 class="cat-card-title">Architectural Home Décor</h3>
-            <p class="cat-card-desc">
-              Add texture, warmth, and character. Premium wooden flooring, acoustic wall panelling, Saint-Gobain Gyproc false ceilings, and ambient architectural lighting.
-            </p>
-            <div class="cat-card-action">
-              <span>Explore Home Décor</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-            <a href="/home-decor.html" class="stretched-link" aria-label="Explore Home Décor"></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- INTERACTIVE MODULAR KITCHEN LAYOUT SHOWCASE -->
-  <section class="section" id="kitchenShowcaseSection">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tag">Kitchen Engineering</span>
-        <h2 class="section-title">Engineered Kitchen Layouts for Indian Homes</h2>
-        <p class="section-desc">
-          Every kitchen layout has unique advantages based on your room dimensions, cooking habits, and storage requirements. Select a layout to inspect its design.
-        </p>
-      </div>
-
-      <!-- Tab Filter Bar -->
-      <div class="filter-tabs-bar" style="margin-bottom:2.5rem;">
-        <button class="tab-btn active" onclick="switchKitchenTab('lshape', this)">L-Shaped Kitchen</button>
-        <button class="tab-btn" onclick="switchKitchenTab('ushape', this)">U-Shaped Kitchen</button>
-        <button class="tab-btn" onclick="switchKitchenTab('island', this)">Island Kitchen</button>
-        <button class="tab-btn" onclick="switchKitchenTab('parallel', this)">Parallel Kitchen</button>
-        <button class="tab-btn" onclick="switchKitchenTab('straight', this)">Straight Kitchen</button>
-        <button class="tab-btn" onclick="switchKitchenTab('peninsular', this)">Peninsular Kitchen</button>
-      </div>
-
-      <!-- Tab 1: L-Shape -->
-      <div id="ktab-lshape" class="kitchen-tab-pane">
-        <div class="editorial-block">
-          <div class="editorial-media">
-            <img src="/assets/images/modular_kitchen_1.jpg" alt="L-Shaped Modular Kitchen Bhubaneswar" class="editorial-img" />
-            <span class="editorial-badge">Most Popular Layout</span>
-          </div>
-          <div class="editorial-content">
-            <span class="editorial-tag">Corner Ergonomics &bull; L-Shaped</span>
-            <h3 class="editorial-title">L-Shaped Modular Kitchen</h3>
-            <p class="editorial-desc">
-              Create a kitchen that keeps everything within easy reach. Our L-shape Modular Kitchen in Bhubaneswar blends smart layouts, premium finishes, and practical storage to make everyday cooking more comfortable and organized.
-            </p>
-            <div class="editorial-specs-grid">
-              <div>
-                <div class="spec-item-label">Ideal Space</div>
-                <div class="spec-item-value">10 &times; 8 ft to 12 &times; 10 ft</div>
-              </div>
-              <div>
-                <div class="spec-item-label">Golden Triangle</div>
-                <div class="spec-item-value">Seamless Hob &bull; Sink &bull; Fridge</div>
-              </div>
-              <div>
-                <div class="spec-item-label">Carcass Base</div>
-                <div class="spec-item-value">IS:710 Boiling Water Proof Ply</div>
-              </div>
-              <div>
-                <div class="spec-item-label">Corner Storage</div>
-                <div class="spec-item-value">Magic Corner Carousel Pull-outs</div>
-              </div>
-            </div>
-            <div class="editorial-cta-row">
-              <a href="/modular-kitchen.html" class="btn-card-quote" style="display:inline-flex; width:auto; padding:0.75rem 1.5rem;">
-                Explore L-Shaped Specs &rarr;
-              </a>
-              <button class="btn-banner-secondary" data-action="consult" style="color:var(--text-main); border-color:var(--border-medium);">
-                Get L-Shape Quote
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab 2: U-Shape -->
-      <div id="ktab-ushape" class="kitchen-tab-pane" style="display:none;">
-        <div class="editorial-block">
-          <div class="editorial-media">
-            <img src="/assets/images/modular_kitchen_3.jpg" alt="U-Shaped Modular Kitchen Bhubaneswar" class="editorial-img" />
-            <span class="editorial-badge">Maximum Storage</span>
-          </div>
-          <div class="editorial-content">
-            <span class="editorial-tag">Triple Counter Workstation &bull; U-Shaped</span>
-            <h3 class="editorial-title">U-Shaped Modular Kitchen</h3>
-            <p class="editorial-desc">
-              A U-shape Modular Kitchen in Bhubaneswar offers generous workspace and storage on three sides, making it a great choice for busy families who enjoy both functionality and a clean, modern look.
-            </p>
-            <div class="editorial-specs-grid">
-              <div>
-                <div class="spec-item-label">Ideal Space</div>
-                <div class="spec-item-value">12 &times; 10 ft or Larger Spaces</div>
-              </div>
-              <div>
-                <div class="spec-item-label">Chef Capacity</div>
-                <div class="spec-item-value">Comfortable for 2-3 Cooks</div>
-              </div>
-              <div>
-                <div class="spec-item-label">Pantry System</div>
-                <div class="spec-item-value">12-Basket Tall Pantry Unit</div>
-              </div>
-              <div>
-                <div class="spec-item-label">Counter Surface</div>
-                <div class="spec-item-value">Non-Porous Kalinga Quartz</div>
-              </div>
-            </div>
-            <div class="editorial-cta-row">
-              <a href="/modular-kitchen.html" class="btn-card-quote" style="display:inline-flex; width:auto; padding:0.75rem 1.5rem;">
-                Explore U-Shaped Specs &rarr;
-              </a>
-              <button class="btn-banner-secondary" data-action="consult" style="color:var(--text-main); border-color:var(--border-medium);">
-                Get U-Shape Quote
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab 3: Island -->
-      <div id="ktab-island" class="kitchen-tab-pane" style="display:none;">
-        <div class="editorial-block">
-          <div class="editorial-media">
-            <img src="/assets/images/modular_kitchen_7.jpg" alt="Island Modular Kitchen Bhubaneswar" class="editorial-img" />
-            <span class="editorial-badge">Luxury Statement</span>
-          </div>
-          <div class="editorial-content">
-            <span class="editorial-tag">Social Culinary Centre &bull; Island</span>
-            <h3 class="editorial-title">Island-Modular Kitchen</h3>
-            <p class="editorial-desc">
-              An island kitchen creates a natural gathering space for cooking, dining, and conversation. Designed with premium finishes and practical layouts, it brings elegance and everyday convenience into one seamless space.
-            </p>
-            <div class="editorial-specs-grid">
-              <div>
-                <div class="spec-item-label">Central Feature</div>
-                <div class="spec-item-value">Waterfall Edge Breakfast Counter</div>
-              </div>
-              <div>
-                <div class="spec-item-label">Lighting Plan</div>
-                <div class="spec-item-value">Concealed LED Pendant Task Lights</div>
-              </div>
-              <div>
-                <div class="spec-item-label">Under-Island Storage</div>
-                <div class="spec-item-value">Tandem Wine &amp; Appliance Drawers</div>
-              </div>
-              <div>
-                <div class="spec-item-label">Finish Standard</div>
-                <div class="spec-item-value">High-Gloss German Acrylic &amp; PU</div>
-              </div>
-            </div>
-            <div class="editorial-cta-row">
-              <a href="/modular-kitchen.html" class="btn-card-quote" style="display:inline-flex; width:auto; padding:0.75rem 1.5rem;">
-                Explore Island Specs &rarr;
-              </a>
-              <button class="btn-banner-secondary" data-action="consult" style="color:var(--text-main); border-color:var(--border-medium);">
-                Get Island Quote
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab 4: Parallel -->
-      <div id="ktab-parallel" class="kitchen-tab-pane" style="display:none;">
-        <div class="editorial-block">
-          <div class="editorial-media">
-            <img src="/assets/images/modular_kitchen_9.jpg" alt="Parallel Modular Kitchen Bhubaneswar" class="editorial-img" />
-            <span class="editorial-badge">Master Chef Layout</span>
-          </div>
-          <div class="editorial-content">
-            <span class="editorial-tag">Dual Work Zones &bull; Parallel Galley</span>
-            <h3 class="editorial-title">Parallel Modular Kitchen</h3>
-            <p class="editorial-desc">
-              Our Parallel Modular Kitchen in Bhubaneswar offers separate work zones for cooking and preparation, making it an excellent option for homes where efficiency and smart planning matter.
-            </p>
-            <div class="editorial-specs-grid">
-              <div>
-                <div class="spec-item-label">Passageway Width</div>
-                <div class="spec-item-value">Optimal 4 ft Corridor Clearance</div>
-              </div>
-              <div>
-                <div class="spec-item-label">Zone Separation</div>
-                <div class="spec-item-value">Dedicated Wet &amp; Dry Counters</div>
-              </div>
-              <div>
-                <div class="spec-item-label">Drawers</div>
-                <div class="spec-item-value">Full-Extension Hettich InnoTech</div>
-              </div>
-              <div>
-                <div class="spec-item-label">Ventilation</div>
-                <div class="spec-item-value">Direct Outer Wall Duct Integration</div>
-              </div>
-            </div>
-            <div class="editorial-cta-row">
-              <a href="/modular-kitchen.html" class="btn-card-quote" style="display:inline-flex; width:auto; padding:0.75rem 1.5rem;">
-                Explore Parallel Specs &rarr;
-              </a>
-              <button class="btn-banner-secondary" data-action="consult" style="color:var(--text-main); border-color:var(--border-medium);">
-                Get Parallel Quote
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab 5: Straight -->
-      <div id="ktab-straight" class="kitchen-tab-pane" style="display:none;">
-        <div class="editorial-block">
-          <div class="editorial-media">
-            <img src="/assets/images/modular_kitchen_5.jpg" alt="Straight Modular Kitchen Bhubaneswar" class="editorial-img" />
-            <span class="editorial-badge">Compact Smart Living</span>
-          </div>
-          <div class="editorial-content">
-            <span class="editorial-tag">Single Wall Linear &bull; Straight</span>
-            <h3 class="editorial-title">Straight Modular Kitchen</h3>
-            <p class="editorial-desc">
-              Simple, efficient, and space-saving, our Straight Modular Kitchen in Bhubaneswar is designed for compact homes without compromising on style, storage, or ease of movement.
-            </p>
-            <div class="editorial-specs-grid">
-              <div>
-                <div class="spec-item-label">Suited For</div>
-                <div class="spec-item-value">Studio &amp; 1BHK/2BHK Apartments</div>
-              </div>
-              <div>
-                <div class="spec-item-label">Lift-up Overhead</div>
-                <div class="spec-item-value">Hydraulic Bi-Fold Flap Doors</div>
-              </div>
-              <div>
-                <div class="spec-item-label">Built-in Elements</div>
-                <div class="spec-item-value">Integrated Hob &amp; Silent Chimney</div>
-              </div>
-              <div>
-                <div class="spec-item-label">Maintenance</div>
-                <div class="spec-item-value">Anti-Fingerprint Thermal Laminates</div>
-              </div>
-            </div>
-            <div class="editorial-cta-row">
-              <a href="/modular-kitchen.html" class="btn-card-quote" style="display:inline-flex; width:auto; padding:0.75rem 1.5rem;">
-                Explore Straight Specs &rarr;
-              </a>
-              <button class="btn-banner-secondary" data-action="consult" style="color:var(--text-main); border-color:var(--border-medium);">
-                Get Straight Quote
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab 6: Peninsular -->
-      <div id="ktab-peninsular" class="kitchen-tab-pane" style="display:none;">
-        <div class="editorial-block">
-          <div class="editorial-media">
-            <img src="/assets/images/modular_kitchen_11.png" alt="Peninsular Modular Kitchen Bhubaneswar" class="editorial-img" />
-            <span class="editorial-badge">Semi-Open Concept</span>
-          </div>
-          <div class="editorial-content">
-            <span class="editorial-tag">Connected Peninsula Bar &bull; Peninsular</span>
-            <h3 class="editorial-title">Peninsular Modular Kitchen</h3>
-            <p class="editorial-desc">
-              A peninsular kitchen creates extra workspace while maintaining an open and welcoming layout. It's an ideal choice for homes that value flexibility, storage, and contemporary design.
-            </p>
-            <div class="editorial-specs-grid">
-              <div>
-                <div class="spec-item-label">Dual Purpose</div>
-                <div class="spec-item-value">Prep Counter &amp; Breakfast Table</div>
-              </div>
-              <div>
-                <div class="spec-item-label">Room Boundary</div>
-                <div class="spec-item-value">Defines Kitchen &amp; Living Zone</div>
-              </div>
-              <div>
-                <div class="spec-item-label">Lower Cabinets</div>
-                <div class="spec-item-value">Wicker Baskets &amp; Cutlery Trays</div>
-              </div>
-              <div>
-                <div class="spec-item-label">Hardware Warranty</div>
-                <div class="spec-item-value">10-Year Comprehensive Replacement</div>
-              </div>
-            </div>
-            <div class="editorial-cta-row">
-              <a href="/modular-kitchen.html" class="btn-card-quote" style="display:inline-flex; width:auto; padding:0.75rem 1.5rem;">
-                Explore Peninsular Specs &rarr;
-              </a>
-              <button class="btn-banner-secondary" data-action="consult" style="color:var(--text-main); border-color:var(--border-medium);">
-                Get Peninsular Quote
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CUSTOM WARDROBE SYSTEMS SHOWCASE -->
-  <section class="section section-subtle" id="wardrobeShowcaseSection">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Storage Architecture</span>
-        <h2 class="section-title">Engineered Wardrobes Tailored to Your Lifestyle</h2>
-        <p class="section-desc">
-          Compare our signature wardrobe systems. Every unit is manufactured with termite-treated marine ply carcass, German aluminium track systems, and customized internal organizers.
-        </p>
-      </div>
-
-      <div class="features-grid-3">
-        <div class="feature-box">
-          <div class="feature-box-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18M7 12h2M15 12h2"/></svg>
-          </div>
-          <h4>Sliding Wardrobes</h4>
-          <p>
-            Our wardrobe design Bhubaneswar solutions feature sleek sliding doors that save space while adding a clean, contemporary finish to bedrooms of every size. Soft-dampening anti-jump rollers ensure whisper-quiet operation.
-          </p>
-          <a href="/wardrobes.html" style="color:var(--color-terracotta); font-weight:600; font-size:0.85rem; display:inline-flex; align-items:center; gap:4px; margin-top:1rem;">
-            Explore Sliding Designs &rarr;
-          </a>
-        </div>
-
-        <div class="feature-box">
-          <div class="feature-box-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4zM9 4v16M15 4v16"/></svg>
-          </div>
-          <h4>Walk-in Wardrobes</h4>
-          <p>
-            Enjoy a dedicated space for clothing, accessories, and everyday essentials with walk-in wardrobes designed for effortless organization and timeless style by experienced Wardrobe Designers in Bhubaneswar.
-          </p>
-          <a href="/wardrobes.html" style="color:var(--color-terracotta); font-weight:600; font-size:0.85rem; display:inline-flex; align-items:center; gap:4px; margin-top:1rem;">
-            Explore Walk-in Dressing &rarr;
-          </a>
-        </div>
-
-        <div class="feature-box">
-          <div class="feature-box-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18M15 10h2M7 10h2"/></svg>
-          </div>
-          <h4>Openable &amp; Folding Wardrobes</h4>
-          <p>
-            Classic openable wardrobes combine practical storage with elegant finishes to bring organization and lasting style to any bedroom. Wide 180-degree opening hinges give full panoramic visibility into all compartments.
-          </p>
-          <a href="/wardrobes.html" style="color:var(--color-terracotta); font-weight:600; font-size:0.85rem; display:inline-flex; align-items:center; gap:4px; margin-top:1rem;">
-            Explore Hinged &amp; Folding &rarr;
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REAL COMPLETED PROJECTS GALLERY -->
-  <section class="section" id="projectsGallery">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tag">Portfolio &amp; Handover Showcase</span>
-        <h2 class="section-title">Actual Homes Furnished in Bhubaneswar</h2>
-        <p class="section-desc">
-          Browse real photographs of completed interior projects executed by Vizous Interio across Bhubaneswar, Cuttack, and Puri.
-        </p>
-      </div>
-
-      <div class="products-grid" style="margin-top:2.5rem;">
-        <div class="product-card">
-          <div class="product-card-media">
-            <img src="/assets/images/home_1.jpg" alt="Turnkey Villa Interior in Patia, Bhubaneswar" class="product-card-img" />
-            <span class="product-badge">Villa Project</span>
-          </div>
-          <div class="product-content">
-            <div class="product-meta-row">
-              <span class="product-spec-tag">Patia, Bhubaneswar</span>
-              <span class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; Verified</span>
-            </div>
-            <h3 class="product-title">Luxury 4BHK Turnkey Interior</h3>
-            <p class="product-desc">
-              Acrylic island kitchen, fluted acoustic TV panelling, master walk-in wardrobe, and custom false ceiling with magnetic track lights.
-            </p>
-            <div class="product-footer-row">
-              <span class="spec-chip">Handover: 42 Days</span>
-              <button class="btn-card-quote" data-action="consult">View Case Study</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-card-media">
-            <img src="/assets/images/home_2.jpg" alt="Modular Kitchen Installation in Nayapalli" class="product-card-img" />
-            <span class="product-badge">Modular Kitchen</span>
-          </div>
-          <div class="product-content">
-            <div class="product-meta-row">
-              <span class="product-spec-tag">Nayapalli, Bhubaneswar</span>
-              <span class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; Verified</span>
-            </div>
-            <h3 class="product-title">L-Shaped High-Gloss Kitchen</h3>
-            <p class="product-desc">
-              IS:710 Marine ply carcass, Hettich soft-close tandem drawers, Kalinga quartz countertop, and integrated tall pantry unit.
-            </p>
-            <div class="product-footer-row">
-              <span class="spec-chip">10-Yr Warranty</span>
-              <button class="btn-card-quote" data-action="consult">Get Similar Quote</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-card-media">
-            <img src="/assets/images/home_3.jpg" alt="Master Bedroom Wardrobe in Saheed Nagar" class="product-card-img" />
-            <span class="product-badge">Master Suite</span>
-          </div>
-          <div class="product-content">
-            <div class="product-meta-row">
-              <span class="product-spec-tag">Saheed Nagar, Bhubaneswar</span>
-              <span class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; Verified</span>
-            </div>
-            <h3 class="product-title">Floor-to-Ceiling Sliding Closet</h3>
-            <p class="product-desc">
-              Tinted lacquer glass sliding shutters with black anodized aluminium frame, sensor illumination, and hydraulic storage king bed.
-            </p>
-            <div class="product-footer-row">
-              <span class="spec-chip">German Hardware</span>
-              <button class="btn-card-quote" data-action="consult">Get Wardrobe Estimate</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center" style="margin-top:2.5rem;">
-        <a href="/our-work.html" class="btn-card-quote" style="display:inline-flex; width:auto; padding:0.85rem 2rem;">
-          View Full Project Gallery &amp; Commercial Case Studies &rarr;
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- INTERACTIVE BEFORE & AFTER TRANSFORMATION -->
-  <section class="section section-subtle" id="transformationSection">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tag">Transformation Proof &bull; Real Site Renovation</span>
-        <h2 class="section-title">From Raw Concrete to Luxury Turnkey Living</h2>
-        <p class="section-desc">
-          Drag the interactive slider below to inspect our turnkey interior fit-out transformation in Nayapalli, Bhubaneswar. Compare the raw brick &amp; concrete shell with the finished modular kitchen handover.
-        </p>
-      </div>
-
-      <div class="transformation-wrap">
-        <div class="ba-card-stage" id="baContainer" style="--slider-pos: 50%;">
-          <!-- Background: Completed Luxury Handover (After) -->
-          <img 
-            src="/assets/images/home_1.jpg" 
-            alt="Completed Luxury Kitchen - Vizous Handover" 
-            class="ba-img-after" 
-            width="768" 
-            height="640" 
-          />
-
-          <!-- Foreground Clipped: Raw Under-Construction (Before) -->
-          <img 
-            src="/assets/images/kitchen_raw_before.jpg" 
-            alt="Raw Concrete Shell - Before Renovation" 
-            class="ba-img-before" 
-            width="768" 
-            height="640" 
-          />
-
-          <!-- Divider Line & Handle -->
-          <div class="ba-divider" id="baDivider">
-            <div class="ba-handle-btn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></svg>
-            </div>
-          </div>
-
-          <!-- Native Range Input (Accessible, Touch & Mouse) -->
-          <input 
-            type="range" 
-            min="0" 
-            max="100" 
-            value="50" 
-            class="ba-slider-range" 
-            id="baRangeInput" 
-            aria-label="Drag to compare before and after interior transformation" 
-          />
-
-          <!-- Floating Badges -->
-          <div class="ba-pill ba-pill-before">
-            <span class="ba-dot dot-red"></span>
-            <span class="ba-pill-text-full">BEFORE: Raw Brick &amp; Concrete Shell</span>
-            <span class="ba-pill-text-short">BEFORE (Raw)</span>
-          </div>
-          <div class="ba-pill ba-pill-after">
-            <span class="ba-dot dot-green"></span>
-            <span class="ba-pill-text-full">AFTER: Vizous Luxury Handover</span>
-            <span class="ba-pill-text-short">AFTER (Luxury)</span>
-          </div>
-        </div>
-
-        <div class="ba-instruction-hint">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 16l-4-4m0 0l4-4m-4 4h18m-4 4l4-4m0 0l-4-4"/></svg>
-          <span>Drag the slider left or right to inspect the transformation</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY CHOOSE VIZOUS (DETAILED ARCHITECTURAL CAPABILITIES) -->
-  <section class="section" id="capabilitiesSection">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Manufacturing Superiority</span>
-        <h2 class="section-title">Why Homeowners &amp; Architects Trust Vizous</h2>
-        <p class="section-desc">
-          Unlike aggregators who outsource your furniture to unverified local carpenters, Vizous owns and operates Odisha's largest in-house modular manufacturing infrastructure.
-        </p>
-      </div>
-
-      <div class="features-grid-3">
-        <div class="feature-box">
-          <div class="feature-box-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M5 20V8l7-5 7 5v12"/></svg>
-          </div>
-          <h4>15,000+ Sq.Ft Bhagabanpur Factory</h4>
-          <p>
-            All cabinetry is pre-fabricated at our state-of-the-art facility in Bhagabanpur Industrial Estate, Patrapada. Zero wood cutting or carpenter mess inside your home.
-          </p>
-        </div>
-
-        <div class="feature-box">
-          <div class="feature-box-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <h4>Guaranteed 45-Day Handover</h4>
-          <p>
-            Because we control manufacturing end-to-end, we adhere to strict 45-day timelines with financial penalties if delayed. Reliable planning for your family's move-in date.
-          </p>
-        </div>
-
-        <div class="feature-box">
-          <div class="feature-box-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h4>10-Year Written Warranty</h4>
-          <p>
-            Backed by genuine IS:710 Marine Grade BWP Plywood and genuine German hardware from Hettich, Hafele, and Blum. Free service checkups during the warranty term.
-          </p>
-        </div>
-
-        <div class="feature-box">
-          <div class="feature-box-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          </div>
-          <h4>Factory-Direct Transparent Pricing</h4>
-          <p>
-            No hidden fees, no arbitrary escalation. Every estimate includes a detailed bill of materials specifying board thickness, brand of hardware, and finish grade.
-          </p>
-        </div>
-
-        <div class="feature-box">
-          <div class="feature-box-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <h4>3D Photorealistic Previews</h4>
-          <p>
-            Review 3D architectural renders of your kitchen and wardrobes before cutting a single board. Test finish combinations, handle placements, and lighting temperatures.
-          </p>
-        </div>
-
-        <div class="feature-box">
-          <div class="feature-box-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-          </div>
-          <h4>Zero-Cost EMI Partnerships</h4>
-          <p>
-            Flexible interior financing options through leading banking partners, allowing you to furnish your dream home with manageable, interest-free monthly installments.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4-STEP CUSTOMER JOURNEY -->
-  <section class="section section-subtle" id="processSection">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tag">How It Works</span>
-        <h2 class="section-title">Your 4-Step Journey to a Stunning Home</h2>
-        <p class="section-desc">
-          We have refined our workflow over 15 years to make your interior experience effortless, predictable, and exciting.
-        </p>
-      </div>
-
-      <div class="process-steps-grid">
-        <div class="feature-box text-center">
-          <div class="feature-box-icon" style="margin:0 auto 1.25rem;">
-            <span style="font-weight:700; font-size:1.2rem;">01</span>
-          </div>
-          <h4>Free Consultation</h4>
-          <p>Meet our interior architects at our Laxmisagar showroom or request a laser-guided space measurement at your site.</p>
-        </div>
-
-        <div class="feature-box text-center">
-          <div class="feature-box-icon" style="margin:0 auto 1.25rem;">
-            <span style="font-weight:700; font-size:1.2rem;">02</span>
-          </div>
-          <h4>3D Design &amp; Approval</h4>
-          <p>Visualize your floorplan in photorealistic 3D. Finalize materials, finishes, hardware, and exact transparent pricing.</p>
-        </div>
-
-        <div class="feature-box text-center">
-          <div class="feature-box-icon" style="margin:0 auto 1.25rem;">
-            <span style="font-weight:700; font-size:1.2rem;">03</span>
-          </div>
-          <h4>Factory Fabrication</h4>
-          <p>Precision manufacturing on German Homag CNC beam saws at our 15,000 sq.ft plant with strict zero-joint edge banding.</p>
-        </div>
-
-        <div class="feature-box text-center">
-          <div class="feature-box-icon" style="margin:0 auto 1.25rem;">
-            <span style="font-weight:700; font-size:1.2rem;">04</span>
-          </div>
-          <h4>45-Day Handover</h4>
-          <p>Pre-drilled flat-pack delivery and dust-free assembly by factory-trained technicians, backed by a 10-year warranty card.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- INTERACTIVE INTERIOR COST ESTIMATOR -->
-  <section class="section" id="costEstimator">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tag">Transparent Pricing</span>
-        <h2 class="section-title">Estimate Your Interior Project Cost</h2>
-        <p class="section-desc">
-          Get an instant, ballpark cost estimate based on your home size and material preference.
-        </p>
-      </div>
-
-      <div class="luxury-estimator-card">
-        <!-- Hidden select elements kept in DOM for programmatic sync -->
-        <select id="estConfig" style="display:none;">
-          <option value="1bhk">1 BHK Apartment (450 - 650 sq.ft)</option>
-          <option value="2bhk" selected>2 BHK Apartment (800 - 1100 sq.ft)</option>
-          <option value="3bhk">3 BHK Apartment (1200 - 1650 sq.ft)</option>
-          <option value="4bhk">4 BHK / Duplex Villa (1800 - 3000 sq.ft)</option>
-          <option value="kitchen">Modular Kitchen Only</option>
-          <option value="commercial">Commercial Office Space</option>
-        </select>
-        <select id="estTier" style="display:none;">
-          <option value="essential">Essential (Commercial MR Ply + Anti-Scratch Laminate)</option>
-          <option value="premium" selected>Premium (IS:710 Marine Ply + High-Gloss Acrylic + Hettich)</option>
-          <option value="luxury">Luxury Elite (IS:710 Marine Ply + PU Lacquer + Blum Aventos)</option>
-        </select>
-
-        <!-- Step 1: Select Space Configuration -->
-        <div class="estimator-step-header">
-          <div class="estimator-step-title">
-            <span class="step-badge">1</span>
-            <span>Select Your Property Type</span>
-          </div>
-          <span class="step-helper">Bhubaneswar &bull; Cuttack &bull; Raipur</span>
-        </div>
-
-        <div class="est-config-grid" id="estConfigGrid">
-          <div class="est-config-card" data-val="1bhk">
-            <div class="est-config-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h6"/></svg>
-            </div>
-            <div class="est-config-name">1 BHK</div>
-            <div class="est-config-sub">450–650 sq.ft</div>
-          </div>
-          <div class="est-config-card active" data-val="2bhk">
-            <div class="est-config-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 3v18M16 3v18M2 9h20"/></svg>
-            </div>
-            <div class="est-config-name">2 BHK</div>
-            <div class="est-config-sub">800–1100 sq.ft</div>
-          </div>
-          <div class="est-config-card" data-val="3bhk">
-            <div class="est-config-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            </div>
-            <div class="est-config-name">3 BHK</div>
-            <div class="est-config-sub">1200–1650 sq.ft</div>
-          </div>
-          <div class="est-config-card" data-val="4bhk">
-            <div class="est-config-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8l8-6z"/><path d="M9 22v-8h6v8"/></svg>
-            </div>
-            <div class="est-config-name">4 BHK / Villa</div>
-            <div class="est-config-sub">1800–3000 sq.ft</div>
-          </div>
-          <div class="est-config-card" data-val="kitchen">
-            <div class="est-config-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><circle cx="7" cy="15" r="1.5"/><circle cx="17" cy="15" r="1.5"/></svg>
-            </div>
-            <div class="est-config-name">Kitchen Only</div>
-            <div class="est-config-sub">All 6 Layouts</div>
-          </div>
-          <div class="est-config-card" data-val="commercial">
-            <div class="est-config-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 18a4 4 0 0 1-4-4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v9a4 4 0 0 1-4 4H7zM12 18v4M8 22h8"/></svg>
-            </div>
-            <div class="est-config-name">Commercial</div>
-            <div class="est-config-sub">Offices &amp; Desks</div>
-          </div>
-        </div>
-
-        <!-- Step 2: Select Material & Hardware Tier -->
-        <div class="estimator-step-header">
-          <div class="estimator-step-title">
-            <span class="step-badge">2</span>
-            <span>Select Material &amp; Hardware Tier</span>
-          </div>
-          <span class="step-helper">10-Year Warranty &bull; Factory-Direct</span>
-        </div>
-
-        <div class="est-tier-grid" id="estTierGrid">
-          <!-- Essential Tier -->
-          <div class="est-tier-card" data-val="essential">
-            <div>
-              <div class="tier-radio-row">
-                <div class="tier-radio-dot"></div>
-                <div class="tier-name">Essential Craft</div>
-              </div>
-              <p class="tier-desc">Durable, value-engineered living solutions for rental units or starter homes.</p>
-            </div>
-            <div class="tier-specs">
-              <span class="tier-chip">Commercial MR Ply</span>
-              <span class="tier-chip">Anti-Scratch Laminate</span>
-              <span class="tier-chip">Soft-Close Hinges</span>
-              <span class="tier-chip">5-Yr Warranty</span>
-            </div>
-          </div>
-
-          <!-- Premium Tier (Default Active) -->
-          <div class="est-tier-card active" data-val="premium">
-            <span class="tier-popular-pill">Most Popular &bull; 85% Choose</span>
-            <div>
-              <div class="tier-radio-row">
-                <div class="tier-radio-dot"></div>
-                <div class="tier-name">Premium Signature</div>
-              </div>
-              <p class="tier-desc">Our flagship architectural standard. Moisture-proof, stain-proof &amp; anti-fingerprint.</p>
-            </div>
-            <div class="tier-specs">
-              <span class="tier-chip">100% IS:710 Marine Ply</span>
-              <span class="tier-chip">High-Gloss Acrylic</span>
-              <span class="tier-chip">Hettich Tandems</span>
-              <span class="tier-chip">10-Yr Warranty</span>
-            </div>
-          </div>
-
-          <!-- Luxury Elite Tier -->
-          <div class="est-tier-card" data-val="luxury">
-            <div>
-              <div class="tier-radio-row">
-                <div class="tier-radio-dot"></div>
-                <div class="tier-name">Luxury Elite</div>
-              </div>
-              <p class="tier-desc">Ultra-luxury turnkey fit-out with imported German Blum motion hardware &amp; Italian PU.</p>
-            </div>
-            <div class="tier-specs">
-              <span class="tier-chip">IS:710 BWP Core</span>
-              <span class="tier-chip">Italian PU Lacquer</span>
-              <span class="tier-chip">Blum Aventos Lifts</span>
-              <span class="tier-chip">10-Yr Comprehensive</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Step 3: Estimated Factory Range Display -->
-        <div class="est-result-card">
-          <div class="est-result-header">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <span>Real-Time Factory Estimate &bull; Bhubaneswar Plant Direct</span>
-          </div>
-
-          <div id="estPriceDisplay" class="est-result-price">&#8377; 3.20 Lakhs &ndash; &#8377; 4.80 Lakhs</div>
-          <div id="estDetailsDisplay" class="est-result-details">Includes Modular Kitchen, 2 Wardrobes, TV Unit, Shoe Rack &amp; Delivery across Bhubaneswar</div>
-
-          <div class="est-deliverables-strip">
-            <div class="deliverable-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>100% IS:710 Marine Core</span>
-            </div>
-            <div class="deliverable-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>German Soft-Close Tandems</span>
-            </div>
-            <div class="deliverable-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>45-Day Handover Guarantee</span>
-            </div>
-            <div class="deliverable-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>10-Year Written Warranty</span>
-            </div>
-            <div class="deliverable-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Free 3D Photorealistic Design</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Step 4: Actions Row -->
-        <div class="est-actions-row">
-          <button type="button" class="btn-est-primary" data-action="consult" data-subject="Lock in Cost Estimate &amp; 3D Design Session" id="estimatorLockInBtn">
-            Lock in Free 3D Design Session &rarr;
-          </button>
-          <button type="button" class="btn-est-save" id="estimatorSaveBtn" title="Save this calculation to local database">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
-            Save Estimate
-          </button>
-          <button type="button" class="btn-est-wa" id="estimatorWhatsappQuoteBtn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Send to WhatsApp &rarr;
-          </button>
-          <a href="tel:+919040087614" class="btn-est-call">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Call: +91 90400 87614
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS & GOOGLE REVIEWS -->
-  <section class="section section-subtle" id="testimonialsSection">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tag">Client Trust &bull; 4.9/5 Rating on Google</span>
-        <h2 class="section-title">What Bhubaneswar Homeowners Say</h2>
-        <p class="section-desc">
-          Read genuine feedback from families and professionals who entrusted their homes and commercial workspaces to Vizous Interio.
-        </p>
-      </div>
-
-      <div class="reviews-grid">
-        <!-- Review 1 -->
-        <div class="review-luxury-card">
-          <div class="review-card-top">
-            <div class="review-stars-wrap">
-              <span class="stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-              <span class="review-score">5.0</span>
-            </div>
-            <div class="google-badge">
-              <svg class="google-g-icon" viewBox="0 0 24 24">
-                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
-                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
-              </svg>
-              <span>Google Review</span>
-            </div>
-          </div>
-          <blockquote class="review-quote-body">
-            Feels like home!! I didn't know that they are manufacturers too, so the quality and price is quite reasonable, rather excellent, I must say. Wardrobes, kitchen, furniture, you name it, you get it, ALL CUSTOMIZED! Visited the Laxmisagar showroom and the view was so homely. Exceptional craftsmanship!
-          </blockquote>
-          <div class="review-author-row">
-            <div class="review-avatar-wrap">
-              <img 
-                src="/assets/images/reviews/review_priyabrata.jpg" 
-                alt="Priyabrata Pattnaik client review photo" 
-                class="review-avatar-img"
-                width="54"
-                height="54"
+            <div class="trust-video-frame" id="trustVideoFrame">
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube-nocookie.com/embed/Gc-_NirqGrI?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1&loop=1&playlist=Gc-_NirqGrI" 
+                title="Vizous Interio Main Office &amp; Showroom Tour" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen
                 loading="lazy"
-              />
-              <div class="avatar-verified-check">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
+                style="position:absolute; inset:0; width:100%; height:100%; border:none; border-radius:inherit;"
+              ></iframe>
             </div>
-            <div class="review-author-meta">
-              <h4 class="review-author-name">Priyabrata Pattnaik</h4>
-              <p class="review-author-loc">Laxmisagar, Bhubaneswar &bull; Full Home</p>
-            </div>
-          </div>
-        </div>
 
-        <!-- Review 2 -->
-        <div class="review-luxury-card">
-          <div class="review-card-top">
-            <div class="review-stars-wrap">
-              <span class="stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-              <span class="review-score">5.0</span>
-            </div>
-            <div class="google-badge">
-              <svg class="google-g-icon" viewBox="0 0 24 24">
-                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
-                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
-              </svg>
-              <span>Google Review</span>
-            </div>
-          </div>
-          <blockquote class="review-quote-body">
-            &ldquo;VIZOUS&rdquo; is the only one stop solution for all your interior needs in Odisha. There is a wide range of Modular Kitchen, Wardrobes &amp; Furniture. The service &amp; commitment towards their customers is awesome. Handed over my 3BHK flat exactly within 40 days as promised.
-          </blockquote>
-          <div class="review-author-row">
-            <div class="review-avatar-wrap">
-              <img 
-                src="/assets/images/reviews/review_vikram.jpg" 
-                alt="Vikram Dugar client review photo" 
-                class="review-avatar-img"
-                width="54"
-                height="54"
-                loading="lazy"
-              />
-              <div class="avatar-verified-check">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-            </div>
-            <div class="review-author-meta">
-              <h4 class="review-author-name">Vikram Dugar</h4>
-              <p class="review-author-loc">Bhubaneswar &bull; 3BHK Turnkey Flat</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Review 3 -->
-        <div class="review-luxury-card">
-          <div class="review-card-top">
-            <div class="review-stars-wrap">
-              <span class="stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-              <span class="review-score">5.0</span>
-            </div>
-            <div class="google-badge">
-              <svg class="google-g-icon" viewBox="0 0 24 24">
-                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
-                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
-              </svg>
-              <span>Google Review</span>
-            </div>
-          </div>
-          <blockquote class="review-quote-body">
-            I am thrilled visiting modular kitchen store &ldquo;VIZOUS&rdquo;. The quality of the materials and the attention to detail are outstanding. The design fits perfectly to our space, and the functionality is fantastic. The staff was helpful and patient throughout. Highly recommend!
-          </blockquote>
-          <div class="review-author-row">
-            <div class="review-avatar-wrap">
-              <img 
-                src="/assets/images/reviews/review_sandipan.jpg" 
-                alt="Sandipan Hui client review photo" 
-                class="review-avatar-img"
-                width="54"
-                height="54"
-                loading="lazy"
-              />
-              <div class="avatar-verified-check">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-            </div>
-            <div class="review-author-meta">
-              <h4 class="review-author-name">Sandipan Hui</h4>
-              <p class="review-author-loc">Cuttack / Bhubaneswar &bull; Modular Kitchen</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Expandable Hidden Row for more authentic reviews -->
-        <div class="reviews-hidden-row" id="moreReviewsRow">
-          <!-- Review 4 -->
-          <div class="review-luxury-card">
-            <div class="review-card-top">
-              <div class="review-stars-wrap">
-                <span class="stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <span class="review-score">5.0</span>
-              </div>
-              <div class="google-badge">
-                <svg class="google-g-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
-                <span>Google Review</span>
-              </div>
-            </div>
-            <blockquote class="review-quote-body">
-              Manufacturer of modular kitchen with amazing designs and excellent products, customized as per space. Having their own factory in Bhagabanpur ensures top notch finishing that ready-made stores simply cannot match.
-            </blockquote>
-            <div class="review-author-row">
-              <div class="review-avatar-wrap">
-                <img src="/assets/images/reviews/review_kapil.jpg" alt="Kapil Khandelwal client photo" class="review-avatar-img" width="54" height="54" loading="lazy" />
-                <div class="avatar-verified-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-              </div>
-              <div class="review-author-meta">
-                <h4 class="review-author-name">Kapil Khandelwal</h4>
-                <p class="review-author-loc">Bhubaneswar &bull; Modular Living</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Review 5 -->
-          <div class="review-luxury-card">
-            <div class="review-card-top">
-              <div class="review-stars-wrap">
-                <span class="stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <span class="review-score">5.0</span>
-              </div>
-              <div class="google-badge">
-                <svg class="google-g-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
-                <span>Google Review</span>
-              </div>
-            </div>
-            <blockquote class="review-quote-body">
-              The quality of the product is superb... The in-house design house they have is excellent in the way they utilize every square inch of space. Moreover, the service quality and time-bound assurance is applaudable. Thank you Vizous team for making my home a beautiful place!
-            </blockquote>
-            <div class="review-author-row">
-              <div class="review-avatar-wrap">
-                <img src="/assets/images/reviews/review_rajat.jpg" alt="Rajat Panigrahi client photo" class="review-avatar-img" width="54" height="54" loading="lazy" />
-                <div class="avatar-verified-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-              </div>
-              <div class="review-author-meta">
-                <h4 class="review-author-name">Rajat Panigrahi</h4>
-                <p class="review-author-loc">Bhubaneswar &bull; Complete Home Interior</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Review 6 -->
-          <div class="review-luxury-card">
-            <div class="review-card-top">
-              <div class="review-stars-wrap">
-                <span class="stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <span class="review-score">5.0</span>
-              </div>
-              <div class="google-badge">
-                <svg class="google-g-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
-                <span>Google Review</span>
-              </div>
-            </div>
-            <blockquote class="review-quote-body">
-              Great Interior Design and good demo display at their experience center. Request everyone to visit their showroom near Laxmisagar Square to check the live finish quality and consult with their architects for your requirements.
-            </blockquote>
-            <div class="review-author-row">
-              <div class="review-avatar-wrap">
-                <img src="/assets/images/reviews/review_jangyadev.jpg" alt="Jangyadev Mohapatra client photo" class="review-avatar-img" width="54" height="54" loading="lazy" />
-                <div class="avatar-verified-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-              </div>
-              <div class="review-author-meta">
-                <h4 class="review-author-name">Jangyadev Mohapatra</h4>
-                <p class="review-author-loc">Laxmisagar, Bhubaneswar &bull; Architectural Suite</p>
-              </div>
+            <div class="trust-video-caption">
+              <strong>Official Video</strong>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="reviews-toggle-wrap">
-        <button class="btn-toggle-reviews" id="toggleReviewsBtn" onclick="window.toggleMoreReviews && window.toggleMoreReviews()">
-          <span id="toggleReviewsBtnText">View More Verified Google Reviews</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+  <!-- SECTION 3: MODULAR KITCHENS (REFERENCE SHOWCASE) -->
+  <section class="ref-showcase-section" id="kitchenShowcaseSection">
+    <div class="container">
+      <div class="ref-showcase-header">
+        <h2 class="ref-showcase-title">Modular Kitchens Designed for Modern Homes</h2>
+      </div>
+
+      <div class="ref-carousel-wrapper">
+        <button class="ref-nav-btn prev" aria-label="Previous Kitchen Design" onclick="slideRefCarousel('kitchenCarouselTrack', -1)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+
+        <div class="ref-carousel-track" id="kitchenCarouselTrack">
+          <!-- Card 1 -->
+          <a href="/modular-kitchen.html" class="ref-card">
+            <div class="ref-card-media">
+              <img src="/assets/images/ref_kitchen_1.jpg" alt="Sleek Modular Kitchen with Tall Storage Units" class="ref-card-img" loading="lazy" />
+            </div>
+            <div class="ref-card-caption">Sleek Modular Kitchen with Tall Storage Units</div>
+          </a>
+
+          <!-- Card 2 -->
+          <a href="/modular-kitchen.html" class="ref-card">
+            <div class="ref-card-media">
+              <img src="/assets/images/ref_kitchen_2.jpg" alt="U-Shaped Modular Kitchen with Sleek Storage" class="ref-card-img" loading="lazy" />
+            </div>
+            <div class="ref-card-caption">U-Shaped Modular Kitchen with Sleek Storage</div>
+          </a>
+
+          <!-- Card 3 -->
+          <a href="/modular-kitchen.html" class="ref-card">
+            <div class="ref-card-media">
+              <img src="/assets/images/ref_kitchen_3.jpg" alt="Stylish Modular Kitchen with Dual-Tone Cabinets" class="ref-card-img" loading="lazy" />
+            </div>
+            <div class="ref-card-caption">Stylish Modular Kitchen with Dual-Tone Cabinets</div>
+          </a>
+
+          <!-- Card 4 -->
+          <a href="/modular-kitchen.html#lshape" class="ref-card">
+            <div class="ref-card-media">
+              <img src="/assets/images/modular_kitchen_1.jpg" alt="L-Shaped Modular Kitchen with Smart Corner Storage" class="ref-card-img" loading="lazy" />
+            </div>
+            <div class="ref-card-caption">L-Shaped Modular Kitchen with Smart Corner Storage</div>
+          </a>
+
+          <!-- Card 5 -->
+          <a href="/modular-kitchen.html" class="ref-card">
+            <div class="ref-card-media">
+              <img src="/assets/images/modular_kitchen_4.jpg" alt="Parallel Modular Kitchen with Quartz Island" class="ref-card-img" loading="lazy" />
+            </div>
+            <div class="ref-card-caption">Parallel Modular Kitchen with Quartz Island</div>
+          </a>
+
+          <!-- Card 6 -->
+          <a href="/modular-kitchen.html" class="ref-card">
+            <div class="ref-card-media">
+              <img src="/assets/images/modular_kitchen_7.jpg" alt="Island Modular Kitchen with Breakfast Counter" class="ref-card-img" loading="lazy" />
+            </div>
+            <div class="ref-card-caption">Island Modular Kitchen with Breakfast Counter</div>
+          </a>
+        </div>
+
+        <button class="ref-nav-btn next" aria-label="Next Kitchen Design" onclick="slideRefCarousel('kitchenCarouselTrack', 1)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+      <div class="ref-cta-container">
+        <button class="ref-section-cta-btn" onclick="openConsultationModal('Download Modular Kitchen Catalogue')">
+          Download Catalog
         </button>
       </div>
     </div>
   </section>
 
-  <!-- COMPREHENSIVE FAQ ACCORDION -->
-  <section class="section" id="faqSection">
-    <div class="container" style="max-width:900px;">
-      <div class="section-header text-center">
-        <span class="section-tag">Clear Answers</span>
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-desc">
-          Everything you need to know about our materials, warranties, factory visits, and handover guarantees.
+  <!-- SECTION 4: LIVING ROOMS (REFERENCE SHOWCASE) -->
+  <section class="ref-showcase-section alt-bg" id="livingShowcaseSection">
+    <div class="container">
+      <div class="ref-showcase-header">
+        <h2 class="ref-showcase-title">Living Rooms That Host Your Happiest Moments</h2>
+      </div>
+
+      <div class="ref-carousel-wrapper">
+        <button class="ref-nav-btn prev" aria-label="Previous Living Room Design" onclick="slideRefCarousel('livingCarouselTrack', -1)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+
+        <div class="ref-carousel-track" id="livingCarouselTrack">
+          <!-- Card 1 -->
+          <a href="/living-rooms.html" class="ref-card">
+            <div class="ref-card-media">
+              <img src="/assets/images/ref_living_1.jpg" alt="Contemporary Living Room with Floating TV Unit" class="ref-card-img" loading="lazy" />
+            </div>
+            <div class="ref-card-caption">Contemporary Living Room with Floating TV Unit</div>
+          </a>
+
+          <!-- Card 2 -->
+          <a href="/living-rooms.html" class="ref-card">
+            <div class="ref-card-media">
+              <img src="/assets/images/ref_living_2.jpg" alt="Modern Living Room with Wall Panelling" class="ref-card-img" loading="lazy" />
+            </div>
+            <div class="ref-card-caption">Modern Living Room with Wall Panelling</div>
+          </a>
+
+          <!-- Card 3 -->
+          <a href="/living-rooms.html" class="ref-card">
+            <div class="ref-card-media">
+              <img src="/assets/images/ref_living_3.jpg" alt="Contemporary Living Room with Floating Backlit TV Unit" class="ref-card-img" loading="lazy" />
+            </div>
+            <div class="ref-card-caption">Contemporary Living Room with Floating Backlit TV Unit</div>
+          </a>
+
+          <!-- Card 4 -->
+          <a href="/living-rooms.html" class="ref-card">
+            <div class="ref-card-media">
+              <img src="/assets/images/home_1.jpg" alt="Modern Minimalist Open Living &amp; Dining Space" class="ref-card-img" loading="lazy" />
+            </div>
+            <div class="ref-card-caption">Modern Minimalist Open Living &amp; Dining Space</div>
+          </a>
+
+          <!-- Card 5 -->
+          <a href="/living-rooms.html" class="ref-card">
+            <div class="ref-card-media">
+              <img src="/assets/images/home_5.jpg" alt="Warm Contemporary Living Room with Ambient Lighting" class="ref-card-img" loading="lazy" />
+            </div>
+            <div class="ref-card-caption">Warm Contemporary Living Room with Ambient Lighting</div>
+          </a>
+
+          <!-- Card 6 -->
+          <a href="/living-rooms.html" class="ref-card">
+            <div class="ref-card-media">
+              <img src="/assets/images/home_decor_5.jpg" alt="Luxury Living Room with Designer Panelling &amp; Chandelier" class="ref-card-img" loading="lazy" />
+            </div>
+            <div class="ref-card-caption">Luxury Living Room with Designer Panelling &amp; Chandelier</div>
+          </a>
+        </div>
+
+        <button class="ref-nav-btn next" aria-label="Next Living Room Design" onclick="slideRefCarousel('livingCarouselTrack', 1)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+      <div class="ref-cta-container">
+        <button class="ref-section-cta-btn" onclick="openConsultationModal('Download Living Room Catalogue')">
+          Download Catalog
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: MEET A DESIGNER BANNER (REPLACED "WHY HOMEOWNERS CHOOSE VIZOUS") -->
+  <section class="designer-banner-section" id="meetDesignerBanner">
+    <img 
+      src="/assets/images/banner_designer_lounge.jpg" 
+      alt="Vizous Interio Luxury Living and Dining Suite" 
+      class="designer-banner-bg" 
+      loading="lazy" 
+    />
+    <div class="designer-banner-overlay"></div>
+    <div class="designer-banner-container">
+      <div class="designer-banner-content">
+        <h2 class="designer-banner-heading">
+          3,000+ Happy Customers,<br />
+          Ready to Design Your Dream Home.
+        </h2>
+        <p class="designer-banner-subtext">
+          Backed by 15+ years of craft excellence &amp; an in-house 15,000+ sq.ft factory in Bhubaneswar.
         </p>
       </div>
 
-      <div class="faq-list" style="margin-top:2.5rem;">
-        <div class="faq-item active">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <span>What materials and plywood grades does Vizous use?</span>
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer" style="max-height:200px;">
-            <div class="faq-answer-inner">
-              We exclusively use 100% IS:710 Boiling Water Proof (BWP) Marine Grade Plywood for wet zones (kitchens and vanities) and IS:303 BWR / Commercial ply for dry bedroom zones. Surface finishes include German acrylics, Italian PU lacquers, and scratch-resistant decorative laminates from CenturyPly, Greenpanel, and Merino.
+      <div class="designer-card-wrap">
+        <div class="designer-form-card">
+          <h3 class="designer-form-title">Meet a designer</h3>
+          <form class="designer-form-fields" onsubmit="window.handleDesignerBannerSubmit && window.handleDesignerBannerSubmit(event)">
+            <input 
+              type="text" 
+              name="name" 
+              class="designer-form-input" 
+              placeholder="Enter your name" 
+              required 
+            />
+
+            <div class="designer-phone-group">
+              <span class="designer-flag-code">🇮🇳 +91</span>
+              <input 
+                type="tel" 
+                name="phone" 
+                class="designer-form-input" 
+                placeholder="Enter your mobile number" 
+                pattern="[0-9]{10}" 
+                maxlength="10" 
+                required 
+              />
             </div>
+
+            <div class="designer-toggle-row">
+              <span class="designer-toggle-label">Send me updates on WhatsApp</span>
+              <label class="designer-switch" aria-label="Toggle WhatsApp Updates">
+                <input type="checkbox" id="waUpdatesCheck" checked />
+                <span class="designer-slider"></span>
+              </label>
+            </div>
+
+            <div class="designer-select-wrap">
+              <select name="city" class="designer-form-select" required>
+                <option value="" disabled selected>Select your property city</option>
+                <option value="Bhubaneswar">Bhubaneswar</option>
+                <option value="Cuttack">Cuttack</option>
+                <option value="Puri">Puri</option>
+                <option value="Rourkela">Rourkela</option>
+                <option value="Raipur">Raipur</option>
+                <option value="Other">Other City</option>
+              </select>
+            </div>
+
+            <button type="submit" class="designer-form-submit-btn">
+              <span>Book 3D Design Session</span>
+              <span class="designer-submit-free-badge">FREE</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+
+            <p class="designer-form-disclaimer">
+              By submitting, you agree to our <a href="/contact.html">privacy policy</a> and <a href="/contact.html">terms of use</a>, allowing us to use your information as outlined.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6A: BEDROOM DESIGNS (REFERENCE SHOWCASE) -->
+  <section class="ref-showcase-section" id="bedroomShowcaseSection">
+    <div class="container">
+      <div class="ref-showcase-header">
+        <h2 class="ref-showcase-title">Bedroom Designs Crafted for Peaceful Living</h2>
+      </div>
+
+      <div class="ref-carousel-wrapper">
+        <button class="ref-nav-btn prev" aria-label="Previous Bedroom Design" onclick="slideRefCarousel('bedroomCarouselTrack', -1)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+
+        <div class="ref-carousel-track" id="bedroomCarouselTrack">
+          <!-- Card 1 -->
+          <a href="/bedrooms.html" class="ref-card">
+            <div class="ref-card-media">
+              <img src="/assets/images/beds_1.jpg" alt="Bespoke King Bed with Upholstered Headboard" class="ref-card-img" loading="lazy" />
+            </div>
+            <div class="ref-card-caption">Bespoke King Bed with Upholstered Headboard</div>
+          </a>
+
+          <!-- Card 2 -->
+          <a href="/wardrobes.html" class="ref-card">
+            <div class="ref-card-media">
+              <img src="/assets/images/wardrobes_2.jpeg" alt="Tinted Fluted Glass Sliding Wardrobe" class="ref-card-img" loading="lazy" />
+            </div>
+            <div class="ref-card-caption">Tinted Fluted Glass Sliding Wardrobe</div>
+          </a>
+
+          <!-- Card 3 -->
+          <a href="/bedrooms.html" class="ref-card">
+            <div class="ref-card-media">
+              <img src="/assets/images/beds_2.jpg" alt="Hydraulic Lift-Up Storage Platform Bed" class="ref-card-img" loading="lazy" />
+            </div>
+            <div class="ref-card-caption">Hydraulic Lift-Up Storage Platform Bed</div>
+          </a>
+
+          <!-- Card 4 -->
+          <a href="/wardrobes.html" class="ref-card">
+            <div class="ref-card-media">
+              <img src="/assets/images/wardrobes_1.jpg" alt="Floor-to-Ceiling Modular Hinged Wardrobe" class="ref-card-img" loading="lazy" />
+            </div>
+            <div class="ref-card-caption">Floor-to-Ceiling Modular Hinged Wardrobe</div>
+          </a>
+
+          <!-- Card 5 -->
+          <a href="/bedrooms.html" class="ref-card">
+            <div class="ref-card-media">
+              <img src="/assets/images/modern-bedroom-with-large-bed-wooden-wall-natural-light-1-768x432.jpg" alt="Master Suite with Warm Wood Wall Panelling" class="ref-card-img" loading="lazy" />
+            </div>
+            <div class="ref-card-caption">Master Suite with Warm Wood Wall Panelling</div>
+          </a>
+
+          <!-- Card 6 -->
+          <a href="/wardrobes.html" class="ref-card">
+            <div class="ref-card-media">
+              <img src="/assets/images/wardrobes_3.jpg" alt="Walk-In Dressing Room with Ambient LED Lighting" class="ref-card-img" loading="lazy" />
+            </div>
+            <div class="ref-card-caption">Walk-In Dressing Room with Ambient LED Lighting</div>
+          </a>
+        </div>
+
+        <button class="ref-nav-btn next" aria-label="Next Bedroom Design" onclick="slideRefCarousel('bedroomCarouselTrack', 1)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+      <div class="ref-cta-container">
+        <button class="ref-section-cta-btn" onclick="openConsultationModal('Download Bedroom Catalogue')">
+          Download Catalog
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6B: DOORS AND WINDOWS (REFERENCE SHOWCASE) -->
+  <section class="ref-showcase-section alt-bg" id="doorsWindowsShowcaseSection">
+    <div class="container">
+      <div class="ref-showcase-header">
+        <h2 class="ref-showcase-title">Doors and Windows Built for Safety &amp; Elegance</h2>
+      </div>
+
+      <div class="ref-carousel-wrapper">
+        <button class="ref-nav-btn prev" aria-label="Previous Doors &amp; Windows Design" onclick="slideRefCarousel('doorsWindowsCarouselTrack', -1)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+
+        <div class="ref-carousel-track" id="doorsWindowsCarouselTrack">
+          <!-- Card 1 -->
+          <a href="/doors-windows.html" class="ref-card">
+            <div class="ref-card-media">
+              <img src="/assets/images/beds_11.jpg" alt="Acoustic Double-Glazed Bay Window with Seating" class="ref-card-img" loading="lazy" />
+            </div>
+            <div class="ref-card-caption">Acoustic Double-Glazed Bay Window with Seating</div>
+          </a>
+
+          <!-- Card 2 -->
+          <a href="/doors-windows.html" class="ref-card">
+            <div class="ref-card-media">
+              <img src="/assets/images/beds_12.jpg" alt="Floor-to-Ceiling Panoramic Balcony Sliding Windows" class="ref-card-img" loading="lazy" />
+            </div>
+            <div class="ref-card-caption">Floor-to-Ceiling Panoramic Balcony Sliding Windows</div>
+          </a>
+
+          <!-- Card 3 -->
+          <a href="/doors-windows.html" class="ref-card">
+            <div class="ref-card-media">
+              <img src="/assets/images/modular_furniture_13.jpg" alt="Architectural Timber Partition &amp; Fluted Doorway" class="ref-card-img" loading="lazy" />
+            </div>
+            <div class="ref-card-caption">Architectural Timber Partition &amp; Fluted Doorway</div>
+          </a>
+
+          <!-- Card 4 -->
+          <a href="/doors-windows.html" class="ref-card">
+            <div class="ref-card-media">
+              <img src="/assets/images/office_furniture_1.jpg" alt="Commercial Acoustic Glass Partition &amp; Door System" class="ref-card-img" loading="lazy" />
+            </div>
+            <div class="ref-card-caption">Commercial Acoustic Glass Partition &amp; Door System</div>
+          </a>
+
+          <!-- Card 5 -->
+          <a href="/doors-windows.html" class="ref-card">
+            <div class="ref-card-media">
+              <img src="/assets/images/home_decor_1.jpg" alt="Designer Fluted Wall Panelling &amp; Concealed Door" class="ref-card-img" loading="lazy" />
+            </div>
+            <div class="ref-card-caption">Designer Fluted Wall Panelling &amp; Concealed Door</div>
+          </a>
+
+          <!-- Card 6 -->
+          <a href="/doors-windows.html" class="ref-card">
+            <div class="ref-card-media">
+              <img src="/assets/images/home_decor_2.jpg" alt="Geometric Wood Panelling &amp; Entrance Portal" class="ref-card-img" loading="lazy" />
+            </div>
+            <div class="ref-card-caption">Geometric Wood Panelling &amp; Entrance Portal</div>
+          </a>
+        </div>
+
+        <button class="ref-nav-btn next" aria-label="Next Doors &amp; Windows Design" onclick="slideRefCarousel('doorsWindowsCarouselTrack', 1)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+      <div class="ref-cta-container">
+        <button class="ref-section-cta-btn" onclick="openConsultationModal('Download Doors and Windows Catalogue')">
+          Download Catalog
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: VIZOUS OFFICE, STUDIO & INFRASTRUCTURE MULTIMEDIA GALLERY -->
+  <section class="section" id="officeGallery">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">Flagship Spaces &bull; Bhubaneswar</span>
+        <h2 class="section-title">Our Flagship Office &amp; Experience Centre</h2>
+        <p class="section-desc">
+          Take a look inside our luxury design studios at Laxmisagar Square, Cuttack Road, Bhubaneswar, and our in-house automated manufacturing plant.
+        </p>
+      </div>
+
+      <div class="media-filter-bar">
+        <button class="media-filter-btn active" onclick="window.filterOfficeMedia && window.filterOfficeMedia('all', this)">All Media</button>
+        <button class="media-filter-btn" onclick="window.filterOfficeMedia && window.filterOfficeMedia('office', this)">Office &amp; Studios</button>
+        <button class="media-filter-btn" onclick="window.filterOfficeMedia && window.filterOfficeMedia('video', this)">Walkthrough Videos</button>
+        <button class="media-filter-btn" onclick="window.filterOfficeMedia && window.filterOfficeMedia('factory', this)">Direct Manufacturing</button>
+      </div>
+
+      <div class="office-media-grid">
+        <!-- 1. Video: Official Studio Tour -->
+        <div class="office-media-card" data-category="video" onclick="window.openVideoModal && window.openVideoModal('Gc-_NirqGrI', 'Vizous Interio Flagship Studio &amp; Experience Centre Tour')">
+          <div class="office-media-stage">
+            <img src="https://img.youtube.com/vi/Gc-_NirqGrI/hqdefault.jpg" alt="Vizous Flagship Studio &amp; Experience Centre Tour" class="office-media-img" loading="lazy" />
+            <span class="office-media-badge video-badge">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Video Tour
+            </span>
+            <div class="office-media-play">
+              <div class="office-play-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="office-media-body">
+            <h4 class="office-media-title">Flagship Studio &amp; Experience Centre Tour</h4>
+            <span class="office-media-loc">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              1st Floor, Laxmi Sagar Square, Bhubaneswar
+            </span>
           </div>
         </div>
 
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <span>Can I visit your factory before placing an order?</span>
-            <span class="faq-icon">+</span>
+        <!-- 2. Image: Client Lounge & Experience Centre -->
+        <div class="office-media-card" data-category="office" onclick="window.openLightbox && window.openLightbox('/assets/images/banner_designer_lounge.jpg', 'Vizous Designer Lounge &amp; Experience Centre - Bhubaneswar')">
+          <div class="office-media-stage">
+            <img src="/assets/images/banner_designer_lounge.jpg" alt="Vizous Designer Lounge &amp; Experience Centre" class="office-media-img" loading="lazy" />
+            <span class="office-media-badge">
+              Experience Centre
+            </span>
           </div>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Yes, absolutely! We encourage all homeowners and architects to visit our 15,000+ sq.ft manufacturing facility at Plot #12, Bhagabanpur Industrial Estate, Patrapada, Bhubaneswar. You can inspect the German Homag CNC beam saws, automated edge-banding lines, and board raw materials firsthand.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <span>What does the 10-Year Warranty cover?</span>
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Our 10-year warranty provides replacement coverage against termite infestation, borer attacks, and delamination of our IS:710 marine plywood carcasses, as well as manufacturer replacement on all Hettich and Hafele soft-close hinges, tandem runners, and hydraulic lift mechanisms.
-            </div>
+          <div class="office-media-body">
+            <h4 class="office-media-title">Luxury Client Consultation Lounge</h4>
+            <span class="office-media-loc">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Laxmisagar Studio, Bhubaneswar
+            </span>
           </div>
         </div>
 
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <span>How does the 45-day handover guarantee work?</span>
-            <span class="faq-icon">+</span>
+        <!-- 3. Image: 3D Consultation Suite & Meeting Room -->
+        <div class="office-media-card" data-category="office" onclick="window.openLightbox && window.openLightbox('/assets/images/business-meeting-room-high-rise-office-building-with-colorful-decor-furnture-768x512.jpg', 'Architectural 3D Presentation &amp; Meeting Studio')">
+          <div class="office-media-stage">
+            <img src="/assets/images/business-meeting-room-high-rise-office-building-with-colorful-decor-furnture-768x512.jpg" alt="Architectural 3D Presentation &amp; Meeting Studio" class="office-media-img" loading="lazy" />
+            <span class="office-media-badge">
+              Design Studio
+            </span>
           </div>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Once you approve the 3D drawings and sign off on materials, your clock begins. Because all components are pre-machined at our Bhagabanpur plant, on-site installation takes only 5 to 7 days, ensuring total handover within 45 working days.
+          <div class="office-media-body">
+            <h4 class="office-media-title">3D Design &amp; Architectural Review Suite</h4>
+            <span class="office-media-loc">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Corporate Head Office, Bhubaneswar
+            </span>
+          </div>
+        </div>
+
+        <!-- 4. Video: Modular Kitchen Execution Walkthrough -->
+        <div class="office-media-card" data-category="video" onclick="window.openVideoModal && window.openVideoModal('7ETOi3lKVQY', 'Modular Kitchen Designs - Project Walkthrough')">
+          <div class="office-media-stage">
+            <img src="https://img.youtube.com/vi/7ETOi3lKVQY/hqdefault.jpg" alt="Modular Kitchen Designs Walkthrough" class="office-media-img" loading="lazy" />
+            <span class="office-media-badge video-badge">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Video Walkthrough
+            </span>
+            <div class="office-media-play">
+              <div class="office-play-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
             </div>
+          </div>
+          <div class="office-media-body">
+            <h4 class="office-media-title">Modular Kitchen Execution &amp; Finishes</h4>
+            <span class="office-media-loc">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Odisha Turnkey Handover
+            </span>
+          </div>
+        </div>
+
+        <!-- 5. Image: Materials & Hardware Lab -->
+        <div class="office-media-card" data-category="office" onclick="window.openLightbox && window.openLightbox('/assets/images/office_furniture_1.jpg', 'Architectural Hardware &amp; Materials Lab - Vizous')">
+          <div class="office-media-stage">
+            <img src="/assets/images/office_furniture_1.jpg" alt="Architectural Hardware &amp; Materials Lab" class="office-media-img" loading="lazy" />
+            <span class="office-media-badge">
+              Materials Lab
+            </span>
+          </div>
+          <div class="office-media-body">
+            <h4 class="office-media-title">Hardware &amp; Fitting Display Lab</h4>
+            <span class="office-media-loc">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Live Touch-and-Feel Samples
+            </span>
+          </div>
+        </div>
+
+        <!-- 6. Video: Turnkey Living & Lounge Walkthrough -->
+        <div class="office-media-card" data-category="video" onclick="window.openVideoModal && window.openVideoModal('jxiODXemNPY', 'Interior Design in Bhubaneswar - Living &amp; TV Suite')">
+          <div class="office-media-stage">
+            <img src="https://img.youtube.com/vi/jxiODXemNPY/hqdefault.jpg" alt="Interior Design Living Room Walkthrough" class="office-media-img" loading="lazy" />
+            <span class="office-media-badge video-badge">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Video Walkthrough
+            </span>
+            <div class="office-media-play">
+              <div class="office-play-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="office-media-body">
+            <h4 class="office-media-title">Living &amp; TV Lounge Interior Walkthrough</h4>
+            <span class="office-media-loc">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Nayapalli, Bhubaneswar
+            </span>
+          </div>
+        </div>
+
+        <!-- 7. Image: German CNC Panel Saw Line -->
+        <div class="office-media-card" data-category="factory" onclick="window.openLightbox && window.openLightbox('/assets/images/about_3.png', 'German Homag CNC Beam Saw Line - Bhagabanpur Factory')">
+          <div class="office-media-stage">
+            <img src="/assets/images/about_3.png" alt="German CNC Beam Saw Line" class="office-media-img" loading="lazy" />
+            <span class="office-media-badge">
+              Manufacturing
+            </span>
+          </div>
+          <div class="office-media-body">
+            <h4 class="office-media-title">Automated CNC Panel Sizing Line</h4>
+            <span class="office-media-loc">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Bhagabanpur Industrial Estate, Patrapada
+            </span>
+          </div>
+        </div>
+
+        <!-- 8. Image: Automated Edge Banding & Moisture Sealing -->
+        <div class="office-media-card" data-category="factory" onclick="window.openLightbox && window.openLightbox('/assets/images/about_5.png', 'Automated Zero-Joint Edge Banding Facility - Patrapada')">
+          <div class="office-media-stage">
+            <img src="/assets/images/about_5.png" alt="Automated Zero-Joint Edge Bander" class="office-media-img" loading="lazy" />
+            <span class="office-media-badge">
+              Manufacturing
+            </span>
+          </div>
+          <div class="office-media-body">
+            <h4 class="office-media-title">Zero-Joint Edge Sealing Facility</h4>
+            <span class="office-media-loc">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Plot #12, Patrapada, Bhubaneswar
+            </span>
+          </div>
+        </div>
+
+        <!-- 9. Video: Bedroom & Luxury Wardrobes -->
+        <div class="office-media-card" data-category="video" onclick="window.openVideoModal && window.openVideoModal('agUh1dXPNf4', 'Home Interior Design Services - Kids Room &amp; Wardrobes')">
+          <div class="office-media-stage">
+            <img src="https://img.youtube.com/vi/agUh1dXPNf4/hqdefault.jpg" alt="Home Interior Design Services Walkthrough" class="office-media-img" loading="lazy" />
+            <span class="office-media-badge video-badge">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Video Walkthrough
+            </span>
+            <div class="office-media-play">
+              <div class="office-play-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="office-media-body">
+            <h4 class="office-media-title">Kids Bedroom &amp; Custom Wardrobes</h4>
+            <span class="office-media-loc">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Turnkey Suite Walkthrough
+            </span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FULL-WIDTH QUOTATION BANNER -->
-  <section class="container">
-    <div class="quote-banner">
-      <div class="quote-banner-content">
-        <h3>Ready to Transform Your Living Space?</h3>
-        <p>
-          Visit our Laxmisagar showroom or book a free 3D design session today. Our certified interior architects will create a custom floorplan tailored to your family's exact needs.
+  <!-- SECTION: IN-HOUSE MANUFACTURING ADVANTAGE, SHOP COMPARISON & CORE FEATURE GOALS -->
+  <section class="section" id="manufacturingAdvantage" style="background: var(--bg-page, #FAF7F2);">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">Direct In-House Manufacturing &bull; Bhagabanpur Plant</span>
+        <h2 class="section-title">Why Vizous In-House Factory Direct Is Better Than Traditional Shops</h2>
+        <p class="section-desc" style="max-width: 820px; margin: 0 auto 2.5rem;">
+          Unlike local contractors who cut raw boards on your floor or retail shops that outsource to third-party carpentry sheds, Vizous crafts every modular piece in our own 15,000+ sq.ft industrial plant in Bhubaneswar.
         </p>
       </div>
-      <div class="quote-banner-actions">
-        <button class="btn-banner-primary" data-action="consult">
-          Book Free 3D Session &rarr;
+
+      <!-- MANUFACTURING PLANT NARRATIVE BOX -->
+      <div class="mfg-narrative-box">
+        <div class="mfg-narrative-header">
+          <span class="mfg-plant-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M5 20V8l7-5 7 5v12"/></svg>
+            In-House Manufacturing Plant
+          </span>
+          <span class="mfg-plant-spec">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Plot #12, Bhagabanpur Industrial Estate, Patrapada, Bhubaneswar-751019
+          </span>
+        </div>
+        <p class="mfg-narrative-p">
+          At Vizous, manufacturing isn't outsourced—it is our core engineering backbone. Our dedicated facility is equipped with automated German <strong>Homag CNC beam saws, computer-guided multi-spindle drilling lines, and high-pressure zero-joint edge banders</strong>. Every modular kitchen carcass and luxury wardrobe module is precision-cut to a <strong>0.1mm industrial tolerance</strong> using authentic, certified <strong>100% IS:710 Marine Grade BWP Plywood</strong>. This means zero on-site carpenter mess in your living room, zero toxic fumes, and true factory-direct wholesale pricing with no middleman markups.
+        </p>
+        <div class="mfg-specs-chips">
+          <span class="mfg-chip">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            German Homag CNC Automation
+          </span>
+          <span class="mfg-chip">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            0.1mm Microscopic Precision
+          </span>
+          <span class="mfg-chip">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            100% IS:710 Marine Grade BWP Plywood
+          </span>
+          <span class="mfg-chip">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            PUR Zero-Joint Hot-Melt Edge Sealing
+          </span>
+          <span class="mfg-chip">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Dust-Free 48-Hour Assembly
+          </span>
+          <span class="mfg-chip">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Direct Factory Wholesale Pricing
+          </span>
+        </div>
+      </div>
+
+      <!-- OFFICIAL FACTORY MACHINERY & REAL PROJECT VIDEOS -->
+      <div style="margin-bottom: 3.5rem;">
+        <div class="text-center" style="margin-bottom: 2rem;">
+          <span class="section-tag">Authentic Proof &bull; Machinery &amp; Client Projects</span>
+          <h3 style="font-family: var(--font-serif); font-size: 1.75rem; color: var(--text-main); margin-top: 0.35rem;">
+            Official Factory Floor &amp; Video Walkthroughs
+          </h3>
+        </div>
+
+        <div class="office-media-grid" style="grid-template-columns: repeat(4, 1fr);">
+          <!-- 1. Homag Beam Saw Photo -->
+          <div class="office-media-card" onclick="window.openLightbox && window.openLightbox('/assets/images/about_3.png', 'German Homag CNC Beam Saw - Bhagabanpur Industrial Plant')">
+            <div class="office-media-stage">
+              <img src="/assets/images/about_3.png" alt="German Homag CNC Beam Saw Line" class="office-media-img" loading="lazy" />
+              <span class="office-media-badge">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M5 20V8l7-5 7 5v12"/></svg>
+                Factory Machine
+              </span>
+            </div>
+            <div class="office-media-body">
+              <h4 class="office-media-title">German Homag CNC Beam Saw</h4>
+              <span class="office-media-loc">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                0.1mm Precision Sizing
+              </span>
+            </div>
+          </div>
+
+          <!-- 2. Edge Bander Photo -->
+          <div class="office-media-card" onclick="window.openLightbox && window.openLightbox('/assets/images/about_5.png', 'Automated Zero-Joint PUR Edge Bander - Bhagabanpur Plant')">
+            <div class="office-media-stage">
+              <img src="/assets/images/about_5.png" alt="Zero-Joint Edge Bander" class="office-media-img" loading="lazy" />
+              <span class="office-media-badge">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M5 20V8l7-5 7 5v12"/></svg>
+                Factory Machine
+              </span>
+            </div>
+            <div class="office-media-body">
+              <h4 class="office-media-title">Zero-Joint PUR Edge Bander</h4>
+              <span class="office-media-loc">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Waterproof Edge Sealing
+              </span>
+            </div>
+          </div>
+
+          <!-- 3. Video: Kitchen Handover -->
+          <div class="office-media-card" onclick="window.openVideoModal && window.openVideoModal('7ETOi3lKVQY', 'Modular Kitchen Designs - Project Walkthrough')">
+            <div class="office-media-stage">
+              <img src="https://img.youtube.com/vi/7ETOi3lKVQY/hqdefault.jpg" alt="Modular Kitchen Designs Walkthrough" class="office-media-img" loading="lazy" />
+              <span class="office-media-badge video-badge">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                Official Video
+              </span>
+              <div class="office-media-play">
+                <div class="office-play-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="office-media-body">
+              <h4 class="office-media-title">Modular Kitchen Handover</h4>
+              <span class="office-media-loc">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Bhubaneswar Residence
+              </span>
+            </div>
+          </div>
+
+          <!-- 4. Video: Master Bedroom Wardrobes -->
+          <div class="office-media-card" onclick="window.openVideoModal && window.openVideoModal('pn8HxhhQuII', 'Master Bedroom & Luxury Wardrobes Walkthrough')">
+            <div class="office-media-stage">
+              <img src="https://img.youtube.com/vi/pn8HxhhQuII/hqdefault.jpg" alt="Master Bedroom & Luxury Wardrobes Walkthrough" class="office-media-img" loading="lazy" />
+              <span class="office-media-badge video-badge">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                Official Video
+              </span>
+              <div class="office-media-play">
+                <div class="office-play-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="office-media-body">
+              <h4 class="office-media-title">Glass Wardrobes Handover</h4>
+              <span class="office-media-loc">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Patia, Bhubaneswar
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDE-BY-SIDE COMPARISON: VIZOUS FACTORY vs TRADITIONAL SHOPS -->
+      <div class="mfg-comparison-grid">
+        <!-- Card 1: Vizous Factory Advantage -->
+        <div class="comparison-card vizous-winner">
+          <div class="comparison-header">
+            <div>
+              <span class="comparison-badge">Superior In-House Standard</span>
+              <h3 class="comparison-title" style="margin-top: 0.5rem;">Vizous In-House Factory Direct</h3>
+              <span class="comparison-subtitle">Engineered at Bhagabanpur Industrial Estate</span>
+            </div>
+            <div style="background:var(--color-primary-soft,#FDF6EE); color:var(--color-primary,#EE7F23); padding:0.5rem; border-radius:50%;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+          </div>
+          <ul class="comparison-items-list">
+            <li class="comparison-item">
+              <div class="item-icon-wrap">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="item-content">
+                <h5>Direct Factory Wholesale Pricing (Save 20%-30%)</h5>
+                <p>Because you buy direct from our manufacturing plant, showroom dealer markups and intermediary cuts are 100% eliminated.</p>
+              </div>
+            </li>
+            <li class="comparison-item">
+              <div class="item-icon-wrap">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="item-content">
+                <h5>0.1mm German Homag CNC Precision</h5>
+                <p>Computerized beam saws and robotic drilling lines ensure perfectly aligned shutters, flawless 90&deg; corners, and zero gaps.</p>
+              </div>
+            </li>
+            <li class="comparison-item">
+              <div class="item-icon-wrap">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="item-content">
+                <h5>100% Genuine IS:710 Marine Grade BWP Plywood</h5>
+                <p>72-hour boiling-water proof, calibrated core veneers specifically tested for Odisha's coastal humidity, moisture, and termite resistance.</p>
+              </div>
+            </li>
+            <li class="comparison-item">
+              <div class="item-icon-wrap">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="item-content">
+                <h5>Zero-Joint PUR Hot-Melt Edge Banding</h5>
+                <p>Hermetically sealed 1.5mm/2mm edge tape prevents moisture ingress, steam bubbling, and sharp rough edges permanently.</p>
+              </div>
+            </li>
+            <li class="comparison-item">
+              <div class="item-icon-wrap">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="item-content">
+                <h5>Dust-Free 48-Hour Modular Fitment</h5>
+                <p>Flat-packed, pre-drilled components arrive at your site and assemble seamlessly with zero carpenter sawdust or hammering noise.</p>
+              </div>
+            </li>
+            <li class="comparison-item">
+              <div class="item-icon-wrap">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="item-content">
+                <h5>Written 10-Year Factory Warranty &amp; SLA</h5>
+                <p>Backed by our corporate legal guarantee, genuine Blum/Hettich hardware warranties, and in-house servicing team.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 2: Traditional Retail Shops & Local Carpenters -->
+        <div class="comparison-card traditional-loser">
+          <div class="comparison-header">
+            <div>
+              <span class="comparison-badge">Market Risk Factors</span>
+              <h3 class="comparison-title" style="margin-top: 0.5rem;">Traditional Shops &amp; Local Carpenters</h3>
+              <span class="comparison-subtitle">Outsourced workshops &amp; manual site carpentry</span>
+            </div>
+            <div style="background:#FEECEB; color:#D32F2F; padding:0.5rem; border-radius:50%;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+            </div>
+          </div>
+          <ul class="comparison-items-list">
+            <li class="comparison-item">
+              <div class="item-icon-wrap">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </div>
+              <div class="item-content">
+                <h5>Inflated Middleman Markups (+25% to 40%)</h5>
+                <p>Multiple layers of commission agents, retailer margins, and contractor cuts add steep costs without adding any quality.</p>
+              </div>
+            </li>
+            <li class="comparison-item">
+              <div class="item-icon-wrap">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </div>
+              <div class="item-content">
+                <h5>Manual Hand-Saw Cuts &amp; Chipped Laminates</h5>
+                <p>Hand-held circular saws produce uneven edges, chipped laminate corners, sagging drawers, and misaligned hinge holes.</p>
+              </div>
+            </li>
+            <li class="comparison-item">
+              <div class="item-icon-wrap">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </div>
+              <div class="item-content">
+                <h5>Uncertified Commercial MR Ply / Particle Board</h5>
+                <p>Often uses inferior commercial ply that absorbs dampness, bends under load, and attracts termite hollows within 12 to 24 months.</p>
+              </div>
+            </li>
+            <li class="comparison-item">
+              <div class="item-icon-wrap">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </div>
+              <div class="item-content">
+                <h5>Manual Fevicol Edge Tape (Peels Within Months)</h5>
+                <p>Manual cold adhesives fail against kitchen steam and moisture, causing edge strips to detach and expose the core wood.</p>
+              </div>
+            </li>
+            <li class="comparison-item">
+              <div class="item-icon-wrap">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </div>
+              <div class="item-content">
+                <h5>Months of Toxic Sawdust, Noise &amp; Delays</h5>
+                <p>60 to 90 days of loud hammering, dust on walls, toxic glue odors, and unpredictable carpenter absconding schedules.</p>
+              </div>
+            </li>
+            <li class="comparison-item">
+              <div class="item-icon-wrap">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </div>
+              <div class="item-content">
+                <h5>Zero Post-Installation Accountability</h5>
+                <p>Verbal promises evaporate after final settlement; no formal repair SLA, no replacement guarantees, and zero warranty backing.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CORE FEATURE GOALS -->
+      <div class="feature-goals-header">
+        <span class="section-tag">Quality &bull; Durability &bull; Transparency</span>
+        <h3 class="section-title" style="font-size: 2rem;">Core Engineering &amp; Feature Goals</h3>
+        <p class="section-desc" style="max-width: 680px; margin: 0 auto;">
+          The four foundational pillars embedded into every turnkey project executed by Vizous Interio.
+        </p>
+      </div>
+
+      <div class="feature-goals-grid">
+        <!-- Goal 1 -->
+        <div class="goal-card">
+          <div class="goal-top-meta">
+            <span class="goal-number">GOAL 01</span>
+            <div class="goal-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+            </div>
+          </div>
+          <h4 class="goal-title">0.1mm Industrial Precision</h4>
+          <p class="goal-desc">
+            Computerized Homag routing guarantees micron-level hinge boring and runner fitment. Eliminates crooked drawer travel and shutter sagging permanently.
+          </p>
+        </div>
+
+        <!-- Goal 2 -->
+        <div class="goal-card">
+          <div class="goal-top-meta">
+            <span class="goal-number">GOAL 02</span>
+            <div class="goal-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+          </div>
+          <h4 class="goal-title">Odisha Weather Shield</h4>
+          <p class="goal-desc">
+            100% IS:710 Marine Grade BWP Plywood treated with anti-borer anti-termite resin matrices. Engineered to withstand coastal heat, monsoons, and extreme salinity.
+          </p>
+        </div>
+
+        <!-- Goal 3 -->
+        <div class="goal-card">
+          <div class="goal-top-meta">
+            <span class="goal-number">GOAL 03</span>
+            <div class="goal-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+          </div>
+          <h4 class="goal-title">100% Transparent Itemized BOQ</h4>
+          <p class="goal-desc">
+            Complete price lock with brand-certified hardware and ply specifications. Zero hidden mid-project surcharges, surprise carpentry costs, or material compromises.
+          </p>
+        </div>
+
+        <!-- Goal 4 -->
+        <div class="goal-card">
+          <div class="goal-top-meta">
+            <span class="goal-number">GOAL 04</span>
+            <div class="goal-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+          </div>
+          <h4 class="goal-title">45-Day Handover Guarantee</h4>
+          <p class="goal-desc">
+            Disciplined factory scheduling with live WhatsApp milestone notifications and swift 48-hour flat-pack installation backed by a written handover SLA.
+          </p>
+        </div>
+      </div>
+
+      <!-- FUTURE GOALS & VISION ROADMAP (2026-2030) -->
+      <div style="margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--border-subtle, #EAE3D8); margin-bottom: 3.5rem;">
+        <div class="feature-goals-header">
+          <span class="section-tag">2026&ndash;2030 Roadmap &bull; Strategic Vision</span>
+          <h3 class="section-title" style="font-size: 2rem;">Our Future Goals: Redefining Living Spaces</h3>
+          <p class="section-desc" style="max-width: 680px; margin: 0 auto;">
+            How Vizous Interio is scaling advanced automation, green manufacturing, and rapid delivery benchmarks across Odisha.
+          </p>
+        </div>
+
+        <div class="future-goals-container">
+          <!-- Goal 1 -->
+          <div class="future-goal-card">
+            <div class="future-goal-meta">
+              <span class="future-goal-year">2026&ndash;2027 TARGET</span>
+              <span class="future-goal-status">In Expansion</span>
+            </div>
+            <div class="future-goal-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h4 class="future-goal-title">Industry 4.0 Smart Factory Automation</h4>
+            <p class="future-goal-desc">
+              Upgrading our Bhagabanpur plant with robotic multi-axis drilling lines, IoT-driven panel sorting, and automated UV lacquer curing chambers to achieve zero-waste production.
+            </p>
+            <ul class="future-goal-milestones">
+              <li class="future-milestone-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Robotic 6-Axis Drilling Lines
+              </li>
+              <li class="future-milestone-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Automated UV Lacquer Curing
+              </li>
+            </ul>
+          </div>
+
+          <!-- Goal 2 -->
+          <div class="future-goal-card">
+            <div class="future-goal-meta">
+              <span class="future-goal-year">2027 TARGET</span>
+              <span class="future-goal-status">Pioneering</span>
+            </div>
+            <div class="future-goal-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+            </div>
+            <h4 class="future-goal-title">100% Zero-VOC Green Living</h4>
+            <p class="future-goal-desc">
+              Pioneering the green home revolution with certified E0-grade emission-free resin matrices, water-based Italian PU lacquers, and sustainably harvested coastal timber for healthier indoor air.
+            </p>
+            <ul class="future-goal-milestones">
+              <li class="future-milestone-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                E0-Grade Non-Toxic Adhesives
+              </li>
+              <li class="future-milestone-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Water-Based Italian Lacquers
+              </li>
+            </ul>
+          </div>
+
+          <!-- Goal 3 -->
+          <div class="future-goal-card">
+            <div class="future-goal-meta">
+              <span class="future-goal-year">2027&ndash;2028 TARGET</span>
+              <span class="future-goal-status">Fast-Track</span>
+            </div>
+            <div class="future-goal-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h4 class="future-goal-title">72-Hour Rapid Handover Standard</h4>
+            <p class="future-goal-desc">
+              Upgrading our current 45-day cycle to an unprecedented 72-hour flat-pack modular fitment standard using Digital Twin CAD-CAM integrations and pre-fitted German cam-lock fasteners.
+            </p>
+            <ul class="future-goal-milestones">
+              <li class="future-milestone-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Digital Twin CAD-CAM Sizing
+              </li>
+              <li class="future-milestone-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Pre-Calibrated Fast-Click Hardware
+              </li>
+            </ul>
+          </div>
+
+          <!-- Goal 4 -->
+          <div class="future-goal-card">
+            <div class="future-goal-meta">
+              <span class="future-goal-year">2028&ndash;2030 TARGET</span>
+              <span class="future-goal-status">Expansion</span>
+            </div>
+            <div class="future-goal-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h4 class="future-goal-title">Eastern India Experience Network</h4>
+            <p class="future-goal-desc">
+              Expanding our studio network from Bhubaneswar and Cuttack to 10+ immersive material and design experience hubs across Rourkela, Berhampur, Sambalpur, and Raipur.
+            </p>
+            <ul class="future-goal-milestones">
+              <li class="future-milestone-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                10+ Flagship Experience Hubs
+              </li>
+              <li class="future-milestone-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Full AR/VR Virtual Walkthroughs
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center;">
+        <button class="btn btn-primary" onclick="window.openConsultationModal && window.openConsultationModal('Manufacturing Comparison Section')">
+          Book Free Factory-Direct Design Consultation &rarr;
         </button>
-        <a href="tel:+919040087614" class="btn-banner-secondary">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call +91 90400 87614
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: 1,500+ HOMES DESIGNED WITH LOVE (AUTHENTIC SOCIAL MEDIA & HOMEOWNER VIDEOS) -->
+  <section class="section section-subtle" id="homeownersSection">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">Homeowner Stories &bull; Real Transformations</span>
+        <h2 class="section-title">1,500+ Homes Designed with Love</h2>
+        <p class="section-desc">
+          From cozy modular kitchens to grand turnkey duplexes across Bhubaneswar, Cuttack &amp; Raipur. Watch real walkthroughs straight from our official social media handles.
+        </p>
+      </div>
+
+      <div class="video-testimonials-grid">
+        <!-- Video 1: Modular Kitchen Designs -->
+        <div class="video-testimonial-card" onclick="window.openVideoModal && window.openVideoModal('7ETOi3lKVQY', 'Modular Kitchen Designs - Project Walkthrough')">
+          <div class="video-thumb-stage">
+            <img src="https://img.youtube.com/vi/7ETOi3lKVQY/hqdefault.jpg" alt="Modular Kitchen Designs Walkthrough" class="video-thumb-img" loading="lazy" />
+            <div class="video-verified-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span>Verified Home</span>
+            </div>
+            <div class="video-duration-badge" style="background:#FF0000; color:#fff;">Shorts</div>
+            <div class="video-play-overlay">
+              <div class="video-play-button">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="video-card-body">
+            <h4 class="video-client-name">Modular Kitchen Designs</h4>
+            <div class="video-client-loc">Bhubaneswar &bull; Acrylic Modular Kitchen</div>
+            <p class="video-client-quote">
+              "Feels like home!! Complete modular kitchen with under-cabinet warm profile lighting, sleek pull-outs, and German soft-close joinery."
+            </p>
+          </div>
+        </div>
+
+        <!-- Video 2: Interior Design in Bhubaneswar -->
+        <div class="video-testimonial-card" onclick="window.openVideoModal && window.openVideoModal('jxiODXemNPY', 'Interior Design in Bhubaneswar - Living & TV Suite')">
+          <div class="video-thumb-stage">
+            <img src="https://img.youtube.com/vi/jxiODXemNPY/hqdefault.jpg" alt="Interior Design in Bhubaneswar Living Room" class="video-thumb-img" loading="lazy" />
+            <div class="video-verified-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span>Verified Home</span>
+            </div>
+            <div class="video-duration-badge" style="background:#FF0000; color:#fff;">Shorts</div>
+            <div class="video-play-overlay">
+              <div class="video-play-button">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="video-card-body">
+            <h4 class="video-client-name">Interior Design in Bhubaneswar</h4>
+            <div class="video-client-loc">Nayapalli, Bhubaneswar &bull; Luxury TV &amp; Living Suite</div>
+            <p class="video-client-quote">
+              "VIZOUS is the only one-stop solution for all interior needs in Odisha. Handed over our apartment exactly within 40 days as promised."
+            </p>
+          </div>
+        </div>
+
+        <!-- Video 3: Home Interior Design Services -->
+        <div class="video-testimonial-card" onclick="window.openVideoModal && window.openVideoModal('agUh1dXPNf4', 'Home Interior Design Services - Kids Room & Wardrobes')">
+          <div class="video-thumb-stage">
+            <img src="https://img.youtube.com/vi/agUh1dXPNf4/hqdefault.jpg" alt="Home Interior Design Services Walkthrough" class="video-thumb-img" loading="lazy" />
+            <div class="video-verified-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span>Verified Home</span>
+            </div>
+            <div class="video-duration-badge" style="background:#FF0000; color:#fff;">Shorts</div>
+            <div class="video-play-overlay">
+              <div class="video-play-button">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="video-card-body">
+            <h4 class="video-client-name">Home Interior Design Services</h4>
+            <div class="video-client-loc">Laxmisagar, Bhubaneswar &bull; Kids Room &amp; Wardrobes</div>
+            <p class="video-client-quote">
+              "The quality of the materials and attention to detail are outstanding. The customized kids storage and bedroom modulars fit our space perfectly."
+            </p>
+          </div>
+        </div>
+
+        <!-- Video 4: Master Bedroom & Luxury Wardrobes -->
+        <div class="video-testimonial-card" onclick="window.openVideoModal && window.openVideoModal('pn8HxhhQuII', 'Master Bedroom & Luxury Wardrobe Walkthrough')">
+          <div class="video-thumb-stage">
+            <img src="https://img.youtube.com/vi/pn8HxhhQuII/hqdefault.jpg" alt="Master Bedroom & Luxury Wardrobe Walkthrough" class="video-thumb-img" loading="lazy" />
+            <div class="video-verified-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span>Verified Home</span>
+            </div>
+            <div class="video-duration-badge" style="background:#FF0000; color:#fff;">Shorts</div>
+            <div class="video-play-overlay">
+              <div class="video-play-button">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="video-card-body">
+            <h4 class="video-client-name">Master Bedroom &amp; Luxury Wardrobes</h4>
+            <div class="video-client-loc">Patia, Bhubaneswar &bull; Tinted Glass Sliding Closets</div>
+            <p class="video-client-quote">
+              "Floor-to-ceiling profile glass wardrobes with warm sensor strip lighting. Precision German factory finish delivered right on schedule."
+            </p>
+          </div>
+        </div>
+
+        <!-- Video 5: Modern Storage Architecture -->
+        <div class="video-testimonial-card" onclick="window.openVideoModal && window.openVideoModal('k7Zh-a7PyKk', 'Modern Storage Architecture - Bhubaneswar Handover')">
+          <div class="video-thumb-stage">
+            <img src="https://img.youtube.com/vi/k7Zh-a7PyKk/hqdefault.jpg" alt="Modern Storage Architecture Video" class="video-thumb-img" loading="lazy" />
+            <div class="video-verified-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span>Verified Home</span>
+            </div>
+            <div class="video-duration-badge" style="background:#FF0000; color:#fff;">Shorts</div>
+            <div class="video-play-overlay">
+              <div class="video-play-button">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="video-card-body">
+            <h4 class="video-client-name">Modern Storage Architecture</h4>
+            <div class="video-client-loc">Cuttack Road &bull; 45-Day Handover</div>
+            <p class="video-client-quote">
+              "Engineered with 100% IS:710 Marine Grade BWP Plywood and 10-Year Warranty. Exceptional build quality straight from their Bhagabanpur plant."
+            </p>
+          </div>
+        </div>
+
+        <!-- Video 6: Turnkey Duplex Living & Wall Panelling -->
+        <div class="video-testimonial-card" onclick="window.openVideoModal && window.openVideoModal('32sQ8lsV-Eo', 'Turnkey Duplex Living & Wall Panelling')">
+          <div class="video-thumb-stage">
+            <img src="https://img.youtube.com/vi/32sQ8lsV-Eo/hqdefault.jpg" alt="Turnkey Duplex Living Walkthrough" class="video-thumb-img" loading="lazy" />
+            <div class="video-verified-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span>Verified Home</span>
+            </div>
+            <div class="video-duration-badge" style="background:#FF0000; color:#fff;">Shorts</div>
+            <div class="video-play-overlay">
+              <div class="video-play-button">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="video-card-body">
+            <h4 class="video-client-name">Turnkey Duplex Living</h4>
+            <div class="video-client-loc">Khandagiri, Bhubaneswar &bull; 3BHK Turnkey Interior</div>
+            <p class="video-client-quote">
+              "Full turnkey home interior with acoustic wooden louvers, custom false ceilings, and bespoke dining console. 100% recommended."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- OFFICIAL SOCIAL MEDIA CHANNELS HUB -->
+      <div class="social-hub-wrapper">
+        <div class="social-hub-top">
+          <div>
+            <span class="section-tag" style="margin-bottom:0.4rem;">Official Channels &bull; Verified Community</span>
+            <h3 class="social-hub-title">Follow Vizous Across Social Media</h3>
+            <p class="social-hub-subtitle">
+              Watch 4K project handovers, behind-the-scenes factory production, daily client transformations, and design masterclasses.
+            </p>
+          </div>
+          <div>
+            <button class="btn btn-primary" onclick="window.openConsultationModal && window.openConsultationModal('Social Hub Section')">
+              Book Free 3D Design Session
+            </button>
+          </div>
+        </div>
+
+        <div class="social-hub-grid">
+          <!-- 1. YouTube -->
+          <a href="https://www.youtube.com/@vizousinterio3422" target="_blank" rel="noopener noreferrer" class="social-card yt" aria-label="YouTube Channel">
+            <div class="social-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </div>
+            <span class="social-card-tag">4K TOURS &bull; FACTORY REVEALS</span>
+            <h4 class="social-card-name">
+              YouTube
+              <span class="social-verified-tick" title="Official Channel">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              </span>
+            </h4>
+            <span class="social-card-handle">@vizousinterio3422</span>
+            <p class="social-card-desc">
+              Watch cinematic 4K home walkthroughs, German Homag factory tours, and raw client handover experiences in Odisha.
+            </p>
+            <span class="social-card-cta">
+              Watch on YouTube
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </span>
+          </a>
+
+          <!-- 2. Instagram -->
+          <a href="https://www.instagram.com/vizous_interio/" target="_blank" rel="noopener noreferrer" class="social-card ig" aria-label="Instagram Profile">
+            <div class="social-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </div>
+            <span class="social-card-tag">DAILY REELS &bull; AESTHETICS</span>
+            <h4 class="social-card-name">
+              Instagram
+              <span class="social-verified-tick" title="Official Channel">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              </span>
+            </h4>
+            <span class="social-card-handle">@vizous_interio</span>
+            <p class="social-card-desc">
+              Daily site transformation reels, mood boards, kitchen styling inspiration, and real-time project progress.
+            </p>
+            <span class="social-card-cta">
+              Follow on Instagram
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </span>
+          </a>
+
+          <!-- 3. Facebook -->
+          <a href="https://www.facebook.com/vizous" target="_blank" rel="noopener noreferrer" class="social-card fb" aria-label="Facebook Page">
+            <div class="social-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </div>
+            <span class="social-card-tag">COMMUNITY &bull; REVIEWS</span>
+            <h4 class="social-card-name">
+              Facebook
+              <span class="social-verified-tick" title="Official Channel">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              </span>
+            </h4>
+            <span class="social-card-handle">/vizous</span>
+            <p class="social-card-desc">
+              Join 1,500+ satisfied homeowners. Read detailed reviews, participate in design Q&amp;A, and see local milestones.
+            </p>
+            <span class="social-card-cta">
+              Join on Facebook
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </span>
+          </a>
+
+          <!-- 4. LinkedIn -->
+          <a href="https://www.linkedin.com/company/vizous-interio-private-limited/" target="_blank" rel="noopener noreferrer" class="social-card li" aria-label="LinkedIn Profile">
+            <div class="social-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <span class="social-card-tag">CORPORATE &bull; ARCHITECTURE</span>
+            <h4 class="social-card-name">
+              LinkedIn
+              <span class="social-verified-tick" title="Official Channel">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              </span>
+            </h4>
+            <span class="social-card-handle">vizous-interio-private-limited</span>
+            <p class="social-card-desc">
+              Commercial projects, corporate expansion, architectural partnerships, and industrial manufacturing updates.
+            </p>
+            <span class="social-card-cta">
+              Connect on LinkedIn
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SECTION 10: MEDIA PREVIEW (LINKING TO DEDICATED MEDIA SECTION) -->
+  <section class="section section-subtle" id="mediaSection">
+    <div class="container text-center">
+      <span class="section-tag">Visual Archives</span>
+      <h2 class="section-title">Explore Our Full Media Gallery</h2>
+      <p class="section-desc" style="max-width:680px; margin:0 auto 2.5rem;">
+        Discover high-resolution walkthroughs, Bhagabanpur factory production videos, living room photography, and verified customer testimonials.
+      </p>
+
+      <div class="media-gallery-grid">
+        <div class="media-item-card" onclick="window.location.href='/media.html'">
+          <div class="media-item-stage">
+            <img src="/assets/images/home_22.jpg" alt="Interior Architecture Showcase" class="media-item-img" loading="lazy" />
+            <div class="media-item-overlay">
+              <div class="media-item-caption">
+                <span class="media-item-category">Gallery</span>
+                <h4 class="media-item-title">Interior Projects &bull; 40+ Photos</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="media-item-card" onclick="window.location.href='/media.html'">
+          <div class="media-item-stage">
+            <img src="/assets/images/about_3.png" alt="Bhagabanpur Factory Manufacturing" class="media-item-img" loading="lazy" />
+            <div class="media-item-overlay">
+              <div class="media-item-caption">
+                <span class="media-item-category">Factory</span>
+                <h4 class="media-item-title">Bhagabanpur CNC Machinery &bull; Factory Tour</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="media-item-card" onclick="window.location.href='/media.html'">
+          <div class="media-item-stage">
+            <img src="/assets/images/modular_kitchen_7.jpg" alt="Kitchen Walkthroughs" class="media-item-img" loading="lazy" />
+            <div class="media-item-overlay">
+              <div class="media-item-caption">
+                <span class="media-item-category">Videos</span>
+                <h4 class="media-item-title">Kitchen Walkthroughs &amp; Testimonials</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:2.5rem;">
+        <a href="/media.html" class="btn-card-quote" style="display:inline-flex; width:auto; padding:0.95rem 2.5rem; font-size:1rem;">
+          View Full Media Collection &rarr;
         </a>
       </div>
     </div>
   </section>
 
-  <!-- EXPERIENCE CENTRES & SHOWROOM LOCATIONS -->
-  <section class="section section-subtle" id="locationsSection">
+  <!-- SECTION 11: CONTACT / ENQUIRY CTA & EXPERIENCE CENTRES -->
+  <section class="section" id="contactCta">
     <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tag">Visit Our Facilities</span>
-        <h2 class="section-title">Experience Centres &amp; Manufacturing Plants</h2>
-        <p class="section-desc">
-          Feel the materials, test soft-close drawer slides, and consult with senior designers in person.
-        </p>
+      <div class="quote-banner">
+        <div class="quote-banner-content">
+          <span class="section-tag" style="color:var(--color-primary); background:rgba(238,127,35,0.15); border:1px solid rgba(238,127,35,0.3); padding:0.25rem 0.75rem; border-radius:999px; display:inline-block; margin-bottom:0.75rem;">Begin Your Transformation</span>
+          <h3 style="font-size:clamp(1.6rem, 3.5vw, 2.4rem); font-family:var(--font-serif); margin-bottom:0.75rem;">Ready to Transform Your Home?</h3>
+          <p style="color:var(--text-white-muted); font-size:1.05rem; line-height:1.6; max-width:620px;">
+            Visit our Laxmisagar Experience Centre or schedule a free 3D design session today. Our senior architects will create a custom floorplan tailored to your family's lifestyle.
+          </p>
+        </div>
+        <div class="quote-banner-actions">
+          <button class="btn-banner-primary" data-action="consult">
+            Book Free 3D Session &rarr;
+          </button>
+          <a href="tel:+919040087614" class="btn-banner-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +91 90400 87614
+          </a>
+        </div>
       </div>
 
-      <div class="features-grid-3" style="margin-top:2.5rem;">
+      <!-- Experience Centres -->
+      <div class="features-grid-3" style="margin-top:3.5rem;">
         <div class="feature-box">
           <div class="feature-box-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -1626,7 +1715,7 @@
           <p>
             1st Floor, Laxmi Sagar Square, Plot 301/1516, Cuttack Rd, Near Sunshine Hospital, Budheswari Colony, Laxmisagar, Bhubaneswar, Odisha 751006.
           </p>
-          <div style="font-size:0.8rem; color:var(--text-light); margin-top:0.75rem;">
+          <div style="font-size:0.82rem; color:var(--text-light); margin-top:0.75rem;">
             Mon - Sat 10.00 AM to 8.00 PM (*Only 3rd Sunday Closed)<br />
             <strong>Phone:</strong> +91 90400 87614
           </div>
@@ -1636,11 +1725,11 @@
           <div class="feature-box-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M5 20V8l7-5 7 5v12"/></svg>
           </div>
-          <h4>Manufacturing Plant (Bhagabanpur)</h4>
+          <h4>Bhagabanpur Factory (Odisha)</h4>
           <p>
-            Plot #12, Bhagabanpur Industrial Estate, Patrapada, Bhubaneswar - 751019, Odisha, India. 15,000+ sq.ft factory with German CNC machinery.
+            Plot #12, Bhagabanpur Industrial Estate, Patrapada, Bhubaneswar - 751019, Odisha, India. 15,000+ sq.ft plant with German Homag CNC machinery.
           </p>
-          <div style="font-size:0.8rem; color:var(--text-light); margin-top:0.75rem;">
+          <div style="font-size:0.82rem; color:var(--text-light); margin-top:0.75rem;">
             Mon - Sat 9.30 AM to 6.30 PM<br />
             <strong>Factory Tours:</strong> By Prior Appointment
           </div>
@@ -1654,7 +1743,7 @@
           <p>
             Khasara # 801/8, Bhawna Nagar Kachna Road, Near Durga Mandir, Raipur, Chhattisgarh 492007.
           </p>
-          <div style="font-size:0.8rem; color:var(--text-light); margin-top:0.75rem;">
+          <div style="font-size:0.82rem; color:var(--text-light); margin-top:0.75rem;">
             Mon - Sat 10.00 AM to 7.00 PM<br />
             <strong>Phone:</strong> +91 98932 18906 / +91 95892 77465
           </div>
@@ -1663,8 +1752,7 @@
     </div>
   </section>
 
-
-  <!-- FOOTER -->
+  <!-- SECTION 12: FOOTER (PRESERVED BUSINESS INFO & 6-ITEM NAVIGATION) -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-top-grid">
@@ -1676,55 +1764,53 @@
           </p>
           <div class="footer-social-row">
             <a href="https://www.facebook.com/vizous" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="Facebook">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             </a>
-            <a href="https://www.instagram.com/vizousinteriopvtltd/" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="Instagram">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            <a href="https://www.instagram.com/vizous_interio/" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="Instagram">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             </a>
             <a href="https://www.youtube.com/@vizousinterio3422" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="YouTube">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg>
             </a>
             <a href="https://www.linkedin.com/company/vizous-interio-private-limited/" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="LinkedIn">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2" fill="currentColor"/></svg>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2" fill="currentColor"/></svg>
             </a>
           </div>
         </div>
 
-        <!-- Col 2 -->
+        <!-- Col 2: Navigation Links -->
         <div class="footer-col">
-          <h4>Custom Solutions</h4>
+          <h4>Navigation</h4>
           <ul class="footer-links-list">
-            <li><a href="/modular-kitchen.html">L-Shaped &amp; Island Kitchens</a></li>
-            <li><a href="/modular-kitchen.html">U-Shaped &amp; Parallel Kitchens</a></li>
-            <li><a href="/wardrobes.html">Walk-in Master Closets</a></li>
-            <li><a href="/wardrobes.html">Sliding &amp; Folding Wardrobes</a></li>
-            <li><a href="/beds.html">Hydraulic Storage Beds</a></li>
-            <li><a href="/office-furniture.html">Executive Office Workstations</a></li>
-            <li><a href="/modular-furniture.html">Floating TV &amp; Mandir Units</a></li>
-            <li><a href="/home-decor.html">Wooden Floors &amp; Wall Panelling</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/why-us.html">Why Us</a></li>
+            <li><a href="/modular-kitchen.html">Products</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/media.html">Media Gallery</a></li>
           </ul>
         </div>
 
-        <!-- Col 3 -->
+        <!-- Col 3: Products -->
         <div class="footer-col">
-          <h4>Company &amp; Trust</h4>
+          <h4>Custom Products</h4>
           <ul class="footer-links-list">
-            <li><a href="/about.html">About 15-Year Legacy</a></li>
-            <li><a href="/our-work.html">Commercial &amp; Home Portfolio</a></li>
-            <li><a href="/#whyChooseSection">10-Year Warranty Terms</a></li>
-            <li><a href="/#costEstimator">Instant Price Estimator</a></li>
-            <li><a href="/contact.html">Bhubaneswar Showroom</a></li>
-            <li><a href="/contact.html">Bhagabanpur Factory Plant</a></li>
-            <li><a href="/contact.html">Raipur Studio (Chhattisgarh)</a></li>
+            <li><a href="/modular-kitchen.html">Modular Kitchen</a></li>
+            <li><a href="/living-rooms.html">Living Rooms</a></li>
+            <li><a href="/bedrooms.html">Bedrooms</a></li>
+            <li><a href="/doors-windows.html">Door and Windows</a></li>
+            <li><a href="/office-furniture.html">Office Furnitures</a></li>
+            <li><a href="/healthcare.html">Health Care</a></li>
+            <li><a href="/educational.html">Educational Purpose</a></li>
           </ul>
         </div>
 
-        <!-- Col 4 -->
+        <!-- Col 4: Experience Centres -->
         <div class="footer-col">
           <h4>Experience Centres</h4>
           <div class="footer-contact-item">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0; margin-top:2px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <div>1st Floor, Laxmi Sagar Square, Plot 301/1516, Cuttack Rd, Laxmisagar, Bhubaneswar, Odisha 751006</div>
+            <div>1st Floor, Laxmi Sagar Square, Cuttack Rd, Laxmisagar, Bhubaneswar, Odisha 751006</div>
           </div>
           <div class="footer-contact-item">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0; margin-top:2px;"><path d="M2 20h20M5 20V8l7-5 7 5v12"/></svg>
@@ -1739,12 +1825,60 @@
 
       <div class="footer-bottom">
         <div>&copy; 2026 Vizous Interio Private Limited. All Rights Reserved.</div>
-        <div>Crafted with In-House German Precision &bull; Bhubaneswar, Odisha</div>
+        <div>In-House German CNC Precision &bull; Bhubaneswar, Odisha</div>
       </div>
     </div>
   </footer>
 
+  <!-- VIDEO PLAYER MODAL -->
+  <div class="video-modal-backdrop" id="videoModal">
+    <div class="video-modal-box">
+      <button class="video-modal-close" id="videoModalClose" aria-label="Close Video">&times;</button>
+      <div class="video-modal-iframe-wrap">
+        <iframe id="videoModalIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
 
+  <!-- IMAGE LIGHTBOX MODAL -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close Lightbox">&times;</button>
+      <img src="" alt="" class="lightbox-img" id="lightboxImg" />
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+  </div>
+
+  <!-- FULL ARTICLE READER MODAL -->
+  <div class="blog-reader-modal" id="blogReaderModal" role="dialog" aria-modal="true" aria-label="Article Reader">
+    <div class="blog-reader-dialog">
+      <div class="blog-reader-header">
+        <div class="blog-reader-meta">
+          <span class="blog-reader-badge" id="blogReaderBadge">Modular Kitchen</span>
+          <span id="blogReaderMeta">October 2026 • 5 min read • By Vizous Editorial</span>
+        </div>
+        <button class="blog-reader-close" id="blogReaderClose" aria-label="Close article reader">&times;</button>
+      </div>
+      <div class="blog-reader-body">
+        <h2 class="blog-reader-title" id="blogReaderTitle">Article Title</h2>
+        <div class="blog-reader-image-wrap">
+          <img src="/assets/images/hero_luxury_spaces_clean.jpg" alt="Article Visual" class="blog-reader-img" id="blogReaderImg" />
+        </div>
+        <div class="blog-reader-text" id="blogReaderText">
+          <!-- Populated dynamically by main.js -->
+        </div>
+      </div>
+      <div class="blog-reader-footer">
+        <div>
+          <span style="font-size:0.85rem; color:var(--color-sand, #C8996E);">Inspired by this design guide?</span>
+          <div style="font-size:0.95rem; font-weight:600; color:#fff;">Plan your bespoke layout with our lead architects</div>
+        </div>
+        <button class="btn btn-primary" onclick="window.closeBlogReader && window.closeBlogReader(); window.openConsultationModal && window.openConsultationModal('Blog Article Reader CTA');">
+          Book Free 3D Design Session
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- CONSULTATION MODAL POPUP -->
   <div class="modal-overlay" id="consultationModal">
@@ -1810,18 +1944,16 @@
       </div>
       <div class="chat-header-actions">
         <button class="chat-reset-btn" id="chatResetBtn" title="Reset conversation" aria-label="Reset conversation">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
         </button>
         <button class="chat-close-btn" id="chatCloseBtn" aria-label="Close Chat">&times;</button>
       </div>
     </div>
 
-    <div class="chat-messages-container" id="chatMessagesStream">
-      <!-- Injected dynamically by main.js -->
-    </div>
+    <div class="chat-messages-container" id="chatMessagesStream"></div>
 
     <div class="chat-input-bar">
-      <input type="text" id="chatInput" class="chat-input" placeholder="Ask about kitchens, wardrobes, prices..." autocomplete="off" />
+      <input type="text" id="chatInput" class="chat-input" placeholder="Ask about kitchens, wardrobes, materials..." autocomplete="off" />
       <button class="chat-send-btn" id="chatSendBtn" aria-label="Send Message">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
       </button>

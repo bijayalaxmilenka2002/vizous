@@ -122,15 +122,23 @@ ${KNOWLEDGE_BASE}`;
       rollupOptions: {
         input: {
           main: resolve(__dirname, 'index.html'),
+          whyUs: resolve(__dirname, 'why-us.html'),
           about: resolve(__dirname, 'about.html'),
           kitchen: resolve(__dirname, 'modular-kitchen.html'),
+          livingRooms: resolve(__dirname, 'living-rooms.html'),
+          bedrooms: resolve(__dirname, 'bedrooms.html'),
+          doorsWindows: resolve(__dirname, 'doors-windows.html'),
+          office: resolve(__dirname, 'office-furniture.html'),
+          healthcare: resolve(__dirname, 'healthcare.html'),
+          educational: resolve(__dirname, 'educational.html'),
           wardrobes: resolve(__dirname, 'wardrobes.html'),
           beds: resolve(__dirname, 'beds.html'),
-          office: resolve(__dirname, 'office-furniture.html'),
           modular: resolve(__dirname, 'modular-furniture.html'),
           decor: resolve(__dirname, 'home-decor.html'),
           work: resolve(__dirname, 'our-work.html'),
-          contact: resolve(__dirname, 'contact.html')
+          contact: resolve(__dirname, 'contact.html'),
+          blog: resolve(__dirname, 'blog.html'),
+          media: resolve(__dirname, 'media.html')
         }
       }
     }
@@ -204,14 +212,14 @@ function generateGroundedReply(query) {
 
   if (q.includes('quote') || q.includes('price') || q.includes('cost') || q.includes('estimate') || q.includes('budget')) {
     return {
-      text: "Because we manufacture in our own factory with zero middlemen, you get transparent direct-from-factory pricing. You can use our Instant Price Estimator on the website, or share your floorplan on WhatsApp (+91 90400 87614) for a complimentary 3D design and quotation.",
-      suggested: ['Open Price Estimator', 'WhatsApp Quote', 'Book free site measurement'],
-      action: { type: 'scroll', target: '#costEstimator', label: 'Open Cost Estimator' }
+      text: "Because we manufacture in our own factory with zero middlemen, you get transparent direct-from-factory pricing. Share your floorplan on WhatsApp (+91 90400 87614) or book a complimentary 3D design consultation with our senior architects in Bhubaneswar.",
+      suggested: ['Book 3D Design Session', 'WhatsApp Quote', 'Visit Laxmisagar Showroom'],
+      action: { type: 'modal', subject: 'Custom Quote & 3D Session', label: 'Book 3D Design Session' }
     };
   }
 
   return {
     text: "Welcome to Vizous Interio! I can help you explore our modular kitchens, custom wardrobes, luxury beds, office furniture, or book a free 3D design session with our senior architects in Bhubaneswar. What are you planning for your space?",
-    suggested: ['I need a modular kitchen', 'Custom wardrobe options', 'Calculate interior cost', 'Visit Laxmisagar showroom']
+    suggested: ['I need a modular kitchen', 'Custom wardrobe options', 'Explore Project Gallery', 'Visit Laxmisagar showroom']
   };
 }

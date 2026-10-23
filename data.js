@@ -43,7 +43,7 @@ export const COMPANY_INFO = {
   ],
   socials: {
     facebook: "https://www.facebook.com/vizous",
-    instagram: "https://www.instagram.com/vizousinteriopvtltd/",
+    instagram: "https://www.instagram.com/vizous_interio/",
     youtube: "https://www.youtube.com/@vizousinterio3422",
     linkedin: "https://www.linkedin.com/company/vizous-interio-private-limited/"
   }
