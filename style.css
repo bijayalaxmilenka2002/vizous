@@ -4852,20 +4852,32 @@ input, select, textarea {
 }
 
 .hero-centered-title {
-  font-family: var(--font-serif);
-  font-size: clamp(2rem, 3.8vw, 3.2rem);
-  font-weight: 600;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 800;
   color: #FFFFFF;
-  line-height: 1.2;
-  max-width: 620px;
-  margin-bottom: 1.75rem;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  max-width: 680px;
+  margin-bottom: 1rem;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.85), 0 1px 4px rgba(0, 0, 0, 0.95);
 }
 
 .hero-centered-title .title-accent {
   color: var(--color-primary);
-  font-style: italic;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.hero-subtext {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: clamp(0.95rem, 1.35vw, 1.05rem);
   font-weight: 500;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.6;
+  max-width: 580px;
+  margin-bottom: 1.75rem;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.85);
 }
 
 .hero-centered-desc {
@@ -4988,10 +5000,11 @@ input, select, textarea {
   text-align: left;
 }
 
-.trust-accent-italic {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-weight: 700;
+.trust-accent-italic,
+.trust-accent-clean {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 800;
   color: #EE7F23;
 }
 
@@ -6784,9 +6797,9 @@ input, select, textarea {
 }
 
 .ref-title-accent {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-weight: 700;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 800;
   color: #EE7F23;
 }
 
@@ -8117,18 +8130,18 @@ input, select, textarea {
 }
 
 .blog-masthead-title {
-  font-family: var(--font-playfair, 'Playfair Display', serif);
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
   font-size: clamp(2.2rem, 4.5vw, 3.5rem);
-  font-weight: 600;
+  font-weight: 800;
   line-height: 1.15;
   color: #FFFFFF;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   margin-bottom: 1rem;
 }
 
 .blog-masthead-title span {
   color: var(--color-primary, #EE7F23);
-  font-style: italic;
+  font-style: normal;
 }
 
 .blog-masthead-sub {
@@ -8337,9 +8350,10 @@ input, select, textarea {
 }
 
 .cinema-editorial-title {
-  font-family: var(--font-playfair, 'Playfair Display', serif);
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
   font-size: clamp(1.4rem, 2.2vw, 1.95rem);
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   line-height: 1.25;
   color: #FFFFFF;
   margin-bottom: 1rem;
@@ -8642,9 +8656,10 @@ input, select, textarea {
 }
 
 .community-banner-title {
-  font-family: var(--font-playfair, 'Playfair Display', serif);
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
   font-size: clamp(1.6rem, 2.6vw, 2.2rem);
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: #FFFFFF;
   line-height: 1.25;
   margin-bottom: 0.75rem;
