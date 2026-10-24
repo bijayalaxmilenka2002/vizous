@@ -7,9 +7,45 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="format-detection" content="telephone=no" />
   <title>Media Gallery | Vizous Interio - Interior Photography &amp; Project Walkthroughs</title>
-  <meta name="description" content="Explore Vizous Interio's media gallery: completed residential projects, modular kitchens, custom wardrobes, Bhagabanpur factory tours, and homeowner testimonial videos." />
-  <link rel="canonical" href="https://vizous.in/media.html" />
+  <meta name="description" content="Explore Vizous Interio's media gallery: completed residential projects, modular kitchens, custom wardrobes, Bhagabanpur factory tours, and homeowner testimonial videos in Bhubaneswar." />
+  <link rel="canonical" href="https://vizous-rho.vercel.app/media.html" />
   <link rel="icon" type="image/png" href="/assets/images/logo.png" />
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vizous-rho.vercel.app/media.html" />
+  <meta property="og:title" content="Media Gallery | Vizous Interio - Completed Projects &amp; Video Walkthroughs" />
+  <meta property="og:description" content="Explore real completed residential sanctuaries across Bhubaneswar, German Homag CNC factory tours, 4K walkthroughs, and verified client handovers." />
+  <meta property="og:image" content="https://vizous-rho.vercel.app/assets/images/logo.png" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Media Gallery | Vizous Interio" />
+  <meta name="twitter:description" content="Explore Vizous Interio's completed interior design projects and 4K walkthroughs in Bhubaneswar." />
+  <meta name="twitter:image" content="https://vizous-rho.vercel.app/assets/images/logo.png" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <!-- JSON-LD LocalBusiness Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Vizous Interio",
+    "image": "https://vizous-rho.vercel.app/assets/images/logo.png",
+    "url": "https://vizous-rho.vercel.app/media.html",
+    "telephone": "+919040087614",
+    "priceRange": "₹₹₹",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1st Floor, Laxmi Sagar Square, Cuttack Rd, Laxmisagar",
+      "addressLocality": "Bhubaneswar",
+      "addressRegion": "Odisha",
+      "postalCode": "751006",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://www.instagram.com/vizous_interio/",
+      "https://www.youtube.com/@vizousinterio3422"
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -107,46 +143,53 @@
           <button class="btn btn-primary" onclick="window.openConsultationModal && window.openConsultationModal('Navbar Consultation')">
             Book Consultation
           </button>
-          <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Open mobile menu">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Mobile Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
           </button>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- MOBILE DRAWER -->
-  <div class="mobile-drawer-overlay" id="mobileDrawerOverlay"></div>
-  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
-    <div class="drawer-header">
-      <img src="/assets/images/logo.png" alt="Vizous Interio" class="drawer-logo" />
-      <button class="drawer-close" id="mobileDrawerClose" aria-label="Close menu">&times;</button>
-    </div>
-    <div class="drawer-body">
-      <ul class="drawer-nav">
-        <li><a href="/" class="drawer-link">Home</a></li>
-        <li><a href="/why-us.html" class="drawer-link">Why Us</a></li>
-        <li><a href="/modular-kitchen.html" class="drawer-link">Modular Kitchens</a></li>
-        <li><a href="/living-rooms.html" class="drawer-link">Living Rooms</a></li>
-        <li><a href="/bedrooms.html" class="drawer-link">Bedrooms</a></li>
-        <li><a href="/doors-windows.html" class="drawer-link">Doors &amp; Windows</a></li>
-        <li><a href="/office-furniture.html" class="drawer-link">Office Furniture</a></li>
-        <li><a href="/healthcare.html" class="drawer-link">Healthcare</a></li>
-        <li><a href="/educational.html" class="drawer-link">Educational</a></li>
-        <li><a href="/blog.html" class="drawer-link">Blog</a></li>
-        <li><a href="/contact.html" class="drawer-link">Contact</a></li>
-        <li><a href="/media.html" class="drawer-link active">Media Gallery</a></li>
-      </ul>
-      <div class="drawer-actions">
-        <button class="btn btn-primary btn-block" onclick="window.openConsultationModal && window.openConsultationModal('Mobile Drawer'); document.getElementById('mobileDrawer').classList.remove('open');">
-          Book Free Design Session
-        </button>
-        <a href="tel:+919040087614" class="btn btn-outline btn-block">
-          Call +91 90400 87614
+  <!-- MOBILE SLIDE-OUT NAVIGATION DRAWER -->
+  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+    <div class="mobile-drawer-content">
+      <div class="mobile-drawer-header">
+        <a href="/" class="mobile-drawer-brand">
+          <img src="/assets/images/logo.png" alt="Vizous Interio Logo" class="mobile-drawer-logo" />
         </a>
+        <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close navigation menu">&times;</button>
+      </div>
+
+      <div class="mobile-drawer-body">
+        <div class="mobile-nav-group-title">Navigation</div>
+        <ul class="mobile-nav-list">
+          <li><a href="/" class="mobile-nav-link">Home</a></li>
+          <li><a href="/why-us.html" class="mobile-nav-link">Why Us</a></li>
+          <li><a href="/modular-kitchen.html" class="mobile-nav-link">Modular Kitchen</a></li>
+          <li><a href="/living-rooms.html" class="mobile-nav-link">Living Rooms</a></li>
+          <li><a href="/bedrooms.html" class="mobile-nav-link">Bedrooms</a></li>
+          <li><a href="/doors-windows.html" class="mobile-nav-link">Doors &amp; Windows</a></li>
+          <li><a href="/office-furniture.html" class="mobile-nav-link">Office Furniture</a></li>
+          <li><a href="/healthcare.html" class="mobile-nav-link">Healthcare</a></li>
+          <li><a href="/educational.html" class="mobile-nav-link">Educational</a></li>
+          <li><a href="/blog.html" class="mobile-nav-link">Blog</a></li>
+          <li><a href="/contact.html" class="mobile-nav-link">Contact</a></li>
+          <li><a href="/media.html" class="mobile-nav-link active">Media Gallery</a></li>
+        </ul>
+
+        <div class="mobile-drawer-actions">
+          <button class="btn btn-primary btn-block" onclick="window.openConsultationModal && window.openConsultationModal('Mobile Drawer');">
+            Book Free Design Session
+          </button>
+          <a href="tel:+919040087614" class="btn btn-outline btn-block" style="display:flex; align-items:center; justify-content:center; gap:0.5rem; margin-top:0.75rem;">
+            Call +91 90400 87614
+          </a>
+        </div>
       </div>
     </div>
-  </aside>
+  </div>
 
   <!-- MAIN CONTENT -->
   <main>

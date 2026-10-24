@@ -106,45 +106,53 @@
           <button class="btn btn-primary" onclick="window.openConsultationModal && window.openConsultationModal('Navbar Consultation')">
             Book Consultation
           </button>
-          <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Open mobile menu">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Mobile Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
           </button>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- MOBILE DRAWER -->
-  <div class="mobile-drawer-overlay" id="mobileDrawerOverlay"></div>
-  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
-    <div class="drawer-header">
-      <img src="/assets/images/logo.png" alt="Vizous Interio" class="drawer-logo" />
-      <button class="drawer-close" id="mobileDrawerClose" aria-label="Close menu">&times;</button>
-    </div>
-    <div class="drawer-body">
-      <ul class="drawer-nav">
-        <li><a href="/" class="drawer-link">Home</a></li>
-        <li><a href="/why-us.html" class="drawer-link">Why Us</a></li>
-        <li><a href="/modular-kitchen.html" class="drawer-link">Modular Kitchens</a></li>
-        <li><a href="/wardrobes.html" class="drawer-link">Custom Wardrobes</a></li>
-        <li><a href="/beds.html" class="drawer-link">Luxury Beds</a></li>
-        <li><a href="/office-furniture.html" class="drawer-link">Office Furniture</a></li>
-        <li><a href="/modular-furniture.html" class="drawer-link">Modular Living</a></li>
-        <li><a href="/home-decor.html" class="drawer-link">Home Décor</a></li>
-        <li><a href="/blog.html" class="drawer-link active">Blog</a></li>
-        <li><a href="/contact.html" class="drawer-link">Contact</a></li>
-        <li><a href="/media.html" class="drawer-link">Media Gallery</a></li>
-      </ul>
-      <div class="drawer-actions">
-        <button class="btn btn-primary btn-block" onclick="window.openConsultationModal && window.openConsultationModal('Mobile Drawer'); document.getElementById('mobileDrawer').classList.remove('open');">
-          Book Free Design Session
-        </button>
-        <a href="tel:+919040087614" class="btn btn-outline btn-block">
-          Call +91 90400 87614
+  <!-- MOBILE SLIDE-OUT NAVIGATION DRAWER -->
+  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+    <div class="mobile-drawer-content">
+      <div class="mobile-drawer-header">
+        <a href="/" class="mobile-drawer-brand">
+          <img src="/assets/images/logo.png" alt="Vizous Interio Logo" class="mobile-drawer-logo" />
         </a>
+        <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close navigation menu">&times;</button>
+      </div>
+
+      <div class="mobile-drawer-body">
+        <div class="mobile-nav-group-title">Navigation</div>
+        <ul class="mobile-nav-list">
+          <li><a href="/" class="mobile-nav-link">Home</a></li>
+          <li><a href="/why-us.html" class="mobile-nav-link">Why Us</a></li>
+          <li><a href="/modular-kitchen.html" class="mobile-nav-link">Modular Kitchen</a></li>
+          <li><a href="/living-rooms.html" class="mobile-nav-link">Living Rooms</a></li>
+          <li><a href="/bedrooms.html" class="mobile-nav-link">Bedrooms</a></li>
+          <li><a href="/doors-windows.html" class="mobile-nav-link">Doors &amp; Windows</a></li>
+          <li><a href="/office-furniture.html" class="mobile-nav-link">Office Furniture</a></li>
+          <li><a href="/healthcare.html" class="mobile-nav-link">Healthcare</a></li>
+          <li><a href="/educational.html" class="mobile-nav-link">Educational</a></li>
+          <li><a href="/blog.html" class="mobile-nav-link active">Blog</a></li>
+          <li><a href="/contact.html" class="mobile-nav-link">Contact</a></li>
+          <li><a href="/media.html" class="mobile-nav-link">Media Gallery</a></li>
+        </ul>
+
+        <div class="mobile-drawer-actions">
+          <button class="btn btn-primary btn-block" onclick="window.openConsultationModal && window.openConsultationModal('Mobile Drawer');">
+            Book Free Design Session
+          </button>
+          <a href="tel:+919040087614" class="btn btn-outline btn-block" style="display:flex; align-items:center; justify-content:center; gap:0.5rem; margin-top:0.75rem;">
+            Call +91 90400 87614
+          </a>
+        </div>
       </div>
     </div>
-  </aside>
+  </div>
   <!-- MAIN CONTENT -->
   <main>
     <!-- EDITORIAL MASTHEAD -->

@@ -39,14 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
    1. HEADER & MOBILE DRAWER NAVIGATION
    ========================================================================== */
 function initHeader() {
-  const toggleBtn = document.getElementById('mobileMenuToggle');
+  const toggleBtn = document.getElementById('mobileMenuToggle') || document.getElementById('mobileMenuBtn') || document.querySelector('.mobile-menu-toggle');
   const drawer = document.getElementById('mobileDrawer');
-  const drawerClose = document.getElementById('mobileDrawerClose');
-  const drawerBackdrop = document.getElementById('mobileDrawerBackdrop');
+  const drawerClose = document.getElementById('mobileDrawerClose') || drawer?.querySelector('.drawer-close');
+  const drawerBackdrop = document.getElementById('mobileDrawerBackdrop') || document.getElementById('mobileDrawerOverlay');
 
   const openDrawer = () => {
     if (drawer) {
       drawer.classList.add('active');
+      drawer.classList.add('open');
       document.body.style.overflow = 'hidden';
     }
   };
@@ -54,6 +55,7 @@ function initHeader() {
   const closeDrawer = () => {
     if (drawer) {
       drawer.classList.remove('active');
+      drawer.classList.remove('open');
       document.body.style.overflow = '';
     }
   };
