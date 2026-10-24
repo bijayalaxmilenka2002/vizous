@@ -1157,19 +1157,69 @@ function initVideoModal() {
   const modal = document.getElementById('videoModal');
   const iframe = document.getElementById('videoModalIframe');
   const closeBtn = document.getElementById('videoModalClose');
+  const modalBox = modal ? modal.querySelector('.video-modal-box') : null;
 
-  window.openVideoModal = function(videoId, title) {
+  window.openVideoModal = function(videoSource, title, isVertical) {
     if (!modal || !iframe) return;
-    const cleanId = String(videoId).replace(/.*[?&]v=/, '').replace(/.*\//, '').split(/[?#&]/)[0];
-    iframe.src = `https://www.youtube-nocookie.com/embed/${cleanId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+
+    const srcStr = String(videoSource || '').trim();
+    const titleStr = String(title || '').toLowerCase();
+    const isReel = isVertical === true || 
+                   srcStr.includes('reel') || 
+                   srcStr.includes('shorts') || 
+                   titleStr.includes('reel') || 
+                   titleStr.includes('short');
+
+    if (modalBox) {
+      if (isReel) {
+        modalBox.classList.add('is-vertical');
+      } else {
+        modalBox.classList.remove('is-vertical');
+      }
+    }
+
+    let embedUrl = '';
+    if (srcStr.includes('instagram.com/reel/') || srcStr.includes('instagram.com/p/')) {
+      const match = srcStr.match(/instagram\.com\/(?:reel|p)\/([^/?#&]+)/);
+      const reelId = match ? match[1] : '';
+      if (reelId) {
+        embedUrl = `https://www.instagram.com/reel/${reelId}/embed/?autoplay=1`;
+      } else {
+        embedUrl = `https://www.instagram.com/reel/${srcStr}/embed/?autoplay=1`;
+      }
+    } else {
+      // YouTube video or Shorts (supports full URLs or raw IDs)
+      let cleanId = srcStr;
+      if (cleanId.includes('youtu.be/')) {
+        cleanId = cleanId.split('youtu.be/')[1].split(/[?#&]/)[0];
+      } else if (cleanId.includes('youtube.com/shorts/')) {
+        cleanId = cleanId.split('youtube.com/shorts/')[1].split(/[?#&]/)[0];
+      } else if (cleanId.includes('watch?v=')) {
+        cleanId = cleanId.split('watch?v=')[1].split(/[?#&]/)[0];
+      } else if (cleanId.includes('embed/')) {
+        cleanId = cleanId.split('embed/')[1].split(/[?#&]/)[0];
+      } else {
+        cleanId = cleanId.replace(/.*[?&]v=/, '').replace(/.*\//, '').split(/[?#&]/)[0];
+      }
+
+      embedUrl = `https://www.youtube-nocookie.com/embed/${cleanId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+    }
+
+    iframe.src = embedUrl;
+    iframe.title = title || 'Vizous Video Player';
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+  };
+
+  window.openReelModal = function(reelSource, title) {
+    window.openVideoModal(reelSource, title, true);
   };
 
   window.closeVideoModal = function() {
     if (!modal || !iframe) return;
     iframe.src = '';
     modal.classList.remove('active');
+    if (modalBox) modalBox.classList.remove('is-vertical');
     document.body.style.overflow = '';
   };
 
