@@ -276,26 +276,121 @@ function initKitchenTabs() {
 /* ==========================================================================
    5. BEFORE & AFTER TRANSFORMATION SLIDER
    ========================================================================== */
-function initBeforeAfterSlider() {
-  const slider = document.getElementById('baContainer') || document.getElementById('beforeAfterSlider');
+const BA_ROOM_DATA = {
+  living: {
+    title: 'Living Room & Entertainment Lounge',
+    heading: '42-Day Turnkey Handover in Nayapalli, Bhubaneswar',
+    desc: 'Transformed from a dusty concrete shell with dangling conduits into a warm, contemporary living sanctuary. Engineered with acoustic fluted oak panelling, zero-glare magnetic track lighting, and a floating Italian marble TV console.',
+    beforeImg: '/assets/images/transform_living_before.jpg',
+    afterImg: '/assets/images/transform_living_after.jpg',
+    timeline: '38 Days Handover',
+    material: 'IS:710 Marine Grade BWP',
+    lighting: 'Concealed Warm COB LEDs',
+    warranty: '10-Year Comprehensive'
+  },
+  kitchen: {
+    title: 'Precision Modular Kitchen Suite',
+    heading: 'Boiling-Water Proof Acrylic Kitchen in Patia, Bhubaneswar',
+    desc: 'Converted from an unplastered brick shell with bare plumbing outlets into an ergonomic chef culinary haven. Features Calacatta quartz countertops, Blum soft-close pullouts, and dual-tone matte graphite and fluted oak cabinetry.',
+    beforeImg: '/assets/images/transform_kitchen_before.jpg',
+    afterImg: '/assets/images/transform_kitchen_after.jpg',
+    timeline: '42 Days Handover',
+    material: '100% BWP Marine Ply',
+    lighting: 'Under-Cabinet Profile LEDs',
+    warranty: '10-Year Comprehensive'
+  },
+  bedroom: {
+    title: 'Luxury Master Bedroom Suite',
+    heading: 'Acoustic Sanctuary Handover at Cuttack Road, Bhubaneswar',
+    desc: 'Upgraded from raw unpainted cement and dangling junction boxes into a 5-star master suite. Incorporates a custom velvet upholstered headboard, 1200N German hydraulic platform storage bed, and double-glazed acoustic UPVC window suite.',
+    beforeImg: '/assets/images/transform_bedroom_before.jpg',
+    afterImg: '/assets/images/transform_bedroom_after.jpg',
+    timeline: '35 Days Handover',
+    material: 'Acoustic Fluted Oak & Velvet',
+    lighting: 'Architectural Bedside Pendants',
+    warranty: '10-Year Comprehensive'
+  }
+};
+
+window.switchBATransformation = function(roomKey, btn) {
+  const data = BA_ROOM_DATA[roomKey];
+  if (!data) return;
+
+  document.querySelectorAll('.ba-tab-btn').forEach(b => {
+    b.classList.remove('active');
+    b.setAttribute('aria-selected', 'false');
+  });
+  if (btn) {
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+  }
+
+  const beforeImg = document.getElementById('baBeforeImg');
+  const afterImg = document.getElementById('baAfterImg');
+  if (beforeImg) {
+    beforeImg.style.transition = 'opacity 0.2s ease';
+    beforeImg.style.opacity = '0.3';
+    setTimeout(() => {
+      beforeImg.src = data.beforeImg;
+      beforeImg.style.opacity = '1';
+    }, 120);
+  }
+  if (afterImg) {
+    afterImg.style.transition = 'opacity 0.2s ease';
+    afterImg.style.opacity = '0.3';
+    setTimeout(() => {
+      afterImg.src = data.afterImg;
+      afterImg.style.opacity = '1';
+    }, 120);
+  }
+
+  const titleElem = document.getElementById('baSpaceTitle');
+  const headingElem = document.getElementById('baSpaceHeading');
+  const descElem = document.getElementById('baSpaceDesc');
+  const timelineElem = document.getElementById('baSpecTimeline');
+  const materialElem = document.getElementById('baSpecMaterial');
+  const lightingElem = document.getElementById('baSpecLighting');
+  const warrantyElem = document.getElementById('baSpecWarranty');
+
+  if (titleElem) titleElem.textContent = data.title;
+  if (headingElem) headingElem.textContent = data.heading;
+  if (descElem) descElem.textContent = data.desc;
+  if (timelineElem) timelineElem.textContent = data.timeline;
+  if (materialElem) materialElem.textContent = data.material;
+  if (lightingElem) lightingElem.textContent = data.lighting;
+  if (warrantyElem) warrantyElem.textContent = data.warranty;
+
+  window.setBASliderPercentage(50);
+};
+
+window.setBASliderPercentage = function(pct) {
+  const slider = document.getElementById('baContainer');
   const rangeInput = document.getElementById('baRangeInput');
   const afterWrap = document.getElementById('afterImgWrap');
-  const handle = document.getElementById('baDivider') || document.getElementById('sliderHandle');
+  const handle = document.getElementById('baDivider');
 
   if (!slider) return;
+  const clamped = Math.max(2, Math.min(98, parseFloat(pct)));
+  slider.style.setProperty('--slider-pos', `${clamped}%`);
+  if (afterWrap) afterWrap.style.width = `${clamped}%`;
+  if (handle) handle.style.left = `${clamped}%`;
+  if (rangeInput && Math.abs(parseFloat(rangeInput.value) - clamped) > 0.5) {
+    rangeInput.value = clamped;
+  }
+};
 
-  const setSliderPos = (pct) => {
-    const clamped = Math.max(5, Math.min(95, parseFloat(pct)));
-    slider.style.setProperty('--slider-pos', `${clamped}%`);
-    if (afterWrap) afterWrap.style.width = `${clamped}%`;
-    if (handle) handle.style.left = `${clamped}%`;
-    if (rangeInput && Math.abs(parseFloat(rangeInput.value) - clamped) > 0.5) {
-      rangeInput.value = clamped;
-    }
-  };
+function initBeforeAfterSlider() {
+  const slider = document.getElementById('baContainer');
+  const rangeInput = document.getElementById('baRangeInput');
+  if (!slider) return;
+
+  // Initialize at 50%
+  window.setBASliderPercentage(50);
 
   if (rangeInput) {
-    rangeInput.addEventListener('input', (e) => setSliderPos(e.target.value));
+    rangeInput.addEventListener('input', (e) => {
+      window.setBASliderPercentage(e.target.value);
+    });
   }
 
   let isDragging = false;
@@ -304,28 +399,30 @@ function initBeforeAfterSlider() {
     if (!rect.width) return;
     const x = clientX - rect.left;
     const pct = (x / rect.width) * 100;
-    setSliderPos(pct);
+    window.setBASliderPercentage(pct);
   };
 
-  slider.addEventListener('mousedown', (e) => {
+  slider.addEventListener('pointerdown', (e) => {
     isDragging = true;
+    slider.setPointerCapture?.(e.pointerId);
     handlePointer(e.clientX);
   });
-  window.addEventListener('mouseup', () => { isDragging = false; });
-  window.addEventListener('mousemove', (e) => { if (isDragging) handlePointer(e.clientX); });
 
-  slider.addEventListener('touchstart', (e) => {
-    if (e.touches && e.touches.length > 0) {
-      isDragging = true;
-      handlePointer(e.touches[0].clientX);
+  window.addEventListener('pointerup', (e) => {
+    if (isDragging) {
+      isDragging = false;
+      try { slider.releasePointerCapture?.(e.pointerId); } catch (_) {}
     }
-  }, { passive: true });
-  window.addEventListener('touchend', () => { isDragging = false; });
-  slider.addEventListener('touchmove', (e) => {
-    if (isDragging && e.touches && e.touches.length > 0) {
-      handlePointer(e.touches[0].clientX);
+  });
+
+  window.addEventListener('pointercancel', () => { isDragging = false; });
+
+  slider.addEventListener('pointermove', (e) => {
+    if (isDragging) {
+      e.preventDefault();
+      handlePointer(e.clientX);
     }
-  }, { passive: true });
+  });
 }
 
 /* ==========================================================================
@@ -636,7 +733,7 @@ function initAIChatbot() {
       'Custom wardrobe designs',
       'Calculate interior cost',
       'Showroom address in Bhubaneswar',
-      'Book free 3D design session'
+      'Book free design session'
     ];
     appendBotMessage(welcomeText, welcomePills);
   };
@@ -904,7 +1001,7 @@ function getArchitecturalAssistantResponse(text) {
   if ((q.includes('call') && !q.includes('calculate')) || q.includes('phone') || q.includes('mobile') || q.includes('hotline') || q.includes('number')) {
     return {
       text: "📞 **Vizous Senior Design Hotlines**:\n\n• **Bhubaneswar Studio**: +91 90400 87614 (10:00 AM – 8:30 PM)\n• **Customer Care**: +91 95892 77465\n• **Raipur Branch**: +91 98932 18906\n• **Official Email**: info@vizous.in\n\nClick below to call our design desk right away or leave your contact number in this chat for an immediate callback.",
-      suggested: ['Showroom address in Bhubaneswar', 'Calculate interior cost', 'Book free 3D design session'],
+      suggested: ['Showroom address in Bhubaneswar', 'Calculate interior cost', 'Book free design session'],
       actions: [
         { type: 'call', phone: '+919040087614', label: 'Call +91 90400 87614' },
         { type: 'whatsapp', text: 'Hi Vizous Interio, I would like to speak with an interior architect.', label: 'WhatsApp Us' },
@@ -953,7 +1050,7 @@ function getArchitecturalAssistantResponse(text) {
     if (q.includes('sqft') || q.includes('sq.ft') || q.includes('per sq')) {
       return {
         text: "📐 **Turnkey Pricing Per Square Foot**:\n\n• **Essential Craft**: ₹1,200 – ₹1,450 / sq.ft (BWP plywood, scratch-resistant laminates, soft-close hinges)\n• **Premium Contemporary**: ₹1,550 – ₹1,950 / sq.ft (Anti-fingerprint acrylic, Hafele hardware, designer lighting)\n• **Luxury Elite**: ₹2,100 – ₹2,600+ / sq.ft (PU lacquer, fluted panels, sintered stone, motorized Blum fittings)\n\n*Direct factory pricing saves you 20-30% compared to typical design agencies.*",
-        suggested: ['2BHK interior design', '3BHK interior design', 'Book free 3D design session'],
+        suggested: ['2BHK interior design', '3BHK interior design', 'Book free design session'],
         actions: [
           { type: 'modal', subject: 'Sq.Ft Rate Consultation', label: 'Get Detailed Estimate' },
           { type: 'call', phone: '+919040087614', label: 'Call Studio (+91 90400 87614)' }
@@ -999,7 +1096,7 @@ function getArchitecturalAssistantResponse(text) {
   if (q.includes('bed') || q.includes('bedroom') || q.includes('hydraulic') || q.includes('storage bed') || q.includes('mattress')) {
     return {
       text: "🛏️ **Luxury Bed Collection**:\n\n• **Hydraulic Storage Beds**: Heavy-duty German gas-lift cylinders for effortless lifting with dust-sealed under-bed storage.\n• **Designer Headboards**: Velvet, leatherette, and fluted acoustic wooden paneling.\n• **Configurations**: King (72x78), Queen (60x78), Single, and custom mattress sizes.\n• **Carcass**: 100% IS:710 Marine Grade BWP Plywood with 10-Year Warranty.",
-      suggested: ['View Bed Collection', 'Calculate interior cost', 'Book free 3D design session'],
+      suggested: ['View Bed Collection', 'Calculate interior cost', 'Book free design session'],
       actions: [
         { type: 'navigate', url: 'beds.html', label: 'View Bed Collection' },
         { type: 'modal', subject: 'Luxury Bed Inquiry', label: 'Request Custom Size' }
@@ -1011,7 +1108,7 @@ function getArchitecturalAssistantResponse(text) {
   if (q.includes('living') || q.includes('tv') || q.includes('mandir') || q.includes('puja') || q.includes('pooja') || q.includes('temple') || q.includes('louver') || q.includes('fluted') || q.includes('sofa')) {
     return {
       text: "🛋️ **Living Room & Sacred Spaces Architecture**:\n\n• **Floating TV Consoles**: Sintered stone marble cladding, fluted acoustic louvers, concealed wire channels.\n• **Sacred Puja Mandirs**: Custom CNC jaali carving, backlit onyx marble sanctum, brass bell fittings.\n• **Partitions & Foyer**: Open wooden screen dividers and shoe consoles.",
-      suggested: ['View completed projects', 'Calculate 2BHK interior cost', 'Book free 3D design session'],
+      suggested: ['View completed projects', 'Calculate 2BHK interior cost', 'Book free design session'],
       actions: [
         { type: 'navigate', url: 'modular-furniture.html', label: 'View Living & Mandirs' },
         { type: 'navigate', url: 'our-work.html', label: 'Explore Portfolio' },
@@ -1061,7 +1158,7 @@ function getArchitecturalAssistantResponse(text) {
   if (q.includes('delivery') || q.includes('handover') || q.includes('time') || q.includes('how long') || q.includes('duration') || q.includes('process') || q.includes('days') || q.includes('step')) {
     return {
       text: "⏱️ **Guaranteed 45-Day Handover Commitment**:\n\nOur structured 4-step execution:\n1. **Day 1–7**: Free site measurement & 3D design approval.\n2. **Day 8–30**: Precision German CNC cutting & edgebanding at our Bhagabanpur factory.\n3. **Day 31–40**: Flat-pack dispatch to site & clean, dust-free modular assembly (3-5 days on site).\n4. **Day 41–45**: 52-point quality audit, deep clean, and keys handover backed by penalty clauses.",
-      suggested: ['Book free 3D design session', 'Calculate interior cost', 'Showroom address in Bhubaneswar'],
+      suggested: ['Book free design session', 'Calculate interior cost', 'Showroom address in Bhubaneswar'],
       actions: [
         { type: 'modal', subject: '45-Day Handover Consultation', label: 'Plan Your 45-Day Project' }
       ]
@@ -1072,7 +1169,7 @@ function getArchitecturalAssistantResponse(text) {
   if (q.includes('3d') || q.includes('free') || q.includes('site visit') || q.includes('measurement') || q.includes('design charge') || q.includes('floor plan')) {
     return {
       text: "📐 **100% Free Initial Design Consultation**:\n\n• **Free Site Measurement**: An interior architect visits your site in Bhubaneswar, Cuttack, or Khordha.\n• **Free 3D Photorealistic Design**: Custom 3D visuals of your exact floor plan before you commit a single rupee.\n• **Transparent Line-Item Quote**: Clear pricing with zero hidden charges or surprises.",
-      suggested: ['Book free 3D design session', 'Calculate interior cost', 'Showroom address in Bhubaneswar'],
+      suggested: ['Book free design session', 'Calculate interior cost', 'Showroom address in Bhubaneswar'],
       actions: [
         { type: 'modal', subject: 'Free 3D Design Session Booking', label: 'Book Free 3D Session' },
         { type: 'call', phone: '+919040087614', label: 'Call +91 90400 87614' }
@@ -1084,7 +1181,7 @@ function getArchitecturalAssistantResponse(text) {
   if (q.includes('emi') || q.includes('loan') || q.includes('finance') || q.includes('financing') || q.includes('installment') || q.includes('payment') || q.includes('advance')) {
     return {
       text: "💳 **Transparent Milestone Payments & EMI**:\n\n• 10% on Initial 3D Design Finalization\n• 40% on Production Release at Factory\n• 40% on Flat-Pack Delivery at Site\n• 10% on Final Quality Handover & Inspection\n• **Zero-Cost EMI**: Available across 3 to 12-month tenures with leading partner banks.",
-      suggested: ['Calculate interior cost', 'Book free 3D design session', 'Call studio'],
+      suggested: ['Calculate interior cost', 'Book free design session', 'Call studio'],
       actions: [
         { type: 'modal', subject: 'EMI & Payment Consultation', label: 'Check EMI Eligibility' },
         { type: 'call', phone: '+919040087614', label: 'Speak with Finance Desk' }
@@ -1120,7 +1217,7 @@ function getArchitecturalAssistantResponse(text) {
   if (q.includes('thank') || q.includes('thx') || q.includes('okay') || q.includes('ok') || q.includes('great') || q.includes('awesome') || q.includes('good') || q.includes('bye') || q.includes('sure')) {
     return {
       text: "You are very welcome! If you would like to see live modular kitchen layouts or review material samples, visit our Laxmi Sagar showroom or call us directly at +91 90400 87614. Have a wonderful day!",
-      suggested: ['Showroom address in Bhubaneswar', 'Book free 3D design session', 'Explore Portfolio'],
+      suggested: ['Showroom address in Bhubaneswar', 'Book free design session', 'Explore Portfolio'],
       actions: [
         { type: 'call', phone: '+919040087614', label: 'Call Studio (+91 90400 87614)' },
         { type: 'whatsapp', text: 'Hi Vizous Interio, thank you for the information.', label: 'WhatsApp Us' }
@@ -1131,7 +1228,7 @@ function getArchitecturalAssistantResponse(text) {
   // 20. INTELLIGENT GENERAL FALLBACK
   return {
     text: "Thank you for reaching out to Vizous Interio! We are Bhubaneswar's leading interior infrastructure studio with an in-house 15,000+ sq.ft factory at Bhagabanpur.\n\nTo assist you immediately, please choose an option below or leave your contact number in this chat for a callback from our senior architect:",
-    suggested: ['Modular kitchen designs', 'Custom wardrobe designs', 'Explore project gallery', 'Showroom address in Bhubaneswar', 'Book free 3D design session'],
+    suggested: ['Modular kitchen designs', 'Custom wardrobe designs', 'Explore project gallery', 'Showroom address in Bhubaneswar', 'Book free design session'],
     actions: [
       { type: 'modal', subject: 'Design Assistant Consultation', label: 'Book 3D Design Session' },
       { type: 'whatsapp', text: 'Hi Vizous Interio, I would like to speak with an interior designer.', label: 'WhatsApp Us' },
