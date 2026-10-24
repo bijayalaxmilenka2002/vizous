@@ -113,6 +113,9 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
 }
 
 body {
@@ -121,10 +124,13 @@ body {
   color: var(--text-body);
   line-height: 1.65;
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
-img {
+img, picture, video, canvas, svg {
   max-width: 100%;
   height: auto;
   display: block;
@@ -2024,7 +2030,8 @@ input, select, textarea {
   font-size: 0.85rem;
 }
 
-.footer-bottom {
+.footer-bottom,
+.footer-bottom-bar {
   padding: 1.5rem 0;
   display: flex;
   align-items: center;
@@ -4791,10 +4798,13 @@ input, select, textarea {
     gap: 2rem !important;
   }
 
-  .footer-bottom-inner {
+  .footer-bottom-inner,
+  .footer-bottom,
+  .footer-bottom-bar {
     flex-direction: column !important;
     gap: 0.75rem !important;
     text-align: center !important;
+    justify-content: center !important;
   }
 }
 
@@ -9379,4 +9389,81 @@ input, select, textarea {
     justify-content: center;
   }
 }
+
+/* ==========================================================================
+   UNIVERSAL MOBILE & TABLET RESPONSIVENESS SAFEGUARDS
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Prevent iOS Safari auto-zoom on form inputs */
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="number"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  /* Smooth touch scrolling on all horizontal scrolls */
+  .category-navbar,
+  .media-filter-bar,
+  .specs-table-wrap,
+  .lookbook-strip,
+  .ba-rooms-tabs {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+
+  /* Safe tap targets */
+  .btn,
+  .btn-primary,
+  .btn-card-quote,
+  .btn-banner-primary,
+  .btn-hero-primary,
+  .btn-form-submit {
+    min-height: 44px;
+  }
+
+  /* Responsive image & card scaling */
+  .category-card,
+  .product-card,
+  .feature-card,
+  .review-card,
+  .social-entry-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Modal responsiveness for mobile */
+  .modal-window {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0;
+  }
+}
+
+/* Extra-Narrow Screens (<= 380px: iPhone SE, Galaxy Fold cover) */
+@media (max-width: 380px) {
+  .container {
+    padding-left: 0.85rem !important;
+    padding-right: 0.85rem !important;
+  }
+
+  .section-title {
+    font-size: 1.65rem !important;
+  }
+
+  .btn-primary-consult {
+    display: none; /* Hide top header quote button on very narrow screens to give logo breathing room */
+  }
+
+  .brand-logo-img {
+    height: 32px !important;
+  }
+
+  .mobile-menu-toggle {
+    margin-left: auto;
+  }
+}
+
 
