@@ -212,14 +212,14 @@ function generateGroundedReply(query) {
 
   if (q.includes('quote') || q.includes('price') || q.includes('cost') || q.includes('estimate') || q.includes('budget')) {
     return {
-      text: "Because we manufacture in our own factory with zero middlemen, you get transparent direct-from-factory pricing. Share your floorplan on WhatsApp (+91 90400 87614) or book a complimentary 3D design consultation with our senior architects in Bhubaneswar.",
-      suggested: ['Book 3D Design Session', 'WhatsApp Quote', 'Visit Laxmisagar Showroom'],
-      action: { type: 'modal', subject: 'Custom Quote & 3D Session', label: 'Book 3D Design Session' }
+      text: "Because we manufacture in our own factory with zero middlemen, you get transparent direct-from-factory pricing. Share your floorplan on WhatsApp (+91 90400 87614) or book a complimentary design consultation with our senior architects in Bhubaneswar.",
+      suggested: ['Book Design Session', 'WhatsApp Quote', 'Visit Laxmisagar Showroom'],
+      action: { type: 'modal', subject: 'Custom Quote & Design Session', label: 'Book Design Session' }
     };
   }
 
   return {
-    text: "Welcome to Vizous Interio! I can help you explore our modular kitchens, custom wardrobes, luxury beds, office furniture, or book a free 3D design session with our senior architects in Bhubaneswar. What are you planning for your space?",
+    text: "Welcome to Vizous Interio! I can help you explore our modular kitchens, custom wardrobes, luxury beds, office furniture, or book a free design session with our senior architects in Bhubaneswar. What are you planning for your space?",
     suggested: ['I need a modular kitchen', 'Custom wardrobe options', 'Explore Project Gallery', 'Visit Laxmisagar showroom']
   };
 }

@@ -1075,7 +1075,7 @@ function getArchitecturalAssistantResponse(text) {
       suggested: ['Explore Kitchen Layouts', 'Acrylic vs Laminate finish', 'Book free site measurement', 'Showroom address in Bhubaneswar'],
       actions: [
         { type: 'navigate', url: 'modular-kitchen.html', label: 'Explore 6 Kitchen Layouts' },
-        { type: 'modal', subject: 'Modular Kitchen Consultation', label: 'Book 3D Design Session' }
+        { type: 'modal', subject: 'Modular Kitchen Consultation', label: 'Book Design Session' }
       ]
     };
   }
@@ -1137,7 +1137,7 @@ function getArchitecturalAssistantResponse(text) {
       suggested: ['Explore Home Décor', 'Calculate interior cost', 'Book consultation'],
       actions: [
         { type: 'navigate', url: 'home-decor.html', label: 'Explore Home Décor' },
-        { type: 'modal', subject: 'Home Decor Consultation', label: 'Book 3D Design Session' }
+        { type: 'modal', subject: 'Home Decor Consultation', label: 'Book Design Session' }
       ]
     };
   }
@@ -1171,7 +1171,7 @@ function getArchitecturalAssistantResponse(text) {
       text: "📐 **100% Free Initial Design Consultation**:\n\n• **Free Site Measurement**: An interior architect visits your site in Bhubaneswar, Cuttack, or Khordha.\n• **Free 3D Photorealistic Design**: Custom 3D visuals of your exact floor plan before you commit a single rupee.\n• **Transparent Line-Item Quote**: Clear pricing with zero hidden charges or surprises.",
       suggested: ['Book free design session', 'Calculate interior cost', 'Showroom address in Bhubaneswar'],
       actions: [
-        { type: 'modal', subject: 'Free 3D Design Session Booking', label: 'Book Free 3D Session' },
+        { type: 'modal', subject: 'Free Design Session Booking', label: 'Book Free Design Session' },
         { type: 'call', phone: '+919040087614', label: 'Call +91 90400 87614' }
       ]
     };
@@ -1230,7 +1230,7 @@ function getArchitecturalAssistantResponse(text) {
     text: "Thank you for reaching out to Vizous Interio! We are Bhubaneswar's leading interior infrastructure studio with an in-house 15,000+ sq.ft factory at Bhagabanpur.\n\nTo assist you immediately, please choose an option below or leave your contact number in this chat for a callback from our senior architect:",
     suggested: ['Modular kitchen designs', 'Custom wardrobe designs', 'Explore project gallery', 'Showroom address in Bhubaneswar', 'Book free design session'],
     actions: [
-      { type: 'modal', subject: 'Design Assistant Consultation', label: 'Book 3D Design Session' },
+      { type: 'modal', subject: 'Design Assistant Consultation', label: 'Book Design Session' },
       { type: 'whatsapp', text: 'Hi Vizous Interio, I would like to speak with an interior designer.', label: 'WhatsApp Us' },
       { type: 'call', phone: '+919040087614', label: 'Call Studio (+91 90400 87614)' }
     ]
